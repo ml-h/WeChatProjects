@@ -1,0 +1,51 @@
+<!--pages/feitongkao/feitongkao.wxml-->
+<view class="all">
+    <view class="left">
+        <view class="fenlei" bindtap="more">
+            01哲学
+        </view>
+        <view class="fenlei" bindtap="more">
+            02经济学
+        </view>
+        <view class="fenlei" bindtap="more">
+            03法学
+        </view>
+        <view class="fenlei" bindtap="more">
+            04教育学
+        </view>
+        <view class="fenlei" bindtap="more">
+            05文学
+        </view>
+        <view class="fenlei" bindtap="more">
+            06历史学
+        </view>
+        <view class="fenlei" bindtap="more">
+            07理学
+        </view>
+        <view class="fenlei" bindtap="more">
+            08工学
+        </view>
+        <view class="fenlei" bindtap="more">
+            09农学
+        </view>
+        <view class="fenlei" bindtap="more">
+            10医学
+        </view>
+        <view class="fenlei" bindtap="more">
+            11军事学
+        </view>
+        <view class="fenlei" bindtap="more">
+            12管理学
+        </view>
+        <view class="fenlei" bindtap="more">
+            13艺术学
+        </view>
+    </view>
+    <view class="right">
+        <view class="zuo">
+            <button class="click" hover-class="btn-hover" bindtap="lixue"> 0801 力学 </button>
+            <button class="click" hover-class="btn-hover" bindtap="guangxue"> 0803 光学工程 </button>
+            <button class="click" hover-class="btn-hover" bindtap="cailiao"> 0805 材料科学与工程 </button>   
+        </view>
+    </view>
+</view>

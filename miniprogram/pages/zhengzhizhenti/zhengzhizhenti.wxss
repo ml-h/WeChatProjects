@@ -1,0 +1,36 @@
+.contain{
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    border: 3rpx solid #faca82;
+    border-radius: 0%;
+}
+
+.contain .year{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    position: relative;
+  
+}
+.year image{
+    width: 50rpx;
+    height: 50rpx;
+    
+}
+.year .text{
+    font-size: 30rpx;
+    
+}
+.year view{
+    flex: 1;
+    display: flex;
+    
+}
+
+.year .photo{
+    position: absolute;
+    right: 0;
+}
