@@ -1,0 +1,26 @@
+/* pages/feitongkao/feitongkao.wxss */
+.fenlei{
+    padding-top: 14%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 14%;
+    border: 3rpx solid #faca82;
+    border-radius: 0%;
+    display: flex;
+
+}
+.left{
+    width: 25%;
+    height: 100%;
+    /* background: red; */
+}
+.right{
+    width: 75%;
+    height: 100%;
+    border: royalblue 3rpx solid;
+}
+.left view{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}

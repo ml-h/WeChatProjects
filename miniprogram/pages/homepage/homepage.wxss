@@ -82,4 +82,3 @@ border-radius: 50%;
 .write-weibo-btn view{
   margin-top: -16rpx;
 }
-
