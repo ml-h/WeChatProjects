@@ -1,0 +1,36 @@
+/* pages/tongkaoshiti/tongkaoshiti.wxss */
+.wendang image{
+    width: 50rpx;
+    height: 50rpx;
+}
+.jiantou image{
+    width: 30rpx;
+    height: 30rpx;
+    
+}
+.kuangjia .jiantou{
+    position: absolute;
+    right: 5%;
+    padding-top: 2%;
+}
+.kuangjia{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    position: relative;
+    /* background: red; */
+  
+}
+.kuangjia{
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    border: 3rpx solid #faca82;
+    border-radius: 0%;
+}
+.xueke{
+    padding-left: 5%;
+    padding-top: 1%;
+}

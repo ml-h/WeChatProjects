@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="header">
+    <image src="../../images/childlogo.PNG" class="img"></image>
+    <view class="search-container">
+      <x-search iconfont="iconfont"  />
+      <view></view>
+    </view>
+  </view>
+  
+
+</view>

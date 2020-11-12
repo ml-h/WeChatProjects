@@ -22,7 +22,7 @@
 
     <view class="weibo-handle">
       <view class="comment-group">
-        <image src="../../images/pinglun.png">评论
+        <image src="../../images/pinglun.png" bindtap="commenting">评论
         </image>
       </view>
       <view class="praise-group">
@@ -40,5 +40,3 @@
 <view class="write-weibo-btn" bindtap = 'onWriteWeiboTap'> 
   <text>+</text>
 </view> 
-
-
