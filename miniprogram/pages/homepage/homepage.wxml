@@ -167,18 +167,7 @@
 </view> 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!--miniprogram/pages/home/home.wxml-->
+<!-- 这是鲍凌函的测试，前端在这改，把上面的结合在一起 -->
 <block wx:for='{{topics}}' wx:for-index="idx">
   <view class='container' bindtap='onItemClick' data-topicId='{{item._id}}' data-openid='{{item._openid}}'>
     <view class='container-content'>

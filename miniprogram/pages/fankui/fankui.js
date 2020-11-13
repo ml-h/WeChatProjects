@@ -1,4 +1,4 @@
-// pages/upload_doc/upload_doc.js
+// pages/fankui/fankui.js
 Page({
 
   /**
@@ -12,7 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: '用户反馈'
+    })
   },
 
   /**
@@ -40,9 +42,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.setNavigationBarTitle({
-      title: '我的上传'
-    })
+
   },
 
   /**
@@ -64,21 +64,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  up_doc: function (options) {
-    wx.navigateTo({
-          url: '../up_doc/up_doc'
- })  
- },
- up_timu: function (options) {
-  wx.navigateTo({
-        url: '../up_timu/up_timu'
-})  
-},
-fankui:function (options) {
-  wx.navigateTo({
-        url: '../fankui/fankui' 
-  })
- }
-
+  }
 })

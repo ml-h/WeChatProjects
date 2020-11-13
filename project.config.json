@@ -77,6 +77,20 @@
           "pathName": "pages/up_doc/up_doc",
           "query": "",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/up_timu/up_timu",
+          "pathName": "pages/up_timu/up_timu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/fankui/fankui",
+          "pathName": "pages/fankui/fankui",
+          "query": "",
+          "scene": null
         }
       ]
     }

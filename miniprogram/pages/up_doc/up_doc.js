@@ -8,6 +8,11 @@ Page({
     index: 0,//选择的下拉列表下标
   },
   // 点击下拉显示框
+  onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '上传文档'
+    })
+  },
   selectTap() {
     this.setData({
       selectShow: !this.data.selectShow
