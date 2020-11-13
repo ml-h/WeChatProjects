@@ -8,9 +8,16 @@
    "pages/feitongkao/feitongkao",
    "pages/tongkaoshiti/tongkaoshiti",
    "pages/souResult/souResult",
+<<<<<<< Updated upstream
    "pages/comment/comment",
    "pages/upload/upload",
    "pages/login/login"
+=======
+   "pages/upload/upload",
+   "pages/xiangqing/xiangqing",
+   "pages/logs/logs",
+   "pages/timuxiangqing/timuxiangqing"
+>>>>>>> Stashed changes
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

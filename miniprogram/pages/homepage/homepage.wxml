@@ -12,11 +12,15 @@
       <view class="right-info">
         <view class="username">张爱玲</view>
         <view class="detail-info">
+<<<<<<< Updated upstream
 
           <view class="time">1小时前</view>
 
           <view class="time">2020/11/11 11:11:11</view>
 
+=======
+          <view class="time">1小时前</view>
+>>>>>>> Stashed changes
           <view class="from">来自iphone XR </view>
         </view>
         
@@ -165,8 +169,12 @@
 
 <view class="write-weibo-btn" bindtap = 'onWriteWeiboTap'> 
   <text>+</text>
+<<<<<<< Updated upstream
 </view>
 <view class="write-weibo-btn" bindtap = 'onWriteWeiboTap'> 
   <text>+</text>
 </view> 
 
+=======
+</view> 
+>>>>>>> Stashed changes

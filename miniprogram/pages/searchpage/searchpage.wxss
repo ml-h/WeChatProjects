@@ -1,6 +1,9 @@
+<<<<<<< Updated upstream
 
 /* pages/searchpage/searchpage.wxss */
 
+=======
+>>>>>>> Stashed changes
 .header {
   display: flex;
   align-items: center;
@@ -28,4 +31,7 @@
   height:30%;
   
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

@@ -1,11 +1,18 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 .image{
   
   padding-top: 20rpx;
   
 }
 .containter{ 
+<<<<<<< Updated upstream
   background: #f2f2f2;
+=======
+  
+>>>>>>> Stashed changes
 }
 .containter .weibo-group{
   width: 100%;

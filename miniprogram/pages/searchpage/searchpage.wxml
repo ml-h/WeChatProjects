@@ -1,6 +1,9 @@
+<<<<<<< Updated upstream
 
 <!--pages/searchpage/searchpage.wxml-->
 <text>pages/searchpage/searchpage.wxml</text>
+=======
+>>>>>>> Stashed changes
 <view class="container">
   <view class="header">
     <image src="../../images/childlogo.PNG" class="img"></image>
