@@ -1,7 +1,0 @@
-{
-
-  "usingComponents": {
-    "x-search": "/components/search/search"
-  },
-  "navigationBarTitleText":"搜索"
-}
