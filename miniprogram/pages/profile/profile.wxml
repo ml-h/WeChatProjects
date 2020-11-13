@@ -25,3 +25,12 @@
       </navigator>
     </block>
   </view>
+  <navigator open-type="exit" target="miniProgram">
+<view class='item'>
+          <image class='item-image' src="../../images/cuowu.png"></image>
+          <text class="item-text">退出登陆</text>
+        </view>
+          <view class="div-line"></view>
+  </navigator>
+
+  

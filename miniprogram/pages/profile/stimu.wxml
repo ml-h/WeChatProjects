@@ -1,0 +1,9 @@
+<!--miniprogram/pages/profile/stimu.wxml-->
+<block wx:for="{{menuitems}}" wx:key="item">
+<view class='item'>
+          <text class="item-text">{{item.text}}</text>
+          <text class='item-array'>></text>
+</view>
+<view class="div-line"></view>
+</block>
+

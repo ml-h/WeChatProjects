@@ -1,4 +1,4 @@
-// miniprogram/pages/profile/collect.js
+// miniprogram/pages/profile/wendang.js
 Page({
 
   /**
@@ -6,11 +6,12 @@ Page({
    */
   data: {
     menuitems: [
-      { text: '收藏的文档', url: 'wendang', icon: '../../images/wendang.png', tips: '' },
-      { text: '收藏的题目', url: 'stimu', icon: '../../images/wendang.png', tips: '' }
+      { text: '2020-考研政治', tips: '' },
+      { text: '2020-考研英语', tips: '' },
+      { text: '2020-考研数学', tips: '' },
+      { text: '2020-计算机', tips: '' }
       
     ]
-
   },
 
   /**

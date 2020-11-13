@@ -1,4 +1,4 @@
-// miniprogram/pages/profile/collect.js
+// miniprogram/pages/profile/stimu.js
 Page({
 
   /**
@@ -6,8 +6,10 @@ Page({
    */
   data: {
     menuitems: [
-      { text: '收藏的文档', url: 'wendang', icon: '../../images/wendang.png', tips: '' },
-      { text: '收藏的题目', url: 'stimu', icon: '../../images/wendang.png', tips: '' }
+      { text: '2020政治题目1', tips: '' },
+      { text: '2020英语题目2', tips: '' },
+      { text: '2020数学题目3', tips: '' },
+      { text: '2020计算机题目4', tips: '' }
       
     ]
 
