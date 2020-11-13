@@ -18,10 +18,6 @@
     width: 75%;
     height: 100%;
     border: royalblue 3rpx solid;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 }
 .left view{
     display: flex;

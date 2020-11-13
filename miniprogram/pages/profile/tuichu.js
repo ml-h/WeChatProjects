@@ -1,4 +1,4 @@
-// pages/login/login.js
+// miniprogram/pages/profile/tuichu.js
 Page({
 
   /**

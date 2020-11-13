@@ -1,4 +1,4 @@
-// pages/profile/profile.js
+// miniprogram/pages/profile/shangchuan.js
 Page({
 
   /**
