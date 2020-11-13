@@ -1,0 +1,58 @@
+page{
+  background-color: rgb(235, 233, 233);
+}
+.btns{
+  display:flex;
+}
+.line{
+  display:flex;
+  justify-content:space-between;
+  padding: 15rpx;
+  align-items:center;
+}
+.container{
+  margin-top: 25rpx;
+  background-color: rgb(235, 233, 233);
+  /* background-color: tomato; */
+  flex-wrap: wrap; 
+  padding: 12rpx;
+}
+.doc_name{
+  font-size: 30rpx;
+  margin: 12rpx;
+
+}
+.item{
+  padding: 10rpx;
+  width:330rpx;
+  height:120rpx;
+  background-color: white;
+  border-radius: 5%;
+  margin-bottom: 30rpx;
+  align-items:center;
+}
+.upload{
+  background-color: white;
+  /* margin-top: 20rpx; */
+  /* flex-direction: row; */
+  display:flex;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  align-items:center;
+  justify-content:space-around;
+}
+.jiahao{
+  color: rgb(87, 139, 206);
+  font-size: 50rpx;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.fankui{
+  font-size: 25rpx;
+  color:gray;
+  margin-left: 10rpx;
+}

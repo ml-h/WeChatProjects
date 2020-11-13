@@ -13,7 +13,9 @@
    "pages/login/login",
    "pages/xiangqing/xiangqing",
    "pages/logs/logs",
-   "pages/timuxiangqing/timuxiangqing"
+   "pages/timuxiangqing/timuxiangqing",
+   "pages/shangchuan/shangchuan",
+   "pages/up_doc/up_doc"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
