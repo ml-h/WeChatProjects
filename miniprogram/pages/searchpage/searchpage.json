@@ -1,6 +1,5 @@
 {
 
-  "usingComponents": {}
   "usingComponents": {
     "x-search": "/components/search/search"
   },
