@@ -1,18 +1,33 @@
-.ticontainer {
+.timucontainer {
   display: flex;
   align-items: center;
   position: relative;
   flex-direction: row;
   
 }
+.ticontainer{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width:100%;
+  margin-top:2rpx;
+  background-color:#CCCCCC;
+  flex-direction: row;
+  font-size: 35rpx;
+}
 .timuList{
   width:90%;
   margin-left: 2%;
-  margin-top: 15rpx;
-  margin-bottom: 15rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  
 }
 .shoucang{
   width:20px;
   height: 20px;
- 
+}
+
+.noTi{
+  margin-top:15rpx;
+  font-size: 35rpx;
 }

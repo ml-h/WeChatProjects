@@ -24,12 +24,10 @@ Component({
    */
   methods: {
 
-    searchclick :function(e){
-      wx.navigateTo({
-        url: '../../pages/souResult/souResult',
-      })
-    },
+    
+      
+    }
 
     
-  }
+  
 })

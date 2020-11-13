@@ -4,7 +4,7 @@
     <image src="../../images/childlogo.PNG" class="img"></image>
     <view class="search-container">
       <x-search iconfont="iconfont"  />
-      <view></view>
+      <button class="search" style="width:25vw" bindtap="searchclick" hover-class="mousehover">搜索</button>
     </view>
   </view>
   

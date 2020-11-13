@@ -25,3 +25,13 @@
   height:30%;
   
 }
+.search {
+  margin-top: 8%;
+  background:#727272;
+  color: #fff;
+  font-size: 35rpx;
+  border-radius: 10px; 
+}
+.mousehover {
+  background-color:green;
+}

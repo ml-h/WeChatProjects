@@ -27,16 +27,7 @@
   margin-top:18rpx;
   font-size: 35rpx;
 }
-.search {
-  margin-top: 8%;
-  background:#727272;
-  color: #fff;
-  font-size: 35rpx;
-  border-radius: 10px; 
-}
-.mousehover {
-  background-color:green;
-}
+
 
 .in-bar {
   color: #999;
