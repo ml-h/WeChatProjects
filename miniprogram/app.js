@@ -1,4 +1,5 @@
 //app.js
+//测试
 App({
   onLaunch: function () {
     
