@@ -1,10 +1,5 @@
-.image{
-  
-  padding-top: 20rpx;
-  
-}
 .containter{ 
-  
+  background: #f2f2f2;
 }
 .containter .weibo-group{
   width: 100%;
@@ -87,3 +82,4 @@ border-radius: 50%;
 .write-weibo-btn view{
   margin-top: -16rpx;
 }
+
