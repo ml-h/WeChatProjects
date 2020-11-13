@@ -1,0 +1,84 @@
+.containter{ 
+  background: #f2f2f2;
+}
+.containter .weibo-group{
+  width: 100%;
+  margin-bottom: 30rpx;
+  background: #ffffff;
+  padding: 40rpx;
+  box-sizing: border-box;
+
+
+}
+.weibo-group .user-group{
+  display: flex;
+}
+.user-group .avatar{
+width: 74rpx;
+height: 74rpx;
+border-radius: 50%;
+}
+.user-group .right-info{
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-info .username{
+  font-size: 28rpx;
+  color: #323232;
+}
+.right-info .detail-info{
+  font-size: 24rpx;
+  color: #656565;
+  display: flex;
+}
+.detail-info .time{
+  margin-right: 20rpx;
+}
+
+.weibo-content-group{
+  padding-top: 30rpx;
+}
+.weibo-content-group .content{
+  font-size: 32rpx;
+}
+.weibo-content-group .image-list-group{
+  padding-top: 20rpx;
+}
+.weibo-handle{
+  display: flex;
+  padding-top: 30rpx;
+  font-size: 28rpx;
+}
+.weibo-handle image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.weibo-handle view{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.write-weibo-btn{ 
+  pointer-events:none;
+  position: fixed;
+  right: 50rpx;
+  width: 100rpx;
+  bottom: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  font-size: 70rpx;
+  color: #ffffff;
+  box-shadow: grey;
+}
+.write-weibo-btn view{
+  margin-top: -16rpx;
+}

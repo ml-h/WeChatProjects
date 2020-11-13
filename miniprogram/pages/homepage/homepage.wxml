@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="weibo-group">
+    <view class="user-group">
+      <image class="avatar"
+      src = "../../images/wo.png"></image>
+      <view class="right-info">
+        <view class="username">张爱玲</view>
+        <view class="detail-info">
+          <view class="time">2020/11/11 11:11:11</view>
+          <view class="from">来自iphone XR </view>
+        </view>
+        
+        
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="content">书是最好的朋友，唯一的缺点是使我近视加深，但还是值得的。</view>
+      <view class="image -list-group">
+        <image src="../../images/fengjing.jpg" mode="aspectFill" style="width:100%;max-height:400rpx"></image>
+      </view>
+     </view>
+
+    <view class="weibo-handle">
+      <view class="comment-group">
+        <image src="../../images/pinglun.png" bindtap="commenting">评论
+        </image>
+      </view>
+      <view class="praise-group">
+        <image src="../../images/zan.png">赞
+        </image>
+      </view>
+      <view class="jubao-group">
+        <image src="../../images/jubao.png">举报
+        </image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="write-weibo-btn" bindtap = 'onWriteWeiboTap'> 
+  <text>+</text>
+</view> 
