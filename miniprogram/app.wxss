@@ -1,8 +1,9 @@
 /**app.wxss**/
 .container {
+  background: #ffff;
+  padding: 40rpx;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 30rpx;
   box-sizing: border-box;
 } 
 .btn-hover{

@@ -1,27 +1,22 @@
 {
   "pages": [
-    "pages/homepage/homepage",
-    "pages/questionbank/questionbank",
-    "pages/searchpage/searchpage",
-    "pages/profile/profile",
-    "pages/zhengzhizhenti/zhengzhizhenti",
-    "pages/feitongkao/feitongkao",
-    "pages/tongkaoshiti/tongkaoshiti",
-    "pages/souResult/souResult",
-    "pages/comment/comment",
-    "pages/upload/upload",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/test/test",
-    "pages/profile/collect",
-    "pages/profile/kufu",
-    "pages/profile/shangchuan",
-    "pages/profile/dongtai",
-    "pages/profile/ziliao",
-    "pages/profile/tuichu"
+   "pages/homepage/homepage",
+   "pages/questionbank/questionbank",
+   "pages/searchpage/searchpage",
+   "pages/profile/profile",
+   "pages/zhengzhizhenti/zhengzhizhenti",
+   "pages/feitongkao/feitongkao",
+   "pages/tongkaoshiti/tongkaoshiti",
+   "pages/souResult/souResult",
+   "pages/comment/comment",
+   "pages/upload/upload",
+   "pages/login/login",
+   "pages/xiangqing/xiangqing",
+   "pages/logs/logs",
+   "pages/timuxiangqing/timuxiangqing"
   ],
   "window": {
-    "backgroundColor": "#474747",
+    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "小福有研",
@@ -30,33 +25,32 @@
   "tabBar": {
     "color": "#474747",
     "selectedColor": "#87CEFA",
-    "list": [
-      {
-        "pagePath": "pages/homepage/homepage",
-        "text": "首页",
-        "iconPath": "images/shouye.png",
-        "selectedIconPath": "images/shouye1.png"
-      },
-      {
-        "pagePath": "pages/questionbank/questionbank",
-        "text": "题库",
-        "iconPath": "images/wenjian.png",
-        "selectedIconPath": "images/wenjian1.png"
-      },
-      {
-        "pagePath": "pages/searchpage/searchpage",
-        "text": "搜索",
-        "iconPath": "images/sousuo.png",
-        "selectedIconPath": "images/sousuo1.png"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的",
-        "iconPath": "images/wo.png",
-        "selectedIconPath": "images/wo1.png"
-      }
-    ]
-  },
+    "list":[{
+      "pagePath": "pages/homepage/homepage",
+      "text":"首页",
+      "iconPath": "images/shouye.png",
+      "selectedIconPath": "images/shouye1.png"
+    },
+    {
+      "pagePath": "pages/questionbank/questionbank",
+      "text":"题库",
+      "iconPath": "images/wenjian.png",
+      "selectedIconPath": "images/wenjian1.png"
+    },
+    {
+      "pagePath": "pages/searchpage/searchpage",
+      "text":"搜索",
+      "iconPath": "images/sousuo.png",
+      "selectedIconPath": "images/sousuo1.png"
+    },
+    {
+      "pagePath": "pages/profile/profile",
+      "text":"我的",
+      "iconPath": "images/wo.png",
+      "selectedIconPath": "images/wo1.png"
+    }
+  ]
+  },  
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

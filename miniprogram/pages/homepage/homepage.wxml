@@ -1,4 +1,10 @@
 <view class="container">
+  <image class="avatar"
+      src = "../../images/logo.jpg" mode="aspectFill">
+  </image>
+</view>
+
+<view class="container">
   <view class="weibo-group">
     <view class="user-group">
       <image class="avatar"
@@ -6,7 +12,7 @@
       <view class="right-info">
         <view class="username">张爱玲</view>
         <view class="detail-info">
-          <view class="time">2020/11/11 11:11:11</view>
+          <view class="time">1小时前</view>
           <view class="from">来自iphone XR </view>
         </view>
         
@@ -37,6 +43,125 @@
   </view>
 </view>
 
+<view class="container">
+  <view class="weibo-group">
+    <view class="user-group">
+      <image class="avatar"
+      src = "../../images/wo.png"></image>
+      <view class="right-info">
+        <view class="username">三毛</view>
+        <view class="detail-info">
+          <view class="time">三小时前</view>
+          <view class="from">来自iphone XR </view>
+        </view>
+        
+        
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="content">书读多了，容颜自然改变。</view>
+      <view class="image -list-group">
+      </view>
+     </view>
+
+    <view class="weibo-handle">
+      <view class="comment-group">
+        <image src="../../images/pinglun.png" bindtap="commenting">评论
+        </image>
+      </view>
+      <view class="praise-group">
+        <image src="../../images/zan.png">赞
+        </image>
+      </view>
+      <view class="jubao-group">
+        <image src="../../images/jubao.png">举报
+        </image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="weibo-group">
+    <view class="user-group">
+      <image class="avatar"
+      src = "../../images/wo.png"></image>
+      <view class="right-info">
+        <view class="username">丁晓渠</view>
+        <view class="detail-info">
+          <view class="time">7小时前</view>
+          <view class="from">来自iphone XR </view>
+        </view>
+        
+        
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="content">《2017年福州大学837经济考研真题》</view>
+      <view class="content">我上传了真题快来看看吧</view>
+      <view class="image -list-group">
+      </view>
+     </view>
+
+    <view class="weibo-handle">
+      <view class="comment-group">
+        <image src="../../images/pinglun.png" bindtap="commenting">评论
+        </image>
+      </view>
+      <view class="praise-group">
+        <image src="../../images/zan.png">赞
+        </image>
+      </view>
+      <view class="jubao-group">
+        <image src="../../images/jubao.png">举报
+        </image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="weibo-group">
+    <view class="user-group">
+      <image class="avatar"
+      src = "../../images/wo.png"></image>
+      <view class="right-info">
+        <view class="username">林清玄</view>
+        <view class="detail-info">
+          <view class="time">12小时前</view>
+          <view class="from">来自iphone XR </view>
+        </view>
+        
+        
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="content">上知天文下知地理。</view>
+      <view class="image -list-group">
+      </view>
+     </view>
+
+    <view class="weibo-handle">
+      <view class="comment-group">
+        <image src="../../images/pinglun.png" bindtap="commenting">评论
+        </image>
+      </view>
+      <view class="praise-group">
+        <image src="../../images/zan.png">赞
+        </image>
+      </view>
+      <view class="jubao-group">
+        <image src="../../images/jubao.png">举报
+        </image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="write-weibo-btn" bindtap = 'onWriteWeiboTap'> 
+  <text>+</text>
+</view>
 <view class="write-weibo-btn" bindtap = 'onWriteWeiboTap'> 
   <text>+</text>
 </view> 
