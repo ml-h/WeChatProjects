@@ -1,27 +1,26 @@
-<!--pages/questionbank/questionbank.wxml-->
-<!-- <text>+++++公共课</text> -->
-<!-- <view class="container">
-  view.questionbank-title
-</view> -->
 
-<!-- <viem id="xx"></viem> -->
-<view class="container">
-  <!-- <view class="page-body"> -->
-    <!-- <view class="page-section"> -->
-      <view class="page-section-title">
-        <text>————————公共课————————</text>
-      </view>
-      <!-- <view style="width:120rpx;"> -->
-      <button class="click" hover-class="btn-hover" bindtap="changepage"> 政治 </button>
-      <button bindtap="changepage1"> 英语 </button>
-      <button bindtap="changepage2"> 数学 </button>
-    
 
-      <view class="question-title-two">
-         <text>————————专业课————————</text>
-      </view>
-      <button hover-class="btn-hover" bindtap="changepage3"> 统考专业课 </button>
-      <button hover-class="btn-hover" bindtap="changepage4"> 非统考专业课 </button>
-    <!-- </view> -->
-  <!-- </view> -->
+<view class="allpage">
+
+  <view class="public">
+        <text>———————公共课———————</text>
+  </view>
+  <view class="san">
+
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage"> 政治 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage1"> 英语 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage2"> 数学 </button>
+
+  </view>
+  
+  <view class="professional">
+         <text>———————专业课————————</text>
+  </view>
+  <view class="two">
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage3"> 统考专业课 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage4"> 非统考专业课 </button>
+  </view>
+  
+
+ 
 </view>

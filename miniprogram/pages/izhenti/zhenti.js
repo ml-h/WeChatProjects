@@ -1,4 +1,4 @@
-// pages/questionbank/questionbank.js
+// pages/izhenti/zhenti.js
 Page({
 
   /**
@@ -6,24 +6,6 @@ Page({
    */
   data: {
 
-  },
-  changepage:function(event){
-    console.log("跳转页面",event.target.dataset.course)
-    // 跳转到页面 zhenti,并携带参数
-    wx.navigateTo({
-      url:'../zhenti/zhenti?course='+ event.target.dataset.course,
-    })
-  },
-  
-  changepage3:function(){
-    wx.navigateTo({
-      url:'../tongkaoshiti/tongkaoshiti',
-    })
-  },
-  changepage4:function(){
-    wx.navigateTo({
-      url:'../feitongkao/feitongkao',
-    })
   },
 
   /**
