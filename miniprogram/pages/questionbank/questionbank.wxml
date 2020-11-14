@@ -1,30 +1,26 @@
 
- <!-- <text>+++++公共课</text> 
-  <view class="container">
-  view.questionbank-title
-</view>  -->
 
-<!-- <viem id="xx"></viem> -->
-<view class="container">
-  <!-- <view class="page-body"> -->
-    <!-- <view class="page-section"> -->
-      <view class="page-section-title">
-        <text>————————公共课————————</text>
-      </view>
-      <!-- <view style="width:120rpx;"> -->
-        <!-- 跳转到同一个页面 zhenti -->
-      <button class="click" hover-class="btn-hover" bindtap="changepage" data-course="Politics_papers"> 政治 </button>
-      <button bindtap="changepage" data-course="English_papers"> 英语 </button>
-      <button bindtap="changepage" data-course="Math_papers"> 数学 </button>
-    
+<view class="allpage">
 
-      <view class="question-title-two">
-         <text>————————专业课————————</text>
-      </view>
-      <!-- 跳转到页面 tongkaoshiti-->
-      <button hover-class="btn-hover" bindtap="changepage3" data-course="tongkaoshiti "> 统考专业课 </button>
-      <!-- 跳转到页面 feitongkao-->
-      <button hover-class="btn-hover" bindtap="changepage4" data-course="feitongkao"> 非统考专业课 </button>
-    <!-- </view> -->
-  <!-- </view> -->
+  <view class="public">
+        <text>———————公共课———————</text>
+  </view>
+  <view class="san">
+
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage"> 政治 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage1"> 英语 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage2"> 数学 </button>
+
+  </view>
+  
+  <view class="professional">
+         <text>———————专业课————————</text>
+  </view>
+  <view class="two">
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage3"> 统考专业课 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage4"> 非统考专业课 </button>
+  </view>
+  
+
+ 
 </view>
