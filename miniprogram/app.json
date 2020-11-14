@@ -1,6 +1,5 @@
 {
   "pages": [
-<<<<<<< HEAD
    "pages/homepage/homepage",
    "pages/questionbank/questionbank",
    "pages/searchpage/searchpage",
@@ -20,22 +19,6 @@
    "pages/up_timu/up_timu",
    "pages/fankui/fankui",
    "pages/history_dongtai/history_dongtai"
-=======
-    "pages/homepage/homepage",
-    "pages/questionbank/questionbank",
-    "pages/searchpage/searchpage",
-    "pages/profile/profile",
-    "pages/zhengzhizhenti/zhengzhizhenti",
-    "pages/feitongkao/feitongkao",
-    "pages/tongkaoshiti/tongkaoshiti",
-    "pages/souResult/souResult",
-    "pages/comment/comment",
-    "pages/upload/upload",
-    "pages/login/login",
-    "pages/xiangqing/xiangqing",
-    "pages/logs/logs",
-    "pages/timuxiangqing/timuxiangqing"
->>>>>>> master
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
