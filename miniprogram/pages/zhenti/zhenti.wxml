@@ -1,3 +1,4 @@
+
 <view wx:for="{{paperList}}" wx:key="unique" style="display: block;">
 <!-- 循环view 展示文档试题的列表 -->
 <view class="contain">

@@ -26,7 +26,6 @@ Page({
 // 获取试题文档列表
 getPaperList(){
   let that = this;
-  console.log("课程数据库 "+that.data.course)
   // that.data.course是云数据库中存放文档的集合名
   wx.cloud.database().collection(that.data.course).get({
     success(res){
@@ -55,12 +54,12 @@ downLoadPaper:function(event){
   wx.cloud.downloadFile({
     fileID: event.target.dataset['paperurl'],
     success: res => {
-      console.log("下载成功",res)
+      console.log("下载成功云存储里的试题文档",res)
       wx.openDocument({
         // res.tempFilePath下载文档成功后的链接
         filePath: res.tempFilePath,
         success: function (res) {
-          console.log('打开文档成功',res)
+          console.log('打开文档成功success',res)
         }
       })
     },
