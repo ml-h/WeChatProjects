@@ -12,8 +12,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     menuitems: [
       { text: '我的收藏', url: 'collect', icon: '../../images/shoucang.png', tips: '' },
-      { text: '我的上传', url: 'shangchuan', icon: '../../images/wendang.png', tips: '' },
-      { text: '我的动态', url: 'dongtai', icon: '../../images/lishi.png', tips: '' },
+      { text: '我的上传', url: '../shangchuan/shangchuan', icon: '../../images/wendang.png', tips: '' },
+      { text: '我的动态', url: '../history_dongtai/history_dongtai', icon: '../../images/lishi.png', tips: '' },
       { text: '我的客服', url: 'kufu', icon: '../../images/kefu.png', tips: '' },
       { text: '我的资料', url: 'ziliao', icon: '../../images/shezhi.png', tips: '' },
       { text: '退出登录', url: 'tuichu', icon: '../../images/cuowu.png', tips: '' }

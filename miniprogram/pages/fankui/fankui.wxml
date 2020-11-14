@@ -1,0 +1,17 @@
+<image src="../../images/wenjian2.png"></image>
+<view class="title">2020年政治真题</view>
+
+<view class="line">
+<view class="divLine" style="margin-right: 10rpx;"></view>
+用户评价
+<view class="divLine"  style="margin-left: 10rpx;"></view>
+</view>
+<view class="value">该文档对我有帮助：9</view>
+<view class="value">文档内容与标题不符：0</view>
+<view class="value">文档内容质量差：0</view>
+<view class="line">
+<view class="divLine" style="margin-right: 10rpx;"></view>
+文档状态
+<view class="divLine"  style="margin-left: 10rpx;"></view>
+</view>
+<view class="value">已纳入题库</view>
