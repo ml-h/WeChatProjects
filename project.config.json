@@ -52,12 +52,45 @@
     "game": {
       "list": []
     },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
     "miniprogram": {
       "list": [
         {
           "id": -1,
           "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide"
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "pages/upload_doc/upload_doc",
+          "pathName": "pages/upload_doc/upload_doc",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/up_doc/up_doc",
+          "pathName": "pages/up_doc/up_doc",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/up_timu/up_timu",
+          "pathName": "pages/up_timu/up_timu",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/fankui/fankui",
+          "pathName": "pages/fankui/fankui",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -1,0 +1,8 @@
+<!-- 上传文件页面 -->
+<form class="contain">
+  <view class="title">题目</view>
+  <textarea class="textarea" style="height:300rpx;" name="timu" placeholder="输入题目"></textarea>
+  <view class="title">答案</view>
+  <textarea class="textarea" name="daan" placeholder="输入答案"></textarea>
+  <button class='up_btn' form-type="sumbit"> 上传  </button>
+</form>

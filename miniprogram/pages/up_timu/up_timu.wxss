@@ -1,0 +1,23 @@
+.up_btn{
+  background-color: rgb(76, 148, 196);
+  color: white;
+  border-radius: 10%;
+  width: 300rpx;
+  margin-top: 50rpx;
+}
+.title{
+  font-size: 40rpx;
+  font-weight: 800;
+  padding-left: 40rpx;
+}
+.textarea{
+  border-radius: 5%;
+  color: rgb(49, 46, 46);
+  font-size: 30rpx;
+  width:650rpx;
+  margin:20rpx auto;
+  padding: 20rpx;
+  margin-bottom: 40rpx;
+  height: 500rpx;
+  border: 4rpx dashed  rgb(49, 46, 46);
+}
