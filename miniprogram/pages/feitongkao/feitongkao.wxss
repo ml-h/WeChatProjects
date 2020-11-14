@@ -41,7 +41,7 @@
     height:8%;
 }
 .hang .click{
-    font-size: 75%;
+    font-size: 80%;
     background-color: antiquewhite;
     padding-right: 2%;
     padding-top: 8%;
@@ -51,5 +51,5 @@
     text-align: center;
 
 
-    
+
 }
