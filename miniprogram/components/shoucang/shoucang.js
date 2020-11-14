@@ -1,4 +1,5 @@
 // components/shoucang/shoucang.js
+let shoucang=false
 Component({
   /**
    * 组件的属性列表
@@ -11,9 +12,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    shoucangSucceed:true,
-    iconaddBefore:"../../images/shoucang1.1.png",
-    iconaddSucceed:"../../images/shoucang.png",
+    imgUrl:"../../images/shoucang2.png"
   
   },
 
@@ -21,6 +20,19 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    saveClick(){
+      if(shoucang){
+        this.setData({
+          imgUrl:"../../images/shoucang2.png"
+        })
+        shoucang=false
+      }else{
+        this.setData({
+          imgUrl:"../../images/shoucang.png"
+        })
+        shoucang=true
+      }
+    },
 
   }
 })

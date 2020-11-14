@@ -1,1 +1,4 @@
-/* components/shoucang/shoucang.wxss */
+.shoucang{
+  width:20px;
+  height: 20px;
+}

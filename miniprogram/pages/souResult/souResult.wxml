@@ -1,8 +1,7 @@
-<view>--</view>
 <view wx:for="{{dataObj}}" class="timucontainer">
   <view class="ticontainer">
     <view class="timuList">{{item.content}}</view>
-    <image class="shoucang" src="../../images/shoucang.png" />
+    <x-shoucang iconfont="iconfont" class="shoucang" style="margin-right: 4rpx;"/>         
   </view>
   
 </view>

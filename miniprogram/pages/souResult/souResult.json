@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "x-shoucang": "/components/shoucang/shoucang"
+  },
   "navigationBarTitleText":"结果"
 }

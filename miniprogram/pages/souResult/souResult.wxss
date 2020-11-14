@@ -3,7 +3,7 @@
   align-items: center;
   position: relative;
   flex-direction: row;
-  
+  margin-top:2rpx;
 }
 .ticontainer{
   display: flex;
@@ -17,15 +17,12 @@
 }
 .timuList{
   width:90%;
-  margin-left: 2%;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
+  margin-left: 4%;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
   
 }
-.shoucang{
-  width:20px;
-  height: 20px;
-}
+
 
 .noTi{
   margin-top:15rpx;

@@ -1,18 +1,21 @@
 // pages/souResult/souResult.js
 const db=wx.cloud.database()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dataObj:""
-
+    dataObj:"",
+    
   },
+  
+  
   getData(){
-
     db.collection("Tilist").get({
       success:res=>{
+        console.log("题目集")
         console.log(res)
         this.setData({
           dataObj:res.data

@@ -1,2 +1,1 @@
-<!--components/shoucang/shoucang.wxml-->
-<text>components/shoucang/shoucang.wxml</text>
+<image class="shoucang"  bindtap='saveClick' src="{{imgUrl}}"></image>
