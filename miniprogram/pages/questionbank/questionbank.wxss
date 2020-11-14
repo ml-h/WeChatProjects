@@ -1,1 +1,36 @@
 /* pages/questionbank/questionbank.wxss */
+.allpage{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.allpage view{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.button-name{
+    background-color: #f0ece5;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 15%;
+    font-size: 100%;
+}
+.san{
+    padding-top: 8%;
+    display: flex;
+    flex-direction: column;
+}
+.two{
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.public{
+    padding-top: 10%;
+}
+.professional{
+    padding-top: 10%;
+}

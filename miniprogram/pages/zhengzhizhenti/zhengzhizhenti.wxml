@@ -3,7 +3,7 @@
              <view class="text" bindtap="dispath">2020-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
         </view>  
@@ -16,7 +16,7 @@
              <view class="text" bindtap="dispath">2019-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -28,7 +28,7 @@
              <view class="text" bindtap="dispath">2018-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -40,7 +40,7 @@
              <view class="text" bindtap="dispath">2017-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -52,7 +52,7 @@
              <view class="text" bindtap="dispath">2016-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -64,7 +64,7 @@
              <view class="text" bindtap="dispath">2015-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -76,7 +76,7 @@
              <view class="text" bindtap="dispath">2014-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -88,7 +88,7 @@
              <view class="text" bindtap="dispath">2013-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -100,7 +100,7 @@
              <view class="text" bindtap="dispath">2012-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
@@ -111,7 +111,7 @@
              <view class="text" bindtap="dispath">2011-考研政治真题
              </view>
              <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png">
+                 <image class="shoucang" src="../../images/hlm.png">
              </image>
              </view>
              
