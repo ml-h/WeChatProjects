@@ -1,0 +1,64 @@
+
+  <view class="weibo-group">
+    <view class="user-group">
+      <image class="avatar"
+      src = "../../images/wo.png"></image>
+      <view class="right-info">
+        <view class="username">张爱玲</view>
+        <view class="detail-info">
+          <view class="time">1小时前</view>
+          <view class="from">来自iphone XR </view>
+        </view>
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="content">书是最好的朋友，唯一的缺点是使我近视加深，但还是值得的。</view>
+     </view>
+    <view class="weibo-handle">
+      <view class="comment-group">
+        <image src="../../images/pinglun.png" bindtap="commenting">
+        </image>评论
+      </view>
+      <view class="praise-group">
+        <image src="../../images/zan.png">
+        </image>赞
+      </view>
+      <view class="jubao-group">
+        <image src="../../images/cuowu.png">
+        </image>删除
+      </view>
+    </view>
+  </view>
+
+
+  
+  <view class="weibo-group">
+    <view class="user-group">
+      <image class="avatar"
+      src = "../../images/wo.png"></image>
+      <view class="right-info">
+        <view class="username">张爱玲</view>
+        <view class="detail-info">
+          <view class="time">1小时前</view>
+          <view class="from">来自iphone XR </view>
+        </view>
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="content">书是最好的朋友，唯一的缺点是使我近视加深，但还是值得的。</view>
+     </view>
+    <view class="weibo-handle">
+      <view class="comment-group">
+        <image src="../../images/pinglun.png" bindtap="commenting">
+        </image>评论
+      </view>
+      <view class="praise-group">
+        <image src="../../images/zan.png">
+        </image>赞
+      </view>
+      <view class="jubao-group">
+        <image src="../../images/cuowu.png">
+        </image>删除
+      </view>
+    </view>
+  </view>

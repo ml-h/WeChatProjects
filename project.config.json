@@ -91,6 +91,12 @@
           "pathName": "pages/fankui/fankui",
           "query": "",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/history_dongtai/history_dongtai",
+          "pathName": "pages/history_dongtai/history_dongtai",
+          "scene": null
         }
       ]
     }
