@@ -17,13 +17,11 @@
 }
 
 .userinfo {
-  background-color: #b2cebe;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   position: fixed;
-  
 }
 
 .userinfo-avatar {

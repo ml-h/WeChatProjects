@@ -12,11 +12,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(!app.is_login()){
-      wx.navigateTo({
-        url: '../login/login'
-      });
-    }
+
+    wx.setNavigationBarTitle({
+      title: '上传文档'
+    })
   },
 
   /**
@@ -30,7 +29,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(!app.is_login()){
+      wx.navigateTo({
+        url: '../login/login'
+      })
+  }
   },
 
   /**

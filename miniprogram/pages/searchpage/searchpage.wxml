@@ -1,7 +1,7 @@
 <!--pages/searchpage/searchpage.wxml-->
 <view class="container">
   <view class="header">
-    <image src="../../images/childlogo.PNG" class="img"></image>
+    <image src="../../images/childlogo.png" class="img"></image>
     <view class="search-container">
       <x-search iconfont="iconfont"  />
       <button class="search" style="width:25vw" bindtap="searchclick" hover-class="mousehover">搜索</button>

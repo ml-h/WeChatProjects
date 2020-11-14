@@ -15,8 +15,8 @@ Page({
   getData(){
     db.collection("Tilist").get({
       success:res=>{
-        console.log("题目集")
-        console.log(res)
+        // console.log("题目集")
+        // console.log(res.data)
         this.setData({
           dataObj:res.data
         })

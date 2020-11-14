@@ -13,7 +13,6 @@ page{
 .container{
   margin-top: 25rpx;
   background-color: rgb(235, 233, 233);
-  /* background-color: tomato; */
   flex-wrap: wrap; 
   padding: 12rpx;
 }
@@ -33,8 +32,6 @@ page{
 }
 .upload{
   background-color: white;
-  /* margin-top: 20rpx; */
-  /* flex-direction: row; */
   display:flex;
   font-size: 30rpx;
   margin-top: 20rpx;

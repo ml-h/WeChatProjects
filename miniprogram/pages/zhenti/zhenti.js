@@ -1,4 +1,4 @@
-
+const app=new App()
 Page({
 
   /**
