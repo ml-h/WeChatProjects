@@ -16,7 +16,11 @@
   height: 400rpx;
   border: 2rpx dashed  rgb(49, 46, 46);
 }
-
+.choose_paper{
+  display: block;
+  width:170rpx;
+  height: 170rpx;
+}
 .divLine{
   
   background:rgb(100, 95, 95);
@@ -88,3 +92,4 @@
   width: 300rpx;
   margin-top: 200rpx;
 }
+

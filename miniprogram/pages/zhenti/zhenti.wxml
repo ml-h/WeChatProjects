@@ -1,0 +1,13 @@
+<view wx:for="{{paperList}}" wx:key="unique" style="display: block;">
+<!-- 循环view 展示文档试题的列表 -->
+<view class="contain">
+        <view class="year">
+             <view class="text" bindtap="showPaper" data-paperurl="{{item.paper_url}}">{{item.paper_name}}
+             </view>
+             <view class="photo">
+                 <image class="shoucang" src="../../images/shoucang.png" bindtap="collectPaper" data-paperurl="{{item.paperurl}}"></image>
+             </view>
+        </view>  
+</view>
+
+</view>

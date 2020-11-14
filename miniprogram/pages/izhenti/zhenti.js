@@ -1,4 +1,4 @@
-// pages/zhengzhizhenti/zhengzhizhenti.js
+// pages/izhenti/zhenti.js
 Page({
 
   /**
@@ -6,11 +6,6 @@ Page({
    */
   data: {
 
-  },
-  dispath:function(){
-    wx.navigateTo({
-      url:''
-    })
   },
 
   /**

@@ -7,9 +7,11 @@ Page({
   data: {
 
   },
-  changepage:function(){
+  changepage:function(event){
+    console.log("跳转页面",event.target.dataset.course)
+    // 跳转到页面 zhenti,并携带参数
     wx.navigateTo({
-      url:'../zhengzhizhenti/zhengzhizhenti',
+      url:'../zhenti/zhenti?course='+ event.target.dataset.course,
     })
   },
   
