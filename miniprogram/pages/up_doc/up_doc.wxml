@@ -9,7 +9,7 @@
   </view>
 
   <!-- 下拉框 -->
-  <view class='select_box'>
+  <view class='select_box' style="z-index:300;">
       <view class='select' catchtap='selectTap'>
           <text class='select_text'>{{selectData[index]}}</text>
           <image class='select_img {{selectShow&&"select_img_rotate"}}' src='../../images/xiala.png'  background-size="contain"></image> 
@@ -18,6 +18,16 @@
           <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
       </view>
   </view>
+  <view class='select_box'>
+      <view class='select' catchtap='selectTap2'>
+          <text class='select_text'>{{selectData2[index2]}}</text>
+          <image class='select_img {{selectShow&&"select_img_rotate"}}' src='../../images/xiala.png'  background-size="contain"></image> 
+      </view>
+      <view class='option_box' style='height:{{selectShow2?(selectData2.length>5?325:selectData2.length*50):0}}rpx;'>
+          <text class='option' wx:for='{{selectData2}}' wx:key='this' data-index='{{index}}' catchtap='optionTap2'>{{item}}</text>
+      </view>
+  </view>
+
   <button class='up_btn'>
     上传
   </button>

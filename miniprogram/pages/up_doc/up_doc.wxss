@@ -29,14 +29,16 @@
   display: flex;
   flex-direction: row;
   align-items:center;
-  margin-bottom: 20rpx;
+  margin-bottom: 50rpx;
  }
 
  .select_box{
+   z-index: 100;
    width: 400rpx;
   height:70%;
   position: relative;
   margin: 20rpx auto;
+  margin-bottom: 50rpx ;
 }
 .select_box .select{
   box-sizing: border-box;
@@ -84,5 +86,5 @@
   color: white;
   border-radius: 10%;
   width: 300rpx;
-  margin-top: 400rpx;
+  margin-top: 200rpx;
 }
