@@ -97,6 +97,14 @@
           "id": -1,
           "name": "pages/history_dongtai/history_dongtai",
           "pathName": "pages/history_dongtai/history_dongtai",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
           "scene": null
         }
       ]
