@@ -1,12 +1,10 @@
 /* pages/feitongkao/feitongkao.wxss */
 .fenlei{
-    padding: 22rpx;
+    padding: 23rpx;
     font-size: 33rpx;
-    background-color: rgb(252, 240, 240);
-}
-.all{
-    /* display: flex; */
-    /* display:inline-flex; */
+    height: 49rpx;
+    background-color: rgba(252, 240, 240, 0.829);
+    border: rgb(122, 87, 90) 1rpx solid;
 }
 .left{
     position: fixed;
@@ -17,15 +15,12 @@
 }
 .right{
     margin-left: 200rpx;
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; */
 }
 .click{
     font-size: 32rpx;
     background-color: rgb(216, 186, 186);
     padding: 20rpx;
-    margin: 20rpx;
+    margin: 25rpx;
     border-radius: 20%;
     text-align: center;
 }

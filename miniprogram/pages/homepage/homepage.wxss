@@ -1,20 +1,18 @@
-
-.image{
-  
-  padding-top: 20rpx;
-  
-}
-.containter{ 
-  background: #f2f2f2;
-
-}
-.containter .weibo-group{
+.container{
+  background-color: rgb(219, 204, 204);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 100%;
-  margin-bottom: 30rpx;
-  background: #ffffff;
+}
+
+
+.weibo-group{
+  width: 100%;
+  background: #fdfbfb;
   padding: 40rpx;
   box-sizing: border-box;
-
+  margin-bottom: 20rpx;
 
 }
 .weibo-group .user-group{
@@ -47,7 +45,7 @@ border-radius: 50%;
 }
 
 .weibo-content-group{
-  padding-top: 30rpx;
+  padding: 30rpx;
 }
 .weibo-content-group .content{
   font-size: 32rpx;
@@ -59,10 +57,12 @@ border-radius: 50%;
   display: flex;
   padding-top: 30rpx;
   font-size: 28rpx;
+  border-top: rgb(216, 207, 207) 1rpx dashed;
 }
 .weibo-handle image{
   width: 40rpx;
   height: 40rpx;
+  margin-right: 5rpx;
 }
 .weibo-handle view{
   flex: 1;
@@ -90,23 +90,6 @@ border-radius: 50%;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
 .container-content {
   display: flex;
   flex-direction: column;
@@ -114,11 +97,7 @@ border-radius: 50%;
   padding: 16px 16px;
   margin: 0 auto;
 }
-.container-line{
-  width: 100%;
-  height: 1px;
-  background-color: #ccc;
-}
+
 
 .user-info {
   display: flex;
