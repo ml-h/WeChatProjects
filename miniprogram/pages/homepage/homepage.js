@@ -42,7 +42,6 @@ Page({
    */
   getData: function() {
     const db = wx.cloud.database();
-
     db.collection('topic')
       .orderBy('date', 'desc')
       .get({
@@ -63,6 +62,42 @@ Page({
         }
       })
 
+  },
+
+  onPraiseTap: function(event){
+    const that = this;
+    const weiboIndex = event.currentTarget.dataset.weibo;
+    const topic = that.data.topics[weiboIndex];
+    wx.cloud.callFunction({
+      name:"login",
+      success: res => {
+        const openId = res.result.openid;
+        console.log(openId);
+        //that.userInfo.openId=openId;
+      }
+    })
+    //const openId = this.userInfo.openId;
+   // console.log(app.globalData);
+   let isPraised=false;
+    if(topic.praises){
+      topic.praises.forEach((value,index) => {
+        if(value==openId){
+          isPraised=true;
+        }
+      })
+    }
+    if(!isPraised){
+      console.log(openId);
+      wx.cloud.callFunction({
+        name:"praise",
+        data:{
+          weiboId:topic._id
+        },
+        success: res=>{
+          console.log(res);
+        }
+      })
+    }
   },
   /**
    * item 点击
@@ -132,4 +167,7 @@ Page({
   onShareAppMessage: function() {
 
   }
+
+  
+
 })
