@@ -1,1 +1,4 @@
-<image class="shoucang"  bindtap='saveClick' src="{{imgUrl}}"></image>
+<view class="shoucangfield"  bindtap='saveClick'>
+  <image class="shoucang" src="{{imgUrl}}"></image>
+</view>
+
