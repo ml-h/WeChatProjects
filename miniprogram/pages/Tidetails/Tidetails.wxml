@@ -1,0 +1,34 @@
+<!--搜索题目后的详情页-->
+<view class="TiHeader">
+  <view class="title" >题目</view>
+  <view class="anchor" style="margin-right:2%;"> 
+    <image class="ren" src="../../images/ren.png"></image>
+    <view>上传者:</view>
+    <view>{{detail.anchor}}</view>
+  </view>
+</view>
+<view class="xuxian"></view>
+<text class="Ticontent">{{detail.content}}</text>
+<view class="line"></view>
+<view class="title">答案解析</view>
+<view class="xuxian"></view>
+<view class="Tianswer">{{detail.answer}}</view>
+<view class="title">评论</view>
+<view class="xuxian"></view>
+<block wx:for="{{detail.pinglun}}" wx:key="{{index}}">  
+  <view class="pingfield">
+    <text>{{item.name}}</text>
+    <view>{{item.content}}</view>
+  </view>
+</block>
+<view class="line1" style="margin-bottom:120rpx;"></view>
+<view class="bottom" >
+  <view class="collection" >
+    <x-shoucang iconfont="iconfont" class="shoucang" />
+    <view style="font-size:35rpx;">收藏</view>
+  </view>
+  <view class="comment" >
+    <image src="../../images/pinglun.png" style="width:40rpx;height:40rpx;"></image>
+    <view style="font-size:35rpx;margin-left:13rpx;">评论</view>
+  </view>
+</view>

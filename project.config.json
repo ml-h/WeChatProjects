@@ -112,6 +112,7 @@
           "id": -1,
           "name": "pages/souResult/souResult",
           "pathName": "pages/souResult/souResult",
+          "query": "",
           "scene": null
         }
       ]
