@@ -8,7 +8,8 @@ Page({
    */
   data: {
     totalCount: 0,
-    topics: {},
+    topics: [],
+    
   },
 
 
@@ -27,11 +28,11 @@ Page({
       url: '../../pages/publish/publish',
     })
   },
-  commenting :function(e){
+  /*commenting :function(e){
     wx.navigateTo({
       url: '../../pages/comment/comment',
     })
-  },
+  },*/
 
   onShow: function() {
     that.getData();
@@ -68,33 +69,61 @@ Page({
     const that = this;
     const weiboIndex = event.currentTarget.dataset.weibo;
     const topic = that.data.topics[weiboIndex];
-    wx.cloud.callFunction({
-      name:"login",
+    /*wx.cloud.callFunction({
+      name:"praise",
       success: res => {
-        const openId = res.result.openid;
-        console.log(openId);
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!");
+        data:{
+          weiboId=topic._id
+        }
+        
         //that.userInfo.openId=openId;
       }
+    })*/
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: ', res.result.openid)
+        app.globalData.openid = res.result.openid
+      }
     })
+    const openId=app.globalData.openid
     //const openId = this.userInfo.openId;
    // console.log(app.globalData);
-   let isPraised=false;
+    let isPraised=false;
     if(topic.praises){
       topic.praises.forEach((value,index) => {
         if(value==openId){
+          console.log("!!!!!!!!!!!!!!!!!");
           isPraised=true;
         }
       })
     }
     if(!isPraised){
-      console.log(openId);
+      console.log("+++++++++++++++++++++++");
+      
+      //console.log(openId);
       wx.cloud.callFunction({
         name:"praise",
         data:{
           weiboId:topic._id
         },
-        success: res=>{
-          console.log(res);
+        success: res => {
+          if(!topic.praises){
+            topic.praises=[openId];
+            console.log("++++++++++++++++++yes");
+          }else{
+            topic.praises.push(openId);
+            console.log("++++++++++++++++++no");
+          }
+          const topics=that.data.topics;
+          console.log(weiboIndex);
+          topics[weiboIndex]=topic;
+          that.setData({
+            topics:topics
+          })
+          console.log(topics[weiboIndex].praises);
         }
       })
     }
@@ -105,6 +134,7 @@ Page({
   onItemClick: function(event) {
     var id = event.currentTarget.dataset.topicid;
     var openid = event.currentTarget.dataset.openid;
+    console.log(event);
     console.log(id);
     console.log(openid);
     wx.navigateTo({

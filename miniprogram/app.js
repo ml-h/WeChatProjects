@@ -16,11 +16,14 @@ App({
         traceUser: true,
       })
     }
-    this.globalData = {}
+    this.globalData = {
+      openid:""
+    }
     this.loadUserInfo();
   },
+  
   globalData: {
-    userInfo: null
+    userInfo: null,
   },
   is_login:function(){
     if(this.globalData.userInfo){
