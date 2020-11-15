@@ -1,78 +1,47 @@
 <!--pages/feitongkao/feitongkao.wxml-->
 <view class="all">
     <view class="left">
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="01">
             01哲学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="02">
             02经济学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="03">
             03法学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="04">
             04教育学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="05">
             05文学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="06">
             06历史学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="07">
             07理学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="08">
             08工学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="09">
             09农学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="10">
             10医学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="11">
             11军事学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="12">
             12管理学
         </view>
-        <view class="fenlei" bindtap="more">
+        <view class="fenlei" bindtap="more" data-operate="13">
             13艺术学
         </view>
     </view>
-    <view class="right">
-        <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="lixue">0801 力学</button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="jixie">0802 机械工程</button>
+    <view class="right" wx:for="{{zhuanye}}">
+            <view class="click"   bindtap="lixue">{{item}}</view>
         </view>
-        <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="guangxue"> 0803 光学工程 </button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="yiqi"> 0804 仪器科学与技术 </button>
-        </view>
-        <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0805 材料科学与工程</button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0806 冶金工程</button>
-        </view>
-         <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0807 动力工程及工程热物理</button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0808 电气工程</button>
-        </view>
-         <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0809 电子科学与技术</button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0810 信息与通信工程</button>
-        </view>
-         <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0811 控制科学与工程</button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0812 计算机科学与技术</button>
-        </view>
-         <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0813 建筑学</button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0814 土木工程</button>
-        </view>
-         <view class="hang">
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0815 水利工程</button>
-            <button class="click" hover-class="btn-hover"  style=" margin-left: 3%;" bindtap="">0816 测绘科学与技术</button>
-        </view>
-    </view>
 </view>

@@ -18,7 +18,11 @@
    "pages/up_doc/up_doc",
    "pages/up_timu/up_timu",
    "pages/fankui/fankui",
-   "pages/history_dongtai/history_dongtai"
+   "pages/history_dongtai/history_dongtai",
+   "pages/Tidetails/Tidetails",
+   "pages/doc_dongtai/doc_dongtai",
+   "pages/timu_dongtai/timu_dongtai"
+
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

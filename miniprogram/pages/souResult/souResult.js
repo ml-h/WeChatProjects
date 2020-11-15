@@ -79,5 +79,14 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  detailclick(event){
+    console.log("点击获取的数据",event.currentTarget.dataset.item._id)
+    wx.navigateTo({
+      url: '../../pages/Tidetails/Tidetails?id='+event.currentTarget.dataset.item._id,
+    })  
+    
+ 
+    
   }
 })

@@ -1,11 +1,11 @@
 <!-- 搜题结果返回页面 -->
 <view wx:for="{{dataObj}}" class="timucontainer">
   <view class="ticontainer oushu" wx:if="{{index%2==0}}" >
-    <view class="timuList">{{item.content}}</view>
+    <view class="timuList" bindtap="detailclick" data-item="{{item}}">{{item.content}}</view>
     <x-shoucang iconfont="iconfont" class="shoucang" style="margin-right: 4rpx;"/>         
   </view>
   <view class="ticontainer jishu" wx:if="{{index%2==1}}" >
-    <view class="timuList">{{item.content}}</view>
+    <view class="timuList" bindtap="detailclick" data-item="{{item}}" >{{item.content}}</view>
     <x-shoucang iconfont="iconfont" class="shoucang" style="margin-right: 4rpx;"/>         
   </view>
 </view>

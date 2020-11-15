@@ -1,6 +1,8 @@
 {
-  "miniprogramRoot": "miniprogram/",
-  "cloudfunctionRoot": "cloudfunctions/",
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
   "setting": {
     "urlCheck": true,
     "es6": true,
@@ -30,27 +32,37 @@
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
     "packNpmManually": false,
-    "packNpmRelationList": [],
-    "enableEngineNative": false,
-    "minifyWXSS": true
+    "packNpmRelationList": []
   },
+  "compileType": "miniprogram",
+  "libVersion": "2.8.1",
   "appid": "wx977cb0206ddbdbff",
   "projectname": "XiaoFuYouYan",
-  "libVersion": "2.8.1",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "compileType": "miniprogram",
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "cloudfunctionTemplateRoot": "",
+  "watchOptions": {
+    "ignore": []
+  },
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
   "condition": {
     "search": {
+      "current": -1,
       "list": []
     },
     "conversation": {
+      "current": -1,
       "list": []
     },
     "plugin": {
+      "current": -1,
       "list": []
     },
     "game": {
+      "current": -1,
       "list": []
     },
     "gamePlugin": {
@@ -109,9 +121,10 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/souResult/souResult",
-          "pathName": "pages/souResult/souResult",
+          "id": 7,
+          "name": "pages/feitongkao/feitongkao",
+          "pathName": "pages/feitongkao/feitongkao",
+          "query": "",
           "scene": null
         }
       ]

@@ -1,0 +1,28 @@
+<view class="content">
+  <!-- <form bindsubmit="formSubmit"> -->
+    <view class="text-content">
+      <view class="answer">
+        <view class="title">题目</view>
+        <view class="info">简述赖特的草原住宅的特征</view>
+      </view>
+
+      <view class=text-content">
+        <view class="title">答案解析</view>
+        <view class="info">特点是在造型上力求新颖，彻底摆脱折中主义的常套，在布局上与大自然结合，
+        使建筑与周围环境融为一个整体。它的平面常做十字形，以壁炉为中心</view>
+      </view>
+
+    </view>
+
+    <view class='comment'>
+        <button class="btn" open-type="getUserInfo">没用
+          <image class="img" src="../../images/cai.png"></image>
+        </button>
+
+        <button class="btn" open-type="getUserInfo">有用
+          <image class="img" src="../../images/zan.png"></image>
+        </button>
+    </view>
+
+  <!-- </form> -->
+</view>

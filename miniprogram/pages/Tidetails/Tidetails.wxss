@@ -1,0 +1,113 @@
+/* pages/Tidetails/Tidetails.wxss */
+.TiHeader{
+  display: flex;
+  flex-flow : row;
+  align-items: center;
+  padding: 0 20rpx;
+  width:100%;
+}
+.title{
+  font-size: 36rpx;
+  font-weight: 800;
+  padding-left: 40rpx;
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:10rpx;
+}
+.anchor{
+  display: flex;
+  flex-flow : row;
+  align-items: center;
+  padding: 0 20rpx;
+  margin-left:35%;
+}
+.ren{
+  width:20px;
+  height:20px;
+}
+.xuxian{
+  width: 100%;
+  
+  height: 1rpx;
+  
+  border-top: 2rpx dashed gray;
+  
+  }
+.Ticontent{
+  color: rgb(49, 46, 46);
+  font-size: 35rpx;
+  margin:5rpx auto;
+  margin-left:2rpx;
+  padding: 20rpx;
+  font-weight: 510;
+}
+.line{
+  width: 100%;
+  
+  height: 7rpx;
+  
+  background:darkgray;
+  
+  }
+
+
+
+.Tianswer{
+  color: rgb(49, 46, 46);
+  font-size: 35rpx;
+  margin-left:2rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  font-weight: 510;
+  width:95%;
+}
+.pingfield{
+  border-bottom:1px solid gainsboro;
+  margin-left:10rpx;
+  margin-top:20rpx;
+}
+.bottom{
+  display: flex;
+  flex-flow : row;
+  align-items: center;
+  padding: 0 20rpx;
+  height:110rpx;
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  box-sizing: border-box;
+  border: 2rpx solid  rgb(49, 46, 46);
+  background: #fff;
+}
+.collection{
+  display: flex;
+  flex-flow : row;
+  margin-left:10rpx;
+  margin-top:30rpx;
+  align-items: center;
+  padding: 0 20rpx;
+
+}
+.shoucang{
+  margin:20rpx;
+}
+.comment{
+  display: flex;
+  flex-flow : row;
+  align-items: center;
+  padding: 0 20rpx;
+  margin-left:35%;
+  margin-right:2%;
+  margin-top:30rpx;
+}
+.line1{
+  width: 100%;
+  
+  height: 7rpx;
+  margin-top:50rpx;
+  background:darkgray;
+ 
+
+  
+  }
