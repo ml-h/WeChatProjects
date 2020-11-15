@@ -4,19 +4,8 @@
     <view class="jiahao" >+</view>
     上传文档
   </button>
-  <button class="upload" bindtap="up_timu" style="width:300rpx;height:100rpx;">
-    <view class="jiahao" >+</view>
-    上传题目
-  </button>
 </view>
 <view class="container">
-  <view class="item">
-      <view class="doc_name">2020年政治真题</view>
-      <view class="line">
-        <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view class="fankui" bindtap="fankui">查看反馈</view>
-      </view>
-  </view>
   <view class="item">
       <view class="doc_name">2020年政治真题</view>
       <view class="line">

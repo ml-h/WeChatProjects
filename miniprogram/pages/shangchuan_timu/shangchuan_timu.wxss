@@ -1,0 +1,46 @@
+page{
+  background-color: rgb(235, 233, 233);
+}
+
+.line{
+  display:flex;
+  justify-content:space-between;
+  padding: 20rpx;
+  padding-bottom: 10rpx;
+  align-items:center;
+}
+.container{
+  margin-top: 25rpx;
+  background-color: rgb(235, 233, 233);
+  flex-wrap: wrap; 
+  padding: 12rpx;
+}
+.timu{
+  font-size: 30rpx;
+  margin: 12rpx;
+}
+.item{
+  padding: 18rpx;
+  width:100%;
+  background-color: white;
+  margin-bottom: 20rpx;
+  align-items:center;
+}
+.upload{
+  background-color: white;
+  display:flex;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  align-items:center;
+}
+.jiahao{
+  color: rgb(87, 139, 206);
+  font-size: 50rpx;
+}
+
+.fankui{
+  font-size: 25rpx;
+  color:gray;
+  margin-left: 10rpx;
+}

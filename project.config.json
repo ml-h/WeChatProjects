@@ -124,8 +124,8 @@
         },
         {
           "id": 7,
-          "name": "pages/feitongkao/feitongkao",
-          "pathName": "pages/feitongkao/feitongkao",
+          "name": "pages/fankui_timu/fankui_timu",
+          "pathName": "pages/fankui_timu/fankui_timu",
           "query": "",
           "scene": null
         }

@@ -1,0 +1,27 @@
+<view class="content">
+  <view class="text-content">
+        <view class="answer">
+          <view class="title">题目</view>
+          <view class="info">简述赖特的草原住宅的特征</view>
+        </view>
+  </view>
+
+  <view class=text-content">
+          <view class="title">答案解析</view>
+          <view class="info">特点是在造型上力求新颖，彻底摆脱折中主义的常套，在布局上与大自然结合，
+          使建筑与周围环境融为一个整体。它的平面常做十字形，以壁炉为中心</view>
+  </view>
+</view>
+<view class="line">
+<view class="divLine" style="margin-right: 10rpx;"></view>
+用户评价
+<view class="divLine"  style="margin-left: 10rpx;"></view>
+</view>
+<view class="value">有用：9</view>
+<view class="value">没用：0</view>
+<view class="line">
+<view class="divLine" style="margin-right: 10rpx;"></view>
+文档状态
+<view class="divLine"  style="margin-left: 10rpx;"></view>
+</view>
+<view class="value">已纳入题库</view>
