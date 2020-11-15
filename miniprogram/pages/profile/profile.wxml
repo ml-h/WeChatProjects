@@ -1,7 +1,7 @@
 <view class='head head-height'>
     <block wx:if="{{!hasUserInfo && canIUse}}">
       <view class="userinfo">
-        <image class="userinfo-avatar" src="../../images/有研.png" mode="cover"></image>
+        <image class="userinfo-avatar" src="" mode="cover"></image>
         <text class="userinfo-nickname">微信授权</text>
       </view>
       <button class="login-button head-height" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -15,7 +15,7 @@
   </view>
   <view class="list-wrapper">
     <block wx:for="{{menuitems}}" wx:key="item">
-      <navigator url="{{item.url}}" class="list-item" hover-class="list-item_active">
+      <navigator url="{{item.url}}" class="list-item"  hover-class="list-item_active">
         <view class='item'>
           <image class='item-image' src="{{item.icon}}"bindtap="{{item.url}}"></image>
           <text class="item-text">{{item.text}}</text>

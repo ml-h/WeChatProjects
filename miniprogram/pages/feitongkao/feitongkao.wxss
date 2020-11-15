@@ -1,10 +1,9 @@
 /* pages/feitongkao/feitongkao.wxss */
 .fenlei{
-    padding-top: 22%;
+    padding-top: 24rpx;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 22%;
-    border-radius: 0%;
+    padding-bottom: 24rpx;
     display: flex;
     font-size: 80%;
 
@@ -12,7 +11,7 @@
 .left{
     width: 25%;
     /* height: 110%; */
-    border: rgb(194, 194, 27) 3rpx solid;
+    border-left: rgb(194, 194, 27) 3rpx solid;
 }
 .right{
     width: 75%;

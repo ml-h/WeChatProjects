@@ -72,7 +72,6 @@ border-radius: 50%;
 }
 
 .write-weibo-btn{ 
-  pointer-events:none;
   position: fixed;
   right: 50rpx;
   width: 100rpx;

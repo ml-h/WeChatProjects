@@ -22,10 +22,10 @@ Page({
     })
   },
 
-  onWriteWeiboTaps:function(event){
+  onWriteWeiboTap:function(event){
     wx.navigateTo({
-      url: '../../pages/publish/publish',
-    })
+      url: '../publish/publish'
+    });
   },
   commenting :function(e){
     wx.navigateTo({

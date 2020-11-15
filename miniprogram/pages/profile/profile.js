@@ -18,7 +18,6 @@ Page({
       { text: '退出登录', url: 'tuichu', icon: '../../images/cuowu.png', tips: '' }
     ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

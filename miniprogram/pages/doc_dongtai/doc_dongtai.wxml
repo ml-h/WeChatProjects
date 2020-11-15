@@ -1,0 +1,11 @@
+
+  <image class="document" src="../../images/wenjian2.png"></image>
+   <view class="title">2017年福州大学837经济学综合考研真题</view>
+
+  <view class='operation'>
+      <button class="download" open-type="getUserInfo">下载
+      </button>
+      <button class="comment" open-type="getUserInfo">评价
+      </button>
+  </view>
+
