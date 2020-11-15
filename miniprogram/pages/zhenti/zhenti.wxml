@@ -1,12 +1,29 @@
+<!-- 引入wxs -->
+<wxs module="m">
+    var contain = function(a,id){
+        if(a.indexOf(id)>-1){
+            console.log("aaaaaaa");
+            return true
+        }else{
+            console.log("bbbbbbb");
+            return false
+        }
+    }
+    module.exports.contain=contain;
+</wxs>
 
 <view wx:for="{{paperList}}" wx:key="unique" style="display: block;">
 <!-- 循环view 展示文档试题的列表 -->
 <view class="contain">
         <view class="year">
-             <view class="text" bindtap="showPaper" data-paperurl="{{item.paper_url}}">{{item.paper_name}}
+             <view class="text" bindtap="showPaper" data-paperurl="{{item.paper_url}}">{{item.paper_name}} 
              </view>
-             <view class="photo">
-                 <image class="shoucang" src="../../images/shoucang.png" bindtap="collectPaper" data-paperurl="{{item.paperurl}}"></image>
+             <!-- {{ISCN.ISContain(collectPaperurl,item.paper_url)}} -->
+             <view class="photo" wx:if="{{m.contain(collectPaperurl,item.paper_url)}}" >
+                 <image class="shoucang" src="../../images/shoucang.png" bindtap="collectPaper" data-collect="true" data-paperurl="{{item.paper_url}}"></image>
+             </view>
+             <view class="photo" wx:else>
+                 <image class="shoucang" src="../../images/Nshoucang.png" bindtap="collectPaper" data-collect="false" data-paperurl="{{item.paper_url}}"></image>
              </view>
         </view>  
 </view>
