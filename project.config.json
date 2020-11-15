@@ -121,9 +121,9 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/souResult/souResult",
-          "pathName": "pages/souResult/souResult",
+          "id": 7,
+          "name": "pages/feitongkao/feitongkao",
+          "pathName": "pages/feitongkao/feitongkao",
           "query": "",
           "scene": null
         }

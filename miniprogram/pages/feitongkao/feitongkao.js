@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    fenlei: ['01哲学', '02经济学','03法学', '04教育学','05文学','06历史学', '07理学','08工学','09农学', '10医学','11军事学','12管理学','13艺术学'],
+  
+    zhuanye:['0101 哲学'],
   },
 
   /**
@@ -14,7 +16,22 @@ Page({
   onLoad: function (options) {
 
   },
+  more:function(e){
+    wx.cloud.callFunction({
+      name:"query_zhuanye",
+      data:{
+        id:e.target.dataset.operate
+      }
+    }).then(
+      res=>{
+      this.setData({
+        zhuanye:res.result.data.list
+      })     
+    }).catch(err=>{
+      console.log("请求数据库错误"+err);
+    });
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

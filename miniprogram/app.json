@@ -21,7 +21,7 @@
    "pages/history_dongtai/history_dongtai",
    "pages/Tidetails/Tidetails",
    "pages/doc_dongtai/doc_dongtai",
-   "pages/timu_dongtai/timu_dpngtai"
+   "pages/timu_dongtai/timu_dongtai"
 
   ],
   "window": {
