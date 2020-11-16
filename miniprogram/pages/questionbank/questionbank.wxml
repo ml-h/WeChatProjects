@@ -8,8 +8,8 @@
   <view class="san">
 
     <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-course="Politics_papers"> 政治 </button>
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage1" data-course="English_papers"> 英语 </button>
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage2" data-course="Math_papers"> 数学 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-course="English_papers"> 英语 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-course="Math_papers"> 数学 </button>
 
   </view>
   

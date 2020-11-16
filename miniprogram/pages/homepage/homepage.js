@@ -24,9 +24,15 @@ Page({
   },
 
   onWriteWeiboTap:function(event){
+  if(!app.is_login()){
+      wx.navigateTo({
+        url: '../login/login'
+      })
+  }else{
     wx.navigateTo({
       url: '../publish/publish'
     });
+  }
   },
   /*commenting :function(e){
     wx.navigateTo({

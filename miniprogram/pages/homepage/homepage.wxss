@@ -2,16 +2,14 @@
   background-color: rgb(219, 204, 204);
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
 }
 
 
 .weibo-group{
-  width: 100%;
+  /* width: 100%; */
   background: #fdfbfb;
   padding: 40rpx;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   margin-bottom: 20rpx;
 
 }
@@ -49,6 +47,7 @@ border-radius: 50%;
 }
 .weibo-content-group .content{
   font-size: 32rpx;
+  margin-bottom: 20rpx;
 }
 .weibo-content-group .image-list-group{
   padding-top: 20rpx;
