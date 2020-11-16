@@ -1,4 +1,4 @@
-// pages/Tidetails/Tidetails.js
+// 题目详情界面
 Page({
 
   /**

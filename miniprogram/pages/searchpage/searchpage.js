@@ -1,4 +1,4 @@
-// pages/searchpage/searchpage.js
+// 搜索界面
 const app = getApp()
 Page({
 

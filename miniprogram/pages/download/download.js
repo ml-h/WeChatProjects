@@ -1,4 +1,4 @@
-// pages/download/download.js
+// 下载文档页面
 Page({
 
   /**

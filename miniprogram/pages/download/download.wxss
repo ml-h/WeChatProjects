@@ -1,4 +1,4 @@
-/* pages/download/download.wxss */
+/* 下载文档页面 */
 .text{
   width:150px;
 }

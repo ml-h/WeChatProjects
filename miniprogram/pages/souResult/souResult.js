@@ -1,4 +1,4 @@
-// pages/souResult/souResult.js
+// 搜索结果界面
 const db=wx.cloud.database()
 
 Page({

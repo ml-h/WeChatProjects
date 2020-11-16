@@ -1,4 +1,4 @@
-// pages/doclist_nounified/doclist_nounified.js
+//非统考专业课点击后的文档列表界面
 const db=wx.cloud.database()
 Page({
 
