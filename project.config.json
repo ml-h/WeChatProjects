@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -127,6 +127,19 @@
           "name": "pages/fankui_timu/fankui_timu",
           "pathName": "pages/fankui_timu/fankui_timu",
           "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/questionbank/questionbank",
+          "pathName": "pages/questionbank/questionbank",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/feitongkao/feitongkao",
+          "pathName": "pages/feitongkao/feitongkao",
           "scene": null
         }
       ]

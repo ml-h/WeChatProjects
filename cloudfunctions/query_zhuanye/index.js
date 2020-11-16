@@ -7,5 +7,6 @@ let db=cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   var id=event.id;
-  return await db.collection('zhuanye_fenlei').doc(id).get();
+  var idx=event.list.idx
+  return await db.collection('zhuanye_fenlei').get();
 }

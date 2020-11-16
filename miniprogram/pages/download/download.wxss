@@ -1,0 +1,4 @@
+/* pages/download/download.wxss */
+.text{
+  width:150px;
+}

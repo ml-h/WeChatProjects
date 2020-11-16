@@ -23,7 +23,9 @@
    "pages/history_dongtai/history_dongtai",
    "pages/Tidetails/Tidetails",
    "pages/doc_dongtai/doc_dongtai",
-   "pages/timu_dongtai/timu_dongtai"
+   "pages/timu_dongtai/timu_dongtai",
+   "pages/doclist_nounified/doclist_nounified",
+   "pages/download/download"
 
   ],
   "window": {

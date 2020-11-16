@@ -1,0 +1,12 @@
+<!--非统考专业课点击后的文档列表-->
+<view class="header"></view>
+<view class="middlelist">
+  <view wx:for="{{dataObj}}" wx:key="{{index}}" class="wendangcontainer">
+    <view class="wencontainer">
+      <view class="wendangList" bindtap="download"  data-item="{{item}}">{{item.paper_name}}</view>      
+    </view>
+  
+  </view>
+
+</view>
+

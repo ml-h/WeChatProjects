@@ -1,0 +1,3 @@
+<!--下载文档页面-->
+
+<button type="primary" bindtap="download" data-url="{{pdfUrl}}">下载</button>
