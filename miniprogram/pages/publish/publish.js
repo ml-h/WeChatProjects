@@ -89,7 +89,6 @@ Page({
    * 保存到发布集合中
    */
   saveDataToServer: function(event) {
-    
     db.collection('topic').add({
       // data 字段表示需新增的 JSON 数据
       data: {
@@ -98,6 +97,7 @@ Page({
         images: that.data.images,
         user: that.data.user,
         isLike: that.data.isLike,
+        type:1
       },
       success: function(res) {
         // 保存到发布历史

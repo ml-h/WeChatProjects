@@ -88,3 +88,7 @@
   width: 300rpx;
   margin-top: 200rpx;
 }
+.choose_paper{
+  height: 200rpx;
+  width: 200rpx;
+}

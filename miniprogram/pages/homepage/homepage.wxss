@@ -1,15 +1,18 @@
+page{
+  background-color: rgb(219, 204, 204);
+}
 .container{
   background-color: rgb(219, 204, 204);
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 10rpx;
 }
 
 
 .weibo-group{
-  /* width: 100%; */
   background: #fdfbfb;
   padding: 40rpx;
-  /* box-sizing: border-box; */
   margin-bottom: 20rpx;
 
 }
@@ -158,4 +161,12 @@ border-radius: 50%;
   margin-top: 10px;
   background-color: #999;
 }
-
+.title{
+  font-size: 40rpx;
+  font-weight: 900;
+  margin-bottom: 20rpx;
+}
+.notice{
+  color: rgb(68, 84, 221);
+  font-size: 32rpx;
+}

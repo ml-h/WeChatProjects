@@ -26,6 +26,7 @@ Page({
           })
         }else{
           wx.showToast({
+            icon:'none',
             title:'下载失败',
           })
         }       

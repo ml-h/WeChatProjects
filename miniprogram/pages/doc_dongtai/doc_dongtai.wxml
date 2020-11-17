@@ -1,11 +1,17 @@
 
   <image class="document" src="../../images/wenjian2.png"></image>
-   <view class="title">2017年福州大学837经济学综合考研真题</view>
-
+   <view class="title">{{paper_name}}</view>
   <view class='operation'>
-      <button class="download" open-type="getUserInfo">下载
+    <view class="line">
+          <view class="divLine" style="margin-right: 10rpx;"></view>{{status}}<view class="divLine"  style="margin-left: 10rpx;"></view>
+      </view>
+      <button class="download" bindtap="download">预览
       </button>
-      <button class="comment" open-type="getUserInfo">评价
-      </button>
-  </view>
+
+      <view class="line">
+          <view class="divLine" style="margin-right: 10rpx;"></view>评价<view class="divLine"  style="margin-left: 10rpx;"></view>
+      </view>
+              <button bindtap="pingjia" data-operate="1">该文档对我有帮助</button>
+              <button bindtap="pingjia" data-operate="-1">文档内容质量差</button>
+ </view>
 

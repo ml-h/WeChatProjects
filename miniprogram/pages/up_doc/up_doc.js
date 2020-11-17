@@ -8,7 +8,7 @@ Page({
     selectData2:['0101 哲学'],
     index: 0,//选择的下拉列表下标
     index2:0,
-    selectPaperType: ['Philosophy_papers', 'Economics_papers','Law_papers', 'Education_papers','Literature_papers','History_papers', 'Science_papers','Engineer_papers','Agriculture_papers', 'Medical_papers','Stragetics_papers','Management_papers','Art_papers','Politics_papers'],
+    selectPaperType: ['哲学', '经济学','法学', '教育学','文学','历史学', '理学','工学','农学', '医学','军事学','管理学','艺术学'],
     index: 0,//选择的下拉列表下标
     paperurl:"",
     tempfile_url0:"",//临时
@@ -44,8 +44,6 @@ Page({
   },
 
  
-    
-
 
   // 点击下拉显示框
   onLoad: function (options) {
@@ -85,7 +83,6 @@ Page({
   // 点击下拉列表
   optionTap2(e) {
     let Index2 = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
-    console.log(Index2)
     this.setData({
       index2: Index2,
       selectShow2: !this.data.selectShow2,
@@ -104,13 +101,16 @@ Page({
           icon:"success",
           title: '选择文件成功',
         })
-        console.log("调用云函数",res)
+        // console.log("调用云函数",res)
+        var date= new Date();
+        var myDate =date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
         that.data.tempfile_url0=res.tempFiles[0].path
-        that.data.tempfile_time=res.tempFiles[0].time
+        that.data.tempfile_time=myDate
         that.data.tempfile_size=res.tempFiles[0].size
         that.data.tempfile_name=res.tempFiles[0].name
         that.data.tempfile_type=res.tempFiles[0].type
         that.setData({
+          tempfile_name:res.tempFiles[0].name,
           choose_paper:true
         })
         
@@ -119,45 +119,66 @@ Page({
   },
 // 点击上传按钮，上传到云端
 upload_paper_yun(){
-  console.log(this.data.selectData[1],this.data.selectData[this.data.index],this.data.selectPaperType[13])
-  wx.cloud.uploadFile({  
+   wx.cloud.uploadFile({  
     //存储的路径 科目分类/时间+文件名
-    cloudPath:this.data.selectPaperType[this.data.index]+'/'+new Date().getTime()+this.data.tempfile_name,
+    cloudPath:"feiTongKao"+"/"+this.data.selectPaperType[this.data.index]+'/'+new Date().getTime()+this.data.tempfile_name,
     filePath:this.data.tempfile_url0,
     success:res=>{
-      console.log("文件信息 ",res)
       this.data.tempfile_url=res.fileID
-      console.log("文件信息 ",res)
-      wx.showToast({
-        icon:"success",
-        title: '上传文件成功',
-      })
+        this.add_paperList()
       // 把文件信息存储到云数据库
-      this.add_paperList()
-    },fail:console.error
+    },fail:res=>{
+      console.error
+      wx.showToast({
+        icon:"fail",
+        title: '上传文件失败',
+      })
+    }
   })
 },
 
 // 把文件信息存储到云数据库
   add_paperList(){
-
-    var date= new Date();
-    var myDate =date.getHours()+':'+date.getMinutes()+'  '+date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
     // 存储到相应类别的数据库集合中 this.data.selectPaperType[13]
-    console.log("database ",this.data.selectPaperType[this.data.index])
-    wx.cloud.database().collection(this.data.selectPaperType[this.data.index]).add({
+    wx.cloud.database().collection("FeiTongKao").add({
       data:{
         paper_name:this.data.tempfile_name,
-        paper_url:this.data.tempfile_url,
+        paper_FileID:this.data.tempfile_url,
         paper_size:this.data.tempfile_size,
-        paper_time: myDate,
+        paper_time:this.data.tempfile_time,
+        paper_type:this.data.selectData2[this.data.index2],
         paper_loader:"题库",
       },
-      success(res){
-        console.log("试题信息存储到数据库success",res)
-      },fail(res) { console.log(res) }
+      success:res=>{
+
+        this.add_dongtai() 
+      },fail:res=> { console.log(res) }
     })
-
+  },
+// 自动上传文档动态到社区
+  add_dongtai(){
+    console.log(this.data.tempfile_time,this.data.tempfile_name,this.data.tempfile_url,this.data.selectData2[this.data.index2])
+    wx.cloud.database().collection('topic').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        date: new Date(),
+        paper_name:this.data.tempfile_name,
+        paper_FileID:this.data.tempfile_url,
+        paper_type:this.data.selectData2[this.data.index2],
+        pingjia_fenshu:0,
+        paper_status:"正在审核",
+        uploader:"题库",
+        type:2
+      },
+      success:res=>{
+        wx.showToast({
+          icon:"success",
+          title: '上传文件成功',
+        })
+      },fail:res=> {
+         console.log("上传动态失败") 
+        }
+   })
   }
-
-})
+}
+)

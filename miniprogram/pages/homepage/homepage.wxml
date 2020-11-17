@@ -1,6 +1,7 @@
 
-<view class="container">
-  <view class="weibo-group" wx:for='{{topics}}' wx:for-index="windex">
+<view class="container" wx:for='{{topics}}' wx:for-index="windex">
+  <!-- 普通动态 -->
+  <view class="weibo-group" wx:if="{{item.type===1}}">
     <view class="user-group">
       <image class="avatar"
       src = "{{item.user.avatarUrl}}"></image>
@@ -48,6 +49,45 @@
       </view>
     </view>
   </view>
+  <!-- 文档动态 -->
+  <view class="weibo-group" wx:if="{{item.type===2}}" >
+    <view class="user-group">
+      <image class="avatar"
+      src = "{{item.user.avatarUrl}}"></image>
+      <view class="right-info">
+        <view class="username">{{item.user.nickName}}</view>
+        <view class="detail-info">
+          <view class="time">{{item.date}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weibo-content-group" bindtap="doc_dongtai" data-id="{{item._id}}">
+      <view class="title">{{item.paper_name}}</view>
+      <view class="notice">
+        我上传了{{item.paper_type}}真题，快来看看！
+      </view>
+     </view>
+  </view>
+    <!-- 动态题目 -->
+    <view class="weibo-group" wx:if="{{item.type===3}}">
+    <view class="user-group">
+      <image class="avatar"
+      src = "{{item.user.avatarUrl}}"></image>
+      <view class="right-info">
+        <view class="username">{{item.user.nickName}}</view>
+        <view class="detail-info">
+          <view class="time">{{item.date}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="title">{{item.timu}}</view>
+      <view class="notice">
+        我上传了真题，快来看看！
+      </view>
+     </view>
+  </view>
+  
 </view>
 
 

@@ -202,8 +202,13 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  doc_dongtai:function(e){
+    // console.log(e.currentTarget.dataset.fileid)
+    wx.navigateTo({
+      url: '../doc_dongtai/doc_dongtai?id='+e.currentTarget.dataset.id,
+    })
   }
-
   
 
 })
