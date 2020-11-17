@@ -23,8 +23,7 @@ page{
 }
 .item{
   padding: 10rpx;
-  width:330rpx;
-  height:120rpx;
+  width: 100%;
   background-color: white;
   border-radius: 5%;
   margin-bottom: 30rpx;
@@ -42,12 +41,7 @@ page{
   color: rgb(87, 139, 206);
   font-size: 50rpx;
 }
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .fankui{
   font-size: 25rpx;
   color:gray;

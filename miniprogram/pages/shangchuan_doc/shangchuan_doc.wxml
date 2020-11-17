@@ -6,32 +6,11 @@
   </button>
 </view>
 <view class="container">
-  <view class="item">
-      <view class="doc_name">2020年政治真题</view>
+  <view class="item" wx:for="{{my_upDoc}}">
+      <view class="doc_name">{{item.paper_name}}</view>
       <view class="line">
         <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view class="fankui" bindtap="fankui">查看反馈</view>
-      </view>
-  </view>
-  <view class="item">
-      <view class="doc_name">2020年政治真题</view>
-      <view class="line">
-        <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view class="fankui" bindtap="fankui">查看反馈</view>
-      </view>
-  </view>
-  <view class="item">
-      <view class="doc_name">2020年政治真题</view>
-      <view class="line">
-        <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view class="fankui" bindtap="fankui">查看反馈</view>
-      </view>
-  </view>
-  <view class="item">
-      <view class="doc_name">2020年政治真题</view>
-      <view class="line">
-        <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view class="fankui" bindtap="fankui">查看反馈</view>
+        <view class="fankui" bindtap="fankui" data-status="{{item.paper_status}}" data-title="{{item.paper_name}}" data-score="{{item.pingjia_fenshu}}">查看反馈</view>
       </view>
   </view>
 </view>

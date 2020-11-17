@@ -5,17 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      my_upDoc:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    wx.setNavigationBarTitle({
-      title: '上传文档'
-    })
+    const db = wx.cloud.database();
+      db.collection('topic').where({
+        open_id:app.globalData._id,
+        type:2
+      }).get().then(res=>{
+        this.setData({
+          my_upDoc:res.data
+        })
+      })
+      console.log(this.data.my_upDoc)
   },
 
   /**
@@ -48,9 +54,6 @@ Page({
    */
   onUnload: function () {
 
-    wx.setNavigationBarTitle({
-      title: '上传文档'
-    })
 
   },
 
@@ -80,9 +83,9 @@ Page({
  })  
  },
 
-fankui:function (options) {
+fankui:function (e) {
   wx.navigateTo({
-        url: '../fankui/fankui' 
+        url: '../fankui/fankui?title='+e.currentTarget.dataset.title+'&score='+e.currentTarget.dataset.score+'&status='+e.currentTarget.dataset.status
   })
  }
 

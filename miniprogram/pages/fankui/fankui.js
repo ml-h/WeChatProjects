@@ -8,14 +8,6 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '用户反馈'
-    })
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -38,11 +30,17 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
 
+  onLoad: function (option) {
+    wx.setNavigationBarTitle({
+      title: '用户反馈'
+    }),
+    console.log(option)
+      this.setData({
+        title:option.title,
+        score:option.score,
+        status:option.status
+      })
   },
 
   /**
