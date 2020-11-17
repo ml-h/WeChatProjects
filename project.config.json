@@ -130,9 +130,9 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/questionbank/questionbank",
-          "pathName": "pages/questionbank/questionbank",
+          "id": 8,
+          "name": "pages/up_manage/up_feitongkao",
+          "pathName": "pages/up_manage/up_feitongkao",
           "query": "",
           "scene": null
         },

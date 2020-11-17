@@ -68,6 +68,13 @@ Page({
             data: {
               paper_status:"已纳入题库"
             }
+          }),
+          db.collection('FeiTongKao').where({
+            paper_fileID:this.fileId
+          }).update({
+            data: {
+             staus:true
+            }
           })
         }
       })

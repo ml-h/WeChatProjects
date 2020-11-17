@@ -89,17 +89,30 @@ getCollectPaperurl:function(u_openid){
 getPaperList(){
   let that = this;
   // that.data.course是云数据库中存放文档的集合名
-  wx.cloud.database().collection(that.data.dbname).where({
-    paper_type:this.data.course
-  }).get({
-    success(res){
-      // console.log("从数据库获取数据success  ",res.data.length)
-      that.setData({
-        paperList:res.data,
-        length:res.data.length
-      })
-    }
-  })
+  if(that.data.dbname==="FeiTongKao"){
+    wx.cloud.database().collection("FeiTongKao").where({
+      paper_type:this.data.course,
+      status:true
+    }).get({
+      success(res){
+        that.setData({
+          paperList:res.data,
+          length:res.data.length
+        })
+      }
+    })
+  }else{
+    wx.cloud.database().collection(that.data.dbname).where({
+      paper_type:this.data.course
+    }).get({
+      success(res){
+        that.setData({
+          paperList:res.data,
+          length:res.data.length
+        })
+      }
+    })
+  }
 },
 
 // 收藏试题

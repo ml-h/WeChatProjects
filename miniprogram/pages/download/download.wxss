@@ -25,6 +25,10 @@ image{
  }
  .value{
   margin: 20rpx auto;
-  font-size: 40rpx;
+  font-size: 32rpx;
   color: rgb(7, 6, 6);
+ }
+
+ button{
+   margin-top: 80rpx;
  }

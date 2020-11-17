@@ -151,35 +151,13 @@ upload_paper_yun(){
         status:false
       },
       success:res=>{
-
-        this.add_dongtai() 
-      },fail:res=> { console.log(res) }
-    })
-  },
-// 自动上传文档动态到社区
-  add_dongtai(){
-    console.log(this.data.tempfile_time,this.data.tempfile_name,this.data.tempfile_url,this.data.selectData2[this.data.index2])
-    wx.cloud.database().collection('topic').add({
-      // data 字段表示需新增的 JSON 数据
-      data: {
-        date: new Date(),
-        paper_name:this.data.tempfile_name,
-        paper_FileID:this.data.tempfile_url,
-        paper_type:this.data.selectData2[this.data.index2],
-        pingjia_fenshu:0,
-        paper_status:"正在审核",
-        uploader:"题库",
-        type:2
-      },
-      success:res=>{
         wx.showToast({
           icon:"success",
           title: '上传文件成功',
         })
-      },fail:res=> {
-         console.log("上传动态失败") 
-        }
-   })
-  }
+      },fail:res=> { console.log(res) }
+    })
+  },
+
 }
 )
