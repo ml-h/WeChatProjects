@@ -54,6 +54,8 @@ border-radius: 50%;
 }
 .weibo-content-group .image-list-group{
   padding-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
 }
 .weibo-handle{
   display: flex;
@@ -170,3 +172,7 @@ border-radius: 50%;
   color: rgb(68, 84, 221);
   font-size: 32rpx;
 }
+.imageItem{
+  width: 100%;
+  height: 380rpx;
+} 

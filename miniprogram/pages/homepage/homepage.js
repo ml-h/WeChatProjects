@@ -10,16 +10,49 @@ Page({
     totalCount: 0,
     topics: [],
     
-  },
-
-
+    currentIndex: 0,
+    currentIndex1: 0,
+    currentIndex2: 0,
+    imgList: [{
+      img: "../../images/fzu1.png" //轮播图片
+    },
+    {
+      img: "../../images/fzu2.png"
+    },
+    {
+      img: "../../images/fzu3.png"
+    }
+    ]
+  
+   },
+ 
+   changeSwiper: function (e) {
+     this.setData({
+       currentIndex: e.detail.current
+     })
+   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.initImageSize()
     that = this
     wx.cloud.init({
       env: app.globalData.evn
+    })
+
+    
+  },
+
+  initImageSize:function(){
+    const windowWidth = wx.getSystemInfoSync().windowWidth;
+    const weiboWidth = windowWidth-40;
+    const twoImageSize = (weiboWidth-2.5)/2
+    const threeImageSize = (weiboWidth-2.5*2)/3
+    console.log(twoImageSize)
+    this.setData({
+      twoImageSize:twoImageSize,
+      threeImageSize:threeImageSize
     })
   },
 
@@ -86,14 +119,14 @@ Page({
         //that.userInfo.openId=openId;
       }
     })*/
-    wx.cloud.callFunction({
+    /*wx.cloud.callFunction({
       name: 'login',
       data: {},
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
       }
-    })
+    })*/
     const openId=app.globalData.openid
     //const openId = this.userInfo.openId;
    // console.log(app.globalData);

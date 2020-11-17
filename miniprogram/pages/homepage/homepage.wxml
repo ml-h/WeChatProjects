@@ -1,3 +1,18 @@
+<view class='container'>
+  <scroll-view style="display:flex;width:100%" scroll-y>
+    <view class="container">
+      <swiper autoplay="true" interval="2000" indicator-dots="true"
+      indicator-color="grey" indicator-active-color="pink"
+      style="width:100%;height:300rpx;margin-top:10rpx;" bindchange="changeSwiper" previous-margin="0rpx" next-margin="0rpx">
+        <block wx:for="{{imgList}}" wx:key>
+          <swiper-item class="swiperItem">
+            <image mode="scaleToFill" src='{{item.img}}' class="imageItem {{currentIndex == index ? 'active': ''}}"> </image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </scroll-view>
+</view>
 
 <view class="container" wx:for='{{topics}}' wx:for-index="windex">
   <!-- 普通动态 -->
@@ -15,16 +30,17 @@
     <view class="weibo-content-group">
       <view class="content">{{item.content}}</view>
 
-      <view wx:if="{{item.images.length===1}}" class="image -list-group">
+      <view wx:if="{{item.images.length===1}}" class="image-list-group">
         <image src="{{item.images}}" mode="aspectFill" style="width:100%;max-height:400rpx" />
       </view>
-      <view wx:elif="{{item.images.length===2 ||item.images.length===4}}" class="image -list-group">
+      <view wx:elif="{{item.images.length===2 ||item.images.length===4}}" class="image-list-group">
         <image wx:for="{{item.images}}" wx:for-item="image" src="{{image}}" 
-        mode="aspectFill" style="width:{{twoImageSize}}rpx;height:{{twoImageSize}}rpx" />
+        mode="aspectFill" style="width:{{twoImageSize}}px;height:{{twoImageSize}}px;" />
       </view>
-      <view wx:else class="image -list-group">
+      <view wx:else class="image-list-group">
         <image wx:for="{{item.images}}" wx:for-item="image" src="{{image}}" 
-        mode="aspectFill" style="width:{{threeImageSize}}rpx;height:{{threeImageSize}}rpx" />
+        mode="aspectFill" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px" />
+        <view wx:if="{{images.length%3==2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
       </view>
 
      </view>
