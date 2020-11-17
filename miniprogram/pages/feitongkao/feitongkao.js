@@ -18,7 +18,6 @@ Page({
 
   },
   more:function(e){
-
     wx.cloud.callFunction({
       name:"query_zhuanye",
       data:{
@@ -37,7 +36,9 @@ Page({
   lixue(event){
     console.log("点击获取的文档列表数据id",event.currentTarget.dataset.item)
     wx.navigateTo({
-      url: '../../pages/doclist_nounified/doclist_nounified?id='+event.currentTarget.dataset.item,
+      // url: '../../pages/doclist_nounified/doclist_nounified?id='+event.currentTarget.dataset.item,
+      url:'../zhenti/zhenti?type='+event.currentTarget.dataset.type+'&course='+event.currentTarget.dataset.course,
+ 
     })  
     
   },

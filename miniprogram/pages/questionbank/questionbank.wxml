@@ -6,10 +6,10 @@
         <text>———————公共课———————</text>
   </view>
   <view class="san">
-
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-course="Politics_papers"> 政治 </button>
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-course="English_papers"> 英语 </button>
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-course="Math_papers"> 数学 </button>
+<!-- type=1即统考科目 -->
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-type="1" data-course="政治"> 政治 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-type="1" data-course="英语"> 英语 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-type="1" data-course="数学"> 数学 </button>
 
   </view>
   

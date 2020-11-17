@@ -42,6 +42,6 @@
         </view>
     </view>
     <view class="right" wx:for="{{zhuanye}}">
-            <view class="click"   bindtap="lixue" data-item="{{item}}">{{item}}</view>
+            <view class="click"   bindtap="lixue" data-type="2" data-course="{{item}}">{{item}}</view>
         </view>
 </view>

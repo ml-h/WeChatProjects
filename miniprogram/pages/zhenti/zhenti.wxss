@@ -3,7 +3,7 @@
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 3%;
-    border: 3rpx solid #faca82;
+    border-bottom: 2rpx solid #b99898;
     border-radius: 0%;
 }
 
@@ -33,4 +33,9 @@
 .year .photo{
     position: absolute;
     right: 0;
+}
+
+.notice{
+    margin-top: 100rpx;
+    margin: auto;
 }

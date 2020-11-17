@@ -1,92 +1,11 @@
-<!--pages/tongkaoshiti/tongkaoshiti.wxml-->
-<!-- <text>pages/tongkaoshiti/tongkaoshiti.wxml</text> -->
-<view class="kuangjia">
+<!--统考专业课-->
+<view class="kuangjia" wx:for="{{zhuanye}}">
     <view class="wendang">
         <image class="tubiao" src="../../images/wendang.png">
         </image>
     </view>
-    <view class="xueke" bindtap="xiangqing">计算机</view>
+    <view class="xueke" bindtap="xiangqing" data-type="3" data-course="{{item}}">{{item}}</view>
     <view class="jiantou">
         <image class="right" src="../../images/z043.png"></image>
-
-    </view>
-</view>
-
-<view class="kuangjia">
-    <view class="wendang">
-        <image class="tubiao" src="../../images/wendang.png">
-        </image>
-    </view>
-    <view class="xueke" bindtap="xiangqing">教育学</view>
-    <view class="jiantou">
-        <image class="right" src="../../images/z043.png"></image>
-
-    </view>
-</view>
-
-<view class="kuangjia">
-    <view class="wendang">
-        <image class="tubiao" src="../../images/wendang.png">
-        </image>
-    </view>
-    <view class="xueke" bindtap="xiangqing">心理学</view>
-    <view class="jiantou">
-        <image class="right" src="../../images/z043.png"></image>
-
-    </view>
-</view>
-<view class="kuangjia">
-    <view class="wendang">
-        <image class="tubiao" src="../../images/wendang.png">
-        </image>
-    </view>
-    <view class="xueke" bindtap="xiangqing">历史学</view>
-    <view class="jiantou">
-        <image class="right" src="../../images/z043.png"></image>
-
-    </view>
-</view>
-<view class="kuangjia">
-    <view class="wendang">
-        <image class="tubiao" src="../../images/wendang.png">
-        </image>
-    </view>
-    <view class="xueke" bindtap="xiangqing">农学</view>
-    <view class="jiantou">
-        <image class="right" src="../../images/z043.png"></image>
-
-    </view>
-</view>
-<view class="kuangjia">
-    <view class="wendang">
-        <image class="tubiao" src="../../images/wendang.png">
-        </image>
-    </view>
-    <view class="xueke" bindtap="xiangqing">西医综合</view>
-    <view class="jiantou">
-        <image class="right" src="../../images/z043.png"></image>
-
-    </view>
-</view>
-<view class="kuangjia">
-    <view class="wendang">
-        <image class="tubiao" src="../../images/wendang.png">
-        </image>
-    </view>
-    <view class="xueke" bindtap="xiangqing">中医综合</view>
-    <view class="jiantou">
-        <image class="right" src="../../images/z043.png"></image>
-
-    </view>
-</view>
-<view class="kuangjia">
-    <view class="wendang">
-        <image class="tubiao" src="../../images/wendang.png">
-        </image>
-    </view>
-    <view class="xueke" bindtap="xiangqing">法律硕士</view>
-    <view class="jiantou">
-        <image class="right" src="../../images/z043.png"></image>
-
     </view>
 </view>

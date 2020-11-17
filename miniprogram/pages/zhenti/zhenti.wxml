@@ -1,20 +1,9 @@
-<!-- 引入wxs -->
-<wxs module="m">
-    var contain = function(a,id){
-        if(a.indexOf(id)>-1){
-            console.log("aaaaaaa");
-            return true
-        }else{
-            console.log("bbbbbbb");
-            return false
-        }
-    }
-    module.exports.contain=contain;
-</wxs>
 
-<view wx:for="{{paperList}}" wx:key="unique" style="display: block;">
+
+<view wx:for="{{paperList}}" wx:key="unique" style="display: block;" wx:if="{{length!==0}}">
 <!-- 循环view 展示文档试题的列表 -->
-<view class="contain">
+<view class="contain" bindtap="downLoadPaper" data-title="{{item.paper_name}}" data-size="{{item.paper_size}}" data-date="{{item.paper_time}}"
+data-fileId="{{item.paper_FileID}}" data-loder="{{item.paper_loader}} ">
         <view class="year">
              <view class="text" bindtap="showPaper" data-paperurl="{{item.paper_url}}">{{item.paper_name}} 
              </view>
@@ -27,5 +16,8 @@
              </view>
         </view>  
 </view>
-
 </view>
+<view wx:if="{{length===0}}" class="notice">
+暂时没有数据，快来上传
+</view>
+

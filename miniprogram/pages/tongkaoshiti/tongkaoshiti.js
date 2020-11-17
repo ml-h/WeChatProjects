@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      zhuanye:["计算机","教育学","心理学","历史学","农学","农学","西医综合","中医综合","法律硕士"]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: '统考专业课',
+    })
   },
 
   /**
@@ -62,5 +64,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  xiangqing:function(event){
+    wx.navigateTo({
+      url:'../zhenti/zhenti?type='+event.currentTarget.dataset.type+'&course='+event.currentTarget.dataset.course,
+    })
   }
 })

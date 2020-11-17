@@ -1,3 +1,10 @@
 <!--下载文档页面-->
 
-<button type="primary" bindtap="download" data-url="{{pdfUrl}}">下载</button>
+
+<image src="../../images/wenjian2.png"></image>
+<view class="title">{{title}}</view>
+
+<view class="value">上传时间：{{date}}</view>
+<view class="value">文件大小：{{size}}Kb</view>
+<view class="value">来源：{{loder}}</view>
+<button type="primary" bindtap="download" >下载</button>
