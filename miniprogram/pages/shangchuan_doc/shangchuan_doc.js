@@ -7,14 +7,31 @@ Page({
   data: {
       my_upDoc:[]
   },
-
+  getOpenid(){
+    // 获取当前用户的openID
+    wx.cloud.callFunction({
+      name:"login",
+      data:{}
+    }).then(res=>{
+      // res.result.data 是用户数据
+      console.log("获取openID success",res.result.openid)
+      this.setData({
+        openid:res.result.openid
+      })
+    })
+    .catch(res=>{
+      console.log("获取openID 失败",res)
+    })
+   
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getOpenid()
     const db = wx.cloud.database();
       db.collection('topic').where({
-        open_id:app.globalData._id,
+        _openid:"",
         type:2
       }).get().then(res=>{
         this.setData({
