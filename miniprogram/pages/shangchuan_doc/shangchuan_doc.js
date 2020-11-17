@@ -8,6 +8,13 @@ Page({
       my_upDoc:[]
   },
   getOpenid(){
+    
+   
+},
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
     // 获取当前用户的openID
     wx.cloud.callFunction({
       name:"login",
@@ -18,27 +25,22 @@ Page({
       this.setData({
         openid:res.result.openid
       })
-    })
-    .catch(res=>{
-      console.log("获取openID 失败",res)
-    })
-   
-},
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.getOpenid()
-    const db = wx.cloud.database();
+      const db = wx.cloud.database();
+     console.log("user:"+this.data.openid)
       db.collection('topic').where({
-        _openid:"",
-        type:2
+        type:2,
+        _openid:this.data.openid
       }).get().then(res=>{
         this.setData({
           my_upDoc:res.data
         })
       })
-      console.log(this.data.my_upDoc)
+    })
+    .catch(res=>{
+      console.log("获取openID 失败",res)
+    })
+   
+
   },
 
   /**
