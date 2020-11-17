@@ -23,8 +23,8 @@ Page({
         detail:res.data
       })
     })
-    .catch(res=>{
-      console.log("详情页失败",res)
+    .catch(err=>{
+      console.log("详情页失败",err)
     })
 
   },

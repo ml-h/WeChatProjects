@@ -6,9 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    key:'hello'
 
   },
-
+  input: function(e) {//接受输入值
+    this.setData({
+      key: e.detail.value
+    })
+  },
+  searchclick :function(e){
+    wx.navigateTo({
+      url: '../../pages/souResult/souResult?key=' + this.data.key,
+    })  
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -67,11 +77,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  searchclick :function(e){
-    wx.navigateTo({
-      url: '../../pages/souResult/souResult',
-    })  
-    
   }
 })
