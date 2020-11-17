@@ -1,2 +1,21 @@
 <!--miniprogram/pages/profile/kufu.wxml-->
-<text>miniprogram/pages/profile/kufu.wxml</text>
+<view class="head-height">
+  <text class="head">
+    
+    您好，欢迎使用小福有研！
+    若您在使用过程中遇到问题，请选择您方便的方式进行咨询。
+    祝您学习顺利，生活愉快！</text>
+</view>
+
+<view class="list-wrapper">
+    <block wx:for="{{menuitems}}" wx:key="item">
+      <navigator url="{{item.url}}" class="list-item" hover-class="list-item_active">
+        <view class='item'>
+          <image class='item-image' src="{{item.icon}}"></image>
+          <text class="item-text">{{item.text}}</text>
+          <text class='item-array'>></text>
+        </view>
+        <view class="div-line"></view>
+      </navigator>
+    </block>
+  </view>
