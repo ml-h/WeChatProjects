@@ -1,3 +1,5 @@
+<!-- <wxs src="../../utils/util.wxs" module="util" /> -->
+
 <view class='container'>
   <scroll-view style="display:flex;width:100%" scroll-y>
     <view class="container">
@@ -23,7 +25,7 @@
       <view class="right-info">
         <view class="username">{{item.user.nickName}}</view>
         <view class="detail-info">
-          <view class="time">{{item.date}}</view>
+          <view class="time">{{time}}</view>
         </view>
       </view>
     </view>
@@ -40,7 +42,7 @@
       <view wx:else class="image-list-group">
         <image wx:for="{{item.images}}" wx:for-item="image" src="{{image}}" 
         mode="aspectFill" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px" />
-        <view wx:if="{{images.length%3==2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
+        <view wx:if="{{item.images.length%3 == 2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
       </view>
 
      </view>

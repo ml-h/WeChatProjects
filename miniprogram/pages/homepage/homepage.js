@@ -1,6 +1,7 @@
 // pages/homepage/homepage.js
 var that
 const app = getApp()
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -40,13 +41,20 @@ Page({
     wx.cloud.init({
       env: app.globalData.evn
     })
+    var time = util.formatTime(new Date());
+    // 再通过setData更改Page()里面的data，动态更新页面的数据
+    this.setData({
+      time: time
+    });
+
 
     
   },
 
   initImageSize:function(){
     const windowWidth = wx.getSystemInfoSync().windowWidth;
-    const weiboWidth = windowWidth-40;
+    // const weiboWidth = windowWidth-40;
+    const weiboWidth = 253;
     const twoImageSize = (weiboWidth-2.5)/2
     const threeImageSize = (weiboWidth-2.5*2)/3
     console.log(twoImageSize)

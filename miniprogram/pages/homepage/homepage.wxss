@@ -53,9 +53,17 @@ border-radius: 50%;
   margin-bottom: 20rpx;
 }
 .weibo-content-group .image-list-group{
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.image-list-group{
+  margin-bottom: 5rpx;
+}
+.image-list-group image{
+  margin-bottom: 5rpx;
+  /* margin-right: 5rpx; */
 }
 .weibo-handle{
   display: flex;
