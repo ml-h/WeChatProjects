@@ -1,1 +1,41 @@
-/* pages/star_doc/star_doc.wxss */
+.contain{
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 3%;
+  border-bottom: 2rpx solid #b99898;
+  border-radius: 0%;
+}
+
+.contain .year{
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: auto;
+  position: relative;
+
+}
+.year image{
+  width: 50rpx;
+  height: 50rpx;
+  
+}
+.year .text{
+  font-size: 30rpx;
+  
+}
+.year view{
+  flex: 1;
+  display: flex;
+  
+}
+
+.year .photo{
+  position: absolute;
+  right: 0;
+}
+
+.notice{
+  margin-top: 100rpx;
+  margin: auto;
+}

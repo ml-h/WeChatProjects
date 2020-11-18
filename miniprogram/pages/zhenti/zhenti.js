@@ -9,7 +9,7 @@ Page({
     course:"",
     shoucang:false,
     openid:"",
-    collectPaperurl:[""],//用户收藏的试题列表
+    collectPaperurl:[],//用户收藏的试题列表
     length:"",
     id:1,
     day:7
@@ -52,10 +52,12 @@ getOpenid(){
         // res.result.data 是用户数据
         console.log("获取openID成功 ",res.result.openid)
         // 获取用户收藏的试题
-        this.getCollectPaperurl(res.result.openid)
+        // this.getCollectPaperurl(res.result.openid)
         this.setData({
           openid:res.result.openid
         })
+        this.getPaperList()
+        this.getStarurl(res.result.openid)
       })
       .catch(res=>{
         console.log("获取openID 失败",res)
@@ -63,47 +65,77 @@ getOpenid(){
      
 },
 
-// 获取用户收藏的paper_FileID
-getCollectPaperurl:function(u_openid){
-  let that=this
-// 调用cloud云函数查询或更新指定用户id的试题数据
+getStarurl(openid){
   wx.cloud.callFunction({
-    name:"updateUserPapers",
+    name:"starDoc",
     data:{
       action:"get",
-      id:that.data.openid,
-      // id:"123",
+      id:openid
     }
   }).then(res=>{
-    // res.result.data 是用户收藏的试题列表，如果数据库里有用户的信息
-    if(res.result.data.length>0){
-      console.log("向云数据库里查询数据成功，用户收藏的文档",res.result.data[0].collect_paper)
-      that.setData({
-        collectPaperurl:res.result.data[0].collect_paper
-      })
-    }else{ //调用云函数，向数据库中创建用户信息
+    console.log("获取收藏返回：",res)
+    if(res.result.data.length==0){
+      console.log("该用户还没收藏")
       wx.cloud.callFunction({
-        name:"updateUserPapers",
+        name:"starDoc",
         data:{
-          action:"update_adduser",
-          id:that.data.openid,
-          // id:"123",
+          action:"addUser",
+          id:openid
         }
-      }).then(res=>{
-        // res.result.data 是用户数据
-        console.log("向云数据库里创建新用户success",res)
-
       })
-      .catch(res=>{
-        console.log("向云数据库里创建新用户",res)
+    }else{
+      this.setData({
+        collectPaperurl:res.result.data[0].star_docUrl
       })
     }
-    that.getPaperList()
-  })
-  .catch(res=>{
-    console.log("向云数据库里查询数据失败",res)
   })
 },
+starDoc:function(event){
+  console.log("文档item",event.target.dataset.item)
+  if(event.target.dataset.collect=="true"){
+    wx.cloud.callFunction({
+      name:"starDoc",
+      data:{
+        action:"cancel",
+        id:this.data.openid,
+        url:event.target.dataset.paperurl,
+        // title:event.target.dataset.title,
+        doc:event.target.dataset.item
+      }
+    }).then(res=>{
+      // res.result.data 是用户数据
+      // console.log("向云数据库里del数据success",res)
+      // 获取收藏成功后的paperurl列表,更新collectPaperurl
+      this.getStarurl(this.data.openid)
+      wx.showToast({
+        icon:"success",
+        title: '取消收藏成功',
+      })
+    })
+  }else{
+    wx.cloud.callFunction({
+      name:"starDoc",
+      data:{
+        action:"star",
+        id:this.data.openid,
+        url:event.target.dataset.paperurl,
+        // title:event.target.dataset.title,
+        doc:event.target.dataset.item
+      }
+    }).then(res=>{
+      // res.result.data 是用户数据
+      // console.log("向云数据库里del数据success",res)
+      // 获取收藏成功后的paperurl列表,更新collectPaperurl
+      this.getStarurl(this.data.openid)
+      wx.showToast({
+        icon:"success",
+        title: '收藏成功',
+      })
+    })
+  }
+},
+
+
 
 // 获取试题文档列表
 getPaperList(){
@@ -114,7 +146,7 @@ getPaperList(){
     status:true
   }).get({
     success(res){
-      console.log("从数据库获取数据成功,页面试题文档 ",res.data)
+      // console.log("从数据库获取数据成功,页面试题文档 ",res.data)
       that.setData({
         paperList:res.data,
         length:res.data.length
@@ -123,61 +155,9 @@ getPaperList(){
   })
 },
 
-// 收藏试题
-collectPaper:function(event){
- 
-  let that=this
-  if(event.target.dataset.collect=="true"){
-         // 调用cloud云函数删除指定用户id的试题数据
-      wx.cloud.callFunction({
-        name:"updateUserPapers",
-        data:{
-          action:"update_del",
-          id:that.data.openid,
-          paperurl:event.target.dataset.paperurl
-        }
-      }).then(res=>{
-        // res.result.data 是用户数据
-        console.log("向云数据库里del数据success",res)
-        // 获取收藏成功后的paperurl列表,更新collectPaperurl
-        that.getCollectPaperurl(that.data.openid)
-        wx.showToast({
-          icon:"success",
-          title: '取消收藏成功',
-        })
-      })
-      .catch(res=>{
-        console.log("向云数据库里del数据失败",res)
-      })
-  }else{
-    console.log("插入的 ",event.target.dataset.paperurl)
-      // 调用cloud云函数更新指定用户id的试题数据
-      wx.cloud.callFunction({
-        name:"updateUserPapers",
-        data:{
-          action:"update_push",
-          id:that.data.openid,
-          paperurl:event.target.dataset.paperurl
-        }
-      }).then(res=>{
-        // res.result.data 是用户数据
-        console.log("向云数据库里push更新数据success",res)
-        // 获取收藏成功后的paperurl列表,更新collectPaperurl
-        that.getCollectPaperurl(that.data.openid)
-        wx.showToast({
-          icon:"success",
-          title: '收藏成功',
-        })
-      })
-      .catch(res=>{
-        console.log("向云数据库里push更新数据失败",res)
-      })
-  }
-  
+
 
   
-},
-
 
 // 跳转到试题文档详情的页面
 
@@ -189,23 +169,6 @@ downLoadPaper:function(e){
     e.currentTarget.dataset.date+'&loder='+ e.currentTarget.dataset.loder+'&fileId='+ e.currentTarget.dataset.fileid
     +'&size='+e.currentTarget.dataset.size
   })
-  // console.log(event.target.dataset['paperurl'])
-  // wx.cloud.downloadFile({
-  //   fileID: event.target.dataset['paperurl'],
-  //   success: res => {
-  //     console.log("下载成功云存储里的试题文档",res)
-  //     wx.openDocument({
-  //       // res.tempFilePath下载文档成功后的链接
-  //       filePath: res.tempFilePath,
-  //       success: function (res) {
-  //         console.log('打开文档成功success',res)
-  //       }
-  //     })
-  //   },
-  //   fail: err => {
-  //     // handle error
-  //   }
-  // })
 }
 
 

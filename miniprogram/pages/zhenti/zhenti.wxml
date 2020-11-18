@@ -19,10 +19,10 @@ data-fileId="{{item.paper_FileID}}" data-loder="{{item.paper_loader}} ">{{item.p
              </view>
              <!-- {{ISCN.ISContain(collectPaperurl,item.paper_url)}} -->
              <view class="photo" wx:if="{{m.contain(collectPaperurl,item.paper_FileID)}}" >
-                 <image class="shoucang" src="../../images/shoucang.png" bindtap="collectPaper" data-collect="true" data-paperurl="{{item.paper_FileID}}"></image>
+                 <image class="shoucang" src="../../images/shoucang.png" bindtap="starDoc" data-collect="true"  data-item="{{item}}" data-paperurl="{{item.paper_FileID}}" data-title="{{item.paper_name}}"></image>
              </view>
              <view class="photo" wx:else>
-                 <image class="shoucang" src="../../images/Nshoucang.png" bindtap="collectPaper" data-paperurl="{{item.paper_FileID}}" data-collect="false" ></image>
+                 <image class="shoucang" src="../../images/Nshoucang.png" bindtap="starDoc" data-paperurl="{{item.paper_FileID}}" data-item="{{item}}" data-collect="false" data-title="{{item.paper_name}}"></image>
              </view>
         </view>  
 </view>
