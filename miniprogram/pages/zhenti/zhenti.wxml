@@ -1,18 +1,28 @@
-
+<!-- 引入wxs -->
+<wxs module="m">
+    var contain = function(a,id){
+        if(a.indexOf(id)>-1){
+            return true
+        }else{
+            return false
+        }
+    }
+    module.exports.contain=contain;
+</wxs>
 
 <view wx:for="{{paperList}}" wx:key="unique" style="display: block;" wx:if="{{length!==0}}">
 <!-- 循环view 展示文档试题的列表 -->
-<view class="contain" bindtap="downLoadPaper" data-title="{{item.paper_name}}" data-size="{{item.paper_size}}" data-date="{{item.paper_time}}"
-data-fileId="{{item.paper_FileID}}" data-loder="{{item.paper_loader}} ">
+<view class="contain" >
         <view class="year">
-             <view class="text" bindtap="showPaper" data-paperurl="{{item.paper_url}}">{{item.paper_name}} 
+             <view class="text" bindtap="downLoadPaper" data-title="{{item.paper_name}}" data-size="{{item.paper_size}}" data-date="{{item.paper_time}}"
+data-fileId="{{item.paper_FileID}}" data-loder="{{item.paper_loader}} ">{{item.paper_name}} 
              </view>
              <!-- {{ISCN.ISContain(collectPaperurl,item.paper_url)}} -->
-             <view class="photo" wx:if="{{m.contain(collectPaperurl,item.paper_url)}}" >
-                 <image class="shoucang" src="../../images/shoucang.png" bindtap="collectPaper" data-collect="true" data-paperurl="{{item.paper_url}}"></image>
+             <view class="photo" wx:if="{{m.contain(collectPaperurl,item.paper_FileID)}}" >
+                 <image class="shoucang" src="../../images/shoucang.png" bindtap="collectPaper" data-collect="true" data-paperurl="{{item.paper_FileID}}"></image>
              </view>
              <view class="photo" wx:else>
-                 <image class="shoucang" src="../../images/Nshoucang.png" bindtap="collectPaper" data-collect="false" data-paperurl="{{item.paper_url}}"></image>
+                 <image class="shoucang" src="../../images/Nshoucang.png" bindtap="collectPaper" data-paperurl="{{item.paper_FileID}}" data-collect="false" ></image>
              </view>
         </view>  
 </view>

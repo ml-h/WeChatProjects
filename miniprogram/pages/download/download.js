@@ -9,23 +9,6 @@ Page({
 
   },
 
-  download:function(){
-    wx.cloud.downloadFile({
-      fileID: this.data.fileId
-    }).then(res => {
-     if(res.statusCode===200){
-      wx.openDocument({
-        filePath:res.tempFilePath
-      })
-     }
-    }).catch(error => {
-      console.log(res)
-      wx.showToast({
-        icon:'none',
-        title: '文件预览失败',
-      })
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -40,5 +23,43 @@ Page({
       size:options.size
     })
 
+  },
+
+  download:function(){
+
+    console.log("下载文件url",this.data.fileId)
+    wx.cloud.downloadFile({
+      fileID: this.data.fileId,
+    success: res => {
+      console.log("下载成功云存储里的试题文档",res)
+      wx.openDocument({
+        // res.tempFilePath下载文档成功后的链接
+        filePath: res.tempFilePath,
+        success: function (res) {
+          console.log('打开文档成功success',res)
+        }
+      })
+    },
+    fail: err => {
+      // handle error
+      console.log('打开文档成功失败')
+    }
+  })
+
+    // wx.cloud.downloadFile({
+    //   fileID: this.data.fileId
+    // }).then(res => {
+    //  if(res.statusCode===200){
+    //   wx.openDocument({
+    //     filePath:res.tempFilePath
+    //   })
+    //  }
+    // }).catch(error => {
+    //   console.log(res)
+    //   wx.showToast({
+    //     icon:'none',
+    //     title: '文件预览失败',
+    //   })
+    // })
   }
 })

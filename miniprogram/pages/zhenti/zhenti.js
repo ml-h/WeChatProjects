@@ -9,7 +9,7 @@ Page({
     course:"",
     shoucang:false,
     openid:"",
-    collectPaperurl:[""],
+    collectPaperurl:[""],//用户收藏的试题列表
     length:"",
     id:1,
     day:7
@@ -21,11 +21,12 @@ Page({
   // 初始化真题页面时会从数据库获取试题列表
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: options.course ,
+      title: options.course+"试题" ,
     })
     if(options.type==="1"){
       var dbname="TongKao"
     }else if(options.type==="2"){
+      console.log("FeiTongKao")
       var dbname="FeiTongKao"
     }else{
       var dbname="ZhuanYeKe"
@@ -36,12 +37,12 @@ Page({
       course:options.course,
     })
     // 获取当前用户的openID,成功后调用getCollectPaperurl，再调用getPaperList
-    // this.getOpenid()
-    this.getPaperList()
+    this.getOpenid()
+    // this.getPaperList()
     
   },
 
-  // 获取用户id和该用户收藏的题目url
+  // 获取用户id  调用getCollectPaperurl（）
 getOpenid(){
       // 获取当前用户的openID
       wx.cloud.callFunction({
@@ -49,7 +50,7 @@ getOpenid(){
         data:{}
       }).then(res=>{
         // res.result.data 是用户数据
-        console.log("获取openID success",res.result.openid)
+        console.log("获取openID成功 ",res.result.openid)
         // 获取用户收藏的试题
         this.getCollectPaperurl(res.result.openid)
         this.setData({
@@ -62,7 +63,7 @@ getOpenid(){
      
 },
 
-// 获取用户收藏的paperurl
+// 获取用户收藏的paper_FileID
 getCollectPaperurl:function(u_openid){
   let that=this
 // 调用cloud云函数查询或更新指定用户id的试题数据
@@ -70,14 +71,33 @@ getCollectPaperurl:function(u_openid){
     name:"updateUserPapers",
     data:{
       action:"get",
-      id:u_openid,
+      id:that.data.openid,
+      // id:"123",
     }
   }).then(res=>{
-    // res.result.data 是用户数据
-    console.log("向云数据库里查询数据success",res.result.data[0].collect_paper)
-    that.setData({
-      collectPaperurl:res.result.data[0].collect_paper
-    })
+    // res.result.data 是用户收藏的试题列表，如果数据库里有用户的信息
+    if(res.result.data.length>0){
+      console.log("向云数据库里查询数据成功，用户收藏的文档",res.result.data[0].collect_paper)
+      that.setData({
+        collectPaperurl:res.result.data[0].collect_paper
+      })
+    }else{ //调用云函数，向数据库中创建用户信息
+      wx.cloud.callFunction({
+        name:"updateUserPapers",
+        data:{
+          action:"update_adduser",
+          id:that.data.openid,
+          // id:"123",
+        }
+      }).then(res=>{
+        // res.result.data 是用户数据
+        console.log("向云数据库里创建新用户success",res)
+
+      })
+      .catch(res=>{
+        console.log("向云数据库里创建新用户",res)
+      })
+    }
     that.getPaperList()
   })
   .catch(res=>{
@@ -94,7 +114,7 @@ getPaperList(){
     status:true
   }).get({
     success(res){
-      // console.log("从数据库获取数据success  ",res.data.length)
+      console.log("从数据库获取数据成功,页面试题文档 ",res.data)
       that.setData({
         paperList:res.data,
         length:res.data.length
@@ -130,6 +150,7 @@ collectPaper:function(event){
         console.log("向云数据库里del数据失败",res)
       })
   }else{
+    console.log("插入的 ",event.target.dataset.paperurl)
       // 调用cloud云函数更新指定用户id的试题数据
       wx.cloud.callFunction({
         name:"updateUserPapers",
@@ -159,21 +180,16 @@ collectPaper:function(event){
 
 
 // 跳转到试题文档详情的页面
-showPaper:function(event){
-  console.log("试题详情")
-  console.log(event)
-},
 
 //通过Url打开云存储里的试题文档
 downLoadPaper:function(e){
-  console.log(e)
+  console.log("下载文档",e)
   wx.navigateTo({
     url: '../download/download?title='+e.currentTarget.dataset.title+'&date='+
     e.currentTarget.dataset.date+'&loder='+ e.currentTarget.dataset.loder+'&fileId='+ e.currentTarget.dataset.fileid
     +'&size='+e.currentTarget.dataset.size
   })
   // console.log(event.target.dataset['paperurl'])
-  // console.log("下载文档")
   // wx.cloud.downloadFile({
   //   fileID: event.target.dataset['paperurl'],
   //   success: res => {
@@ -185,10 +201,10 @@ downLoadPaper:function(e){
   //         console.log('打开文档成功success',res)
   //       }
   //     })
-    // },
-    // fail: err => {
-    //   // handle error
-    // }
+  //   },
+  //   fail: err => {
+  //     // handle error
+  //   }
   // })
 }
 

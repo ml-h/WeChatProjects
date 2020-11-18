@@ -36,6 +36,16 @@ exports.main = async (event, context) => {
     }
   })
  }
+ else if(event.action=="update_adduser"){
+  return await cloud.database().collection("User_Collect_Papers").add({
+    data:{
+      User_openid:event.id,
+      collect_paper:[]
+    }
+  })
+  
+  
+ }
  else{//查询
   console.log("cloud云函数 getUserPapers调用",event)
   return await cloud.database().collection("User_Collect_Papers")
