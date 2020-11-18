@@ -41,31 +41,31 @@
   },
   "tabBar": {
     "color": "#474747",
-    "selectedColor": "#87CEFA",
+    "selectedColor": "#cc6666",
     "list": [
       {
         "pagePath": "pages/homepage/homepage",
         "text": "首页",
-        "iconPath": "images/shouye.png",
-        "selectedIconPath": "images/shouye1.png"
+        "iconPath": "images/hema1.png",
+        "selectedIconPath": "images/hema.png"
       },
       {
         "pagePath": "pages/questionbank/questionbank",
         "text": "题库",
-        "iconPath": "images/wenjian.png",
-        "selectedIconPath": "images/wenjian1.png"
+        "iconPath": "images/laohu1.png",
+        "selectedIconPath": "images/laohu.png"
       },
       {
         "pagePath": "pages/searchpage/searchpage",
         "text": "搜索",
-        "iconPath": "images/sousuo.png",
-        "selectedIconPath": "images/sousuo1.png"
+        "iconPath": "images/huli1.png",
+        "selectedIconPath": "images/huli.png"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "我的",
-        "iconPath": "images/wo.png",
-        "selectedIconPath": "images/wo1.png"
+        "iconPath": "images/shizi1.png",
+        "selectedIconPath": "images/shizi.png"
       }
     ]
 
