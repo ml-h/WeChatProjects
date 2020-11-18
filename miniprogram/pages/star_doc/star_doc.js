@@ -1,4 +1,4 @@
-// miniprogram/pages/profile/collect.js
+// pages/star_doc/star_doc.js
 Page({
 
   /**

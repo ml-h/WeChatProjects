@@ -100,3 +100,8 @@ textarea {
   /* background: yellow; */
   margin-left: 20rpx;
 }
+
+.input-content{
+  font-size: 40rpx;
+  padding: 20rpx;
+}

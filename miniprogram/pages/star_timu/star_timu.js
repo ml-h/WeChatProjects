@@ -1,4 +1,4 @@
-// miniprogram/pages/profile/dongtai.js
+// pages/star_timu/star_timu.js
 Page({
 
   /**

@@ -1,5 +1,5 @@
 <view class='head head-height'>
-    <block wx:if="{{!hasUserInfo && canIUse}}">
+    <block wx:if="{{!hasUserInfo}}">
       <view class="userinfo">
         <image class="userinfo-avatar" src="../../images/touxiang.png" mode="cover"></image>
         <button class="login-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击获取头像昵称 </button>
@@ -14,13 +14,13 @@
   </view>
   <view class="list-wrapper">
     <block wx:for="{{menuitems}}" wx:key="item">
-      <navigator url="{{item.url}}" class="list-item"  hover-class="list-item_active">
+      <view bindtap="tiaozhuan" data-url="{{item.url}}" class="list-item"  hover-class="list-item_active">
         <view class='item'>
           <image class='item-image' src="{{item.icon}}"bindtap="{{item.url}}"></image>
           <text class="item-text">{{item.text}}</text>
           <text class='item-array'>></text>
         </view>
         <view class="div-line"></view>
-      </navigator>
+      </view>
     </block>
   </view>

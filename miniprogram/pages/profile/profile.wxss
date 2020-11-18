@@ -14,6 +14,8 @@
 .login-button {
    color: #333333;
    margin: 0rpx;
+   font-size: 42rpx;
+   font-weight: 100;
 }
 
 .userinfo {
@@ -38,6 +40,7 @@
 .userinfo-nickname {
   background-color: rgb(219, 204, 204);
   color: #333333;
+  margin-left: 100rpx;
   font-size: 42rpx;
 }
 .list-wrapper {

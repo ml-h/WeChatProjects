@@ -27,8 +27,8 @@
 }
 .search {
   margin-top: 8%;
-  background:#727272;
-  color: #fff;
+  background:rgb(216, 186, 186);
+  color: rgb(73, 66, 66);
   font-size: 35rpx;
   border-radius: 10px; 
 }

@@ -1,44 +1,8 @@
 <!--pages/feitongkao/feitongkao.wxml-->
 <view class="all">
     <view class="left">
-        <view class="fenlei" bindtap="more" data-operate="01" hover-class="list-item_active">
-            01哲学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="02">
-            02经济学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="03">
-            03法学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="04">
-            04教育学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="05">
-            05文学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="06">
-            06历史学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="07">
-            07理学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="08">
-            08工学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="09">
-            09农学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="10">
-            10医学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="11">
-            11军事学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="12">
-            12管理学
-        </view>
-        <view class="fenlei" bindtap="more" data-operate="13">
-            13艺术学
+        <view class="fenlei" bindtap="more" data-operate="{{item.type}}" wx:for="{{fenlei}}" hover-class="list-item_active">
+            {{item.name}}
         </view>
     </view>
     <view class="right" wx:for="{{zhuanye}}">

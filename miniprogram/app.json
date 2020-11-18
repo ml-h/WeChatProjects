@@ -28,7 +28,9 @@
    "pages/download/download",
    "pages/up_manage/up_feitongkao",
    "pages/up_manage/up_zhuanyeke",
-   "pages/up_manage/up_tongkao"
+   "pages/up_manage/up_tongkao",
+   "pages/star_doc/star_doc",
+   "pages/star_timu/star_timu"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
