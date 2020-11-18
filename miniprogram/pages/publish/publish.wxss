@@ -74,7 +74,7 @@ textarea {
   line-height: 60rpx;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
-  background-color: #5cc97f;
+  background-color: rgb(216, 186, 186);
   color: #fff;
   border-radius: 50rpx;
 }
@@ -104,4 +104,5 @@ textarea {
 .input-content{
   font-size: 40rpx;
   padding: 20rpx;
+  color: rgb(73, 71, 71);
 }

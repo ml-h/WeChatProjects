@@ -20,7 +20,7 @@
         <image src='../../images/publish/pic2.png' bindtap='chooseImage' class="picimg"></image>
       </view>
       <view class="picbtnview">
-        <button class="btn" formType='submit' open-type="getUserInfo">发布帖子</button>
+        <button class="btn" formType='submit' open-type="getUserInfo">发布动态</button>
       </view>
     </view>
   </form>
