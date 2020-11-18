@@ -110,7 +110,6 @@
 }
 
 .imgbox {
-  /* background: blue; */
   margin-right: 30rpx;
 }
 
@@ -118,7 +117,7 @@
   width: 300rpx;
   height: 60rpx;
   line-height: 60rpx;
-  background-color: #5cc97f;
+  background-color: rgb(155, 129, 129);
   color: #fff;
   border-radius: 50rpx;
   display: flex;
@@ -151,7 +150,7 @@
   height: 50rpx;
   width: 150rpx;
   color: #fff;
-  background: #5cc97f;
+  background: #856666;
   margin-left: 30rpx;
   margin-bottom: 15rpx;
   line-height: 50rpx;
@@ -161,20 +160,18 @@
 }
 
 .main-content {
-  height: 170rpx;
-  width: 700rpx;
-  margin-left: 30rpx;
+  padding: 20rpx;
   margin-bottom: 20rpx;
   border-radius: 10rpx;
   font-size: 30rpx;
-  border: solid 1rpx #5cc97f;
+  border: solid 1rpx #856666;
 }
 
 .louceng-box {
   height: 40rpx;
   width: 80rpx;
   color: #fff;
-  background: #54a0ec;
+  background: #b38f8f;
   margin-bottom: 15rpx;
   line-height: 40rpx;
   text-align: center;

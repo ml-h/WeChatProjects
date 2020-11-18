@@ -109,9 +109,9 @@
           "scene": null
         },
         {
-          "id": -1,
+          "id": 5,
           "name": "pages/history_dongtai/history_dongtai",
-          "pathName": "pages/history_dongtai/history_dongtai",
+          "pathName": "pages/replay/replay",
           "query": "",
           "scene": null
         },

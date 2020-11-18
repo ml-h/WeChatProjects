@@ -22,8 +22,6 @@ Page({
 
   bindKeyInput(e) {
     that.data.content = e.detail.value;
-    console.log("内容：" + that.data.content)
-
   },
 
   saveReplay: function() {

@@ -12,6 +12,6 @@
           <view class="divLine" style="margin-right: 10rpx;"></view>评价<view class="divLine"  style="margin-left: 10rpx;"></view>
       </view>
               <button bindtap="pingjia" data-operate="1">该文档对我有帮助</button>
-              <button bindtap="pingjia" data-operate="-1">文档内容质量差</button>
+              <button bindtap="pingjia" data-operate="-1">文档内容与标题不符</button>
  </view>
 

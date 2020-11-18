@@ -1,12 +1,12 @@
 var that
 const db = wx.cloud.database();
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     content: '',
     images: [],
     user: {},
@@ -16,8 +16,11 @@ Page({
     * 生命周期函数--监听页面加载
     */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '发布动态',
+    })
     that = this
-    that.jugdeUserLogin();
+
   },
   /**
    * 获取填写的内容
@@ -38,7 +41,7 @@ Page({
           images: res.tempFilePaths,
         })
         that.data.images = []
-        console.log(res.tempFilePaths)
+        // console.log(res.tempFilePaths)
         for (var i in res.tempFilePaths) {
           // 将图片上传至云存储空间
           wx.cloud.uploadFile({
@@ -48,7 +51,10 @@ Page({
             // 成功回调
             success: res => {
               that.data.images.push(res.fileID)
-            },
+              console.log("上传至数据库：",res)
+            },fail:res=>{
+              console.log(res)
+            }
           })
         }
       },
@@ -70,7 +76,6 @@ Page({
     console.log('图片：', that.data.images)
 
     this.data.content = e.detail.value['input-content'];
-    if (this.data.canIUse) {
       if (this.data.images.length > 0) {
         this.saveDataToServer();
       } else if (this.data.content.trim() != '') {
@@ -81,9 +86,6 @@ Page({
           title: '写点东西吧',
         })
       }
-    } else {
-      this.jugdeUserLogin();
-    }
   },
   /**
    * 保存到发布集合中
@@ -95,13 +97,11 @@ Page({
         content: that.data.content,
         date: new Date(),
         images: that.data.images,
-        user: that.data.user,
+        user: app.globalData.userInfo,
         isLike: that.data.isLike,
         type:1
       },
       success: function(res) {
-        // 保存到发布历史
-        that.saveToHistoryServer();
         // 清空数据
         that.data.content = "";
         that.data.images = [];
@@ -121,7 +121,7 @@ Page({
    */
   showTipAndSwitchTab: function(event) {
     wx.showToast({
-      title: '新增记录成功',
+      title: '上传动态成功',
     })
     wx.switchTab({
       url: '../homepage/homepage',
@@ -150,60 +150,8 @@ Page({
     })
   },
 
-  /**
-   * 添加到发布集合中
-   */
-  saveToHistoryServer: function(event) {
-    db.collection('history').add({
-      // data 字段表示需新增的 JSON 数据
-      data: {
-        content: that.data.content,
-        date: new Date(),
-        images: that.data.images,
-        user: that.data.user,
-        isLike: that.data.isLike,
-      },
-      success: function(res) {
-        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-        console.log(res)
-      },
-      fail: console.error
-    })
-  },
 
 
-  /**
-   * 判断用户是否登录
-   */
-  jugdeUserLogin: function(event) {
-    // 查看是否授权
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
 
-              that.data.user = res.userInfo;
-              console.log(that.data.user)
-            }
-          })
-        }
-      }
-    })
-  },
- 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
 
-  }
-
-  // ,
-  // onLoad:function(){
-  //   wx.setNavigationBarTitle({
-  //     title: '发布动态',
-  //   })
-  // }
 })

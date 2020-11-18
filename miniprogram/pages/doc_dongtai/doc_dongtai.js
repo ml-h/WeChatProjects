@@ -63,21 +63,39 @@ Page({
     // 判断文档分数
     juedge(){
       db.collection('topic').doc(this.data.id).get().then(res=>{
+        // console.log("文档分数",res.data.pingjia_fenshu,this.data.fileId)
         if(res.data.pingjia_fenshu>5){
-          db.collection('topic').doc(this.data.id).update({
-            data: {
-              paper_status:"已纳入题库"
+          wx.cloud.callFunction({
+            name:"update_tiku",
+            data:{
+              id:this.data.id,
+              paper_fileID:this.data.fileId
             }
-          }),
-          db.collection('FeiTongKao').where({
-            paper_fileID:this.fileId
-          }).update({
-            data: {
-             staus:true
-            }
+          }).then(res=>{
+            console.log(res)
           })
         }
       })
     }
+        //   db.collection('topic').doc(this.data.id).update({
+        //     data: {
+        //       paper_status:"已纳入题库"
+        //     }
+        //   }),
+        //   db.collection('FeiTongKao').where({
+        //     paper_fileID:this.fileId
+        //   }).update({
+        //     data: {
+        //      staus:true
+        //     }
+        //   },sucess=>{
+        //     console.log("纳入题库成功")
+        // },    
+        //   fail=>{
+        //       console.log("纳入题库失败")
+        //   })
+        // }
+      // )}
+      
   
 })

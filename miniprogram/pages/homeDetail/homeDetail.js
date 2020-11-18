@@ -1,5 +1,6 @@
 var that
 const db = wx.cloud.database();
+const app=getApp();
 Page({
 
   /**
@@ -29,25 +30,6 @@ Page({
         })
       }
     })
-
-    // 获取收藏情况
-    db.collection('collect')
-      .where({
-        _openid: that.data.openid,
-        _id: that.data.id
-
-      })
-      .get({
-        success: function(res) {
-          if (res.data.length > 0) {
-            that.refreshLikeIcon(true)
-          } else {
-            that.refreshLikeIcon(false)
-          }
-        },
-        fail: console.error
-      })
-
   },
 
   onShow: function() {
@@ -93,57 +75,20 @@ Page({
       urls: this.data.topic.images
     })
   },
-  /**
-   * 喜欢点击
-   */
-  onLikeClick: function(event) {
-    console.log(that.data.isLike);
-    if (that.data.isLike) {
-      // 需要判断是否存在
-      that.removeFromCollectServer();
-    } else {
-      that.saveToCollectServer();
-    }
-  },
-  /**
-   * 添加到收藏集合中
-   */
-  saveToCollectServer: function(event) {
-    db.collection('collect').add({
-      // data 字段表示需新增的 JSON 数据
-      data: {
-        _id: that.data.id,
-        date: new Date(),
-      },
-      success: function(res) {
-        that.refreshLikeIcon(true)
-        console.log(res)
-      },
-    })
-  },
-  /**
-   * 从收藏集合中移除
-   */
-  removeFromCollectServer: function(event) {
-    db.collection('collect').doc(that.data.id).remove({
 
-      success: that.refreshLikeIcon(false),
-    });
-  },
 
   /**
    * 跳转回复页面
    */
   onReplayClick() {
+    if(!app.is_login()){
+      wx.navigateTo({
+        url: '../login/login'
+      })
+  }else{
     wx.navigateTo({
       url: "../replay/replay?id=" + that.data.id + "&openid=" + that.data.openid
     })
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
   }
+}
 })

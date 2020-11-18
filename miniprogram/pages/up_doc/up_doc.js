@@ -1,3 +1,4 @@
+const app=getApp()
 Page({
   
   data: {
@@ -50,9 +51,11 @@ Page({
     wx.setNavigationBarTitle({
       title: '上传文档'
     }),
+    console.log("用户：",app.globalData.userInfo)
     this.setData({
       select:this.data.selectData[this.data.index],
-      select2:this.data.selectData2[this.data.index2]
+      select2:this.data.selectData2[this.data.index2],
+      user:app.globalData.userInfo
     })
   },
   selectTap() {
@@ -147,7 +150,7 @@ upload_paper_yun(){
         paper_size:this.data.tempfile_size,
         paper_time:this.data.tempfile_time,
         paper_type:this.data.selectData2[this.data.index2],
-        paper_loader:"题库",
+        uploader:this.data.user.nickName,
         status:false
       },
       success:res=>{
@@ -168,7 +171,8 @@ upload_paper_yun(){
         paper_type:this.data.selectData2[this.data.index2],
         pingjia_fenshu:0,
         paper_status:"正在审核",
-        uploader:"题库",
+        user:this.data.user,
+        uploader:this.data.user.nickName,
         type:2
       },
       success:res=>{

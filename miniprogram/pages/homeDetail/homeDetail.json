@@ -1,6 +1,4 @@
 {
-    "backgroundColor": "#5cc97f",
-    "navigationBarTitleText": "文章详情",
-    "navigationBarBackgroundColor": "#5cc97f",
-    "navigationBarTextStyle": "white"
+    "navigationBarTitleText": "动态详情"
+    
 }

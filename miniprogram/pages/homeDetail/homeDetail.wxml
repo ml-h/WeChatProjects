@@ -41,19 +41,7 @@
   </view>
   <!-- <view class='line'>文末</view> -->
 
-  <view class='like-container' wx:if='{{isLike}}'>
+  <view class='like-container'>
     <button class='btn-class'  bindtap='onReplayClick'>回复</button>
-    <view class="imgbox">
-      <image class='like-icon' src='../../images/topic-detail/like.png' bindtap='onLikeClick' ></image>
-    </view>
   </view>
-  <view class='like-container' wx:else>
-    <button class='btn-class'  bindtap='onReplayClick'>回复</button>
-    <view class="imgbox">
-      <image class='like-icon' src='../../images/topic-detail/unlike.png' bindtap='onLikeClick'></image>  
-    </view>
-  </view>
-
-
-
 </view>

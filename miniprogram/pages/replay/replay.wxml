@@ -2,7 +2,7 @@
 <view class="content">
   <view class="text-content">
     <view class='input-content'>
-      <input bindinput="bindKeyInput" placeholder="开始你的表演~" />
+      <textarea bindinput="bindKeyInput" placeholder="开始你的表演~" ></textarea>
     </view>
 
   </view>
