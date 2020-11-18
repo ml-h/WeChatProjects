@@ -24,7 +24,11 @@ Page({
     wx.setNavigationBarTitle({
       title: "收藏文档" ,
     })
+    wx.showLoading({
+      title:"数据加载中",
+    })
     this.getOpenid()
+    wx.hideLoading()
   },
 
   // 获取用户id  调用getCollectPaperurl（）

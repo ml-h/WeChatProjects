@@ -15,10 +15,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.showLoading({
+      title:'数据加载中',
+    })
     that = this;
     that.data.id = options.id;
     that.data.openid = options.openid;
+    
+    wx.hideLoading()
+    
   },
+  
 
   bindKeyInput(e) {
     that.data.content = e.detail.value;

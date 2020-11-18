@@ -4,7 +4,7 @@
    "pages/questionbank/questionbank",
    "pages/searchpage/searchpage",
    "pages/profile/profile",
-   "pages/izhenti/zhenti",
+   "pages/zhenti/zhenti",
    "pages/feitongkao/feitongkao",
    "pages/tongkaoshiti/tongkaoshiti",
    "pages/souResult/souResult",
@@ -31,7 +31,9 @@
    "pages/up_manage/up_zhuanyeke",
    "pages/up_manage/up_tongkao",
    "pages/star_doc/star_doc",
-   "pages/star_timu/star_timu"
+   "pages/star_timu/star_timu",
+   "pages/publish/publish",
+   "pages/homeDetail/homeDetail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

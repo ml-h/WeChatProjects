@@ -1,7 +1,6 @@
 <!--miniprogram/pages/profile/kufu.wxml-->
 <view class="head-height">
   <text class="head">
-    
     您好，欢迎使用小福有研！
     若您在使用过程中遇到问题，请选择您方便的方式进行咨询。
     祝您学习顺利，生活愉快！</text>

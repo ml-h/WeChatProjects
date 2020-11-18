@@ -17,6 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.showLoading({
+      title:'数据加载中',
+    })
 
     that = this;
     that.data.id = options.id;
@@ -28,8 +31,12 @@ Page({
         that.setData({
           topic: that.topic,
         })
+      },
+      complete:function(res){
+        wx.hideLoading()
       }
     })
+   
   },
 
   onShow: function() {

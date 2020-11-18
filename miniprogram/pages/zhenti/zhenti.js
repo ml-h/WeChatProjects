@@ -23,6 +23,9 @@ Page({
     wx.setNavigationBarTitle({
       title: options.course+"试题" ,
     })
+    wx.showLoading({
+      title:"数据加载中",
+    })
     if(options.type==="1"){
       var dbname="TongKao"
     }else if(options.type==="2"){
@@ -39,7 +42,7 @@ Page({
     // 获取当前用户的openID,成功后调用getCollectPaperurl，再调用getPaperList
     this.getOpenid()
     // this.getPaperList()
-    
+    wx.hideLoading()
   },
 
   // 获取用户id  调用getCollectPaperurl（）

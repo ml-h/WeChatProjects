@@ -19,7 +19,11 @@ Page({
     wx.setNavigationBarTitle({
       title: '发布动态',
     })
+    wx.showLoading({
+      title:'数据加载中',
+    })
     that = this
+    wx.hideLoading()
 
   },
   /**

@@ -1,10 +1,10 @@
 <!--统考专业课-->
-<view class="kuangjia" wx:for="{{zhuanye}}">
+<view class="kuangjia" wx:for="{{zhuanye}}" bindtap="xiangqing" data-type="3" data-course="{{item}}">
     <view class="wendang">
         <image class="tubiao" src="../../images/wendang.png">
         </image>
     </view>
-    <view class="xueke" bindtap="xiangqing" data-type="3" data-course="{{item}}">{{item}}</view>
+    <view class="xueke" >{{item}}</view>
     <view class="jiantou">
         <image class="right" src="../../images/z043.png"></image>
     </view>
