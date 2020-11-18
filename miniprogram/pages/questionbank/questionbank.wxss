@@ -12,7 +12,7 @@
     justify-items: center;
 }
 .button-name{
-    background-color: #f0ece5;
+    background-color: rgb(216, 186, 186);
     padding-top: 5%;
     padding-bottom: 5%;
     border-radius: 15%;

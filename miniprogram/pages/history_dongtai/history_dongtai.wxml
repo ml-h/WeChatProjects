@@ -1,64 +1,99 @@
 
-  <view class="weibo-group">
+<view class="container"  wx:if="{{topics.length===0}}">
+  <view class="line">
+          <view class="divLine" style="margin-right: 10rpx;"></view>暂无动态<view class="divLine"  style="margin-left: 10rpx;"></view>
+      </view>
+</view>
+
+<view  wx:if="{{topics.length!==0}}" class="container" wx:for='{{topics}}' wx:for-index="windex" >
+  <!-- 普通动态 -->
+  <view class="weibo-group" wx:if="{{item.type===1}}">
     <view class="user-group">
-      <image class="avatar"
-      src = "../../images/wo.png"></image>
+      <image class="avatar" src = "{{item.user.avatarUrl}}"></image>
       <view class="right-info">
-        <view class="username">张爱玲</view>
+        <view class="username">{{item.user.nickName}}</view>
         <view class="detail-info">
-          <view class="time">1小时前</view>
-          <view class="from">来自iphone XR </view>
+          <view class="time">{{item.date}}</view>
         </view>
       </view>
     </view>
     <view class="weibo-content-group">
-      <view class="content">书是最好的朋友，唯一的缺点是使我近视加深，但还是值得的。</view>
+      <view class="content">{{item.content}}</view>
+
+      <view wx:if="{{item.images.length===1}}" class="image-list-group">
+        <image src="{{item.images}}" mode="aspectFill" style="width:100%;max-height:400rpx" />
+      </view>
+      <view wx:elif="{{item.images.length===2 ||item.images.length===4}}" class="image-list-group">
+        <image wx:for="{{item.images}}" wx:for-item="image" src="{{image}}" 
+        mode="aspectFill" style="width:{{twoImageSize}}px;height:{{twoImageSize}}px;" />
+      </view>
+      <view wx:else class="image-list-group">
+        <image wx:for="{{item.images}}" wx:for-item="image" src="{{image}}" 
+        mode="aspectFill" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px" />
+        <view wx:if="{{images.length%3==2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
+      </view>
+
      </view>
     <view class="weibo-handle">
       <view class="comment-group">
-        <image src="../../images/pinglun.png" bindtap="commenting">
+        <image src="../../images/pinglun.png" bindtap="onItemClick" data-topicId='{{item._id}}' data-openid='{{item._openid}}'>评论
         </image>评论
       </view>
-      <view class="praise-group">
-        <image src="../../images/zan.png">
-        </image>赞
+      <view class="praise-group" bindtap="onPraiseTap" data-weibo="{{windex}}">
+        <image src="../../images/zan.png">赞
+        </image>
+        <block wx:if="{{item.praises && item.praises.length >0}}">
+          {{item.praises.length}}
+        </block>
+        <block wx:else>
+          赞
+        </block>
       </view>
-      <view class="jubao-group">
+      <view class="jubao-group" data-id="{{item._id}}" bindtap="delete">
         <image src="../../images/cuowu.png">
         </image>删除
       </view>
     </view>
   </view>
-
-
+  <!-- 文档动态 -->
+  <view class="weibo-group" wx:if="{{item.type===2}}" >
+    <view class="user-group">
+      <image class="avatar"
+      src = "{{item.user.avatarUrl}}"></image>
+      <view class="right-info">
+        <view class="username">{{item.user.nickName}}</view>
+        <view class="detail-info">
+          <view class="time">{{item.date}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weibo-content-group" bindtap="doc_dongtai" data-id="{{item._id}}">
+      <view class="title">{{item.paper_name}}</view>
+      <view class="notice">
+        我上传了{{item.paper_type}}真题，快来看看！
+      </view>
+     </view>
+  </view>
+    <!-- 动态题目 -->
+    <view class="weibo-group" wx:if="{{item.type===3}}">
+    <view class="user-group">
+      <image class="avatar"
+      src = "{{item.user.avatarUrl}}"></image>
+      <view class="right-info">
+        <view class="username">{{item.user.nickName}}</view>
+        <view class="detail-info">
+          <view class="time">{{item.date}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="weibo-content-group">
+      <view class="title">{{item.timu}}</view>
+      <view class="notice">
+        我上传了真题，快来看看！
+      </view>
+     </view>
+  </view>
   
-  <view class="weibo-group">
-    <view class="user-group">
-      <image class="avatar"
-      src = "../../images/wo.png"></image>
-      <view class="right-info">
-        <view class="username">张爱玲</view>
-        <view class="detail-info">
-          <view class="time">1小时前</view>
-          <view class="from">来自iphone XR </view>
-        </view>
-      </view>
-    </view>
-    <view class="weibo-content-group">
-      <view class="content">书是最好的朋友，唯一的缺点是使我近视加深，但还是值得的。</view>
-     </view>
-    <view class="weibo-handle">
-      <view class="comment-group">
-        <image src="../../images/pinglun.png" bindtap="commenting">
-        </image>评论
-      </view>
-      <view class="praise-group">
-        <image src="../../images/zan.png">
-        </image>赞
-      </view>
-      <view class="jubao-group">
-        <image src="../../images/cuowu.png">
-        </image>删除
-      </view>
-    </view>
-  </view>
+</view>
+
+

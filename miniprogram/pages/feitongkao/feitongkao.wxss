@@ -16,6 +16,10 @@
 .right{
     margin-left: 200rpx;
 }
+.list-item_active {
+    background-color: rgb(216, 186, 186);
+  }
+  
 .click{
     font-size: 32rpx;
     background-color: rgb(216, 186, 186);

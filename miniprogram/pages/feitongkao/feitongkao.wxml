@@ -1,7 +1,7 @@
 <!--pages/feitongkao/feitongkao.wxml-->
 <view class="all">
     <view class="left">
-        <view class="fenlei" bindtap="more" data-operate="01">
+        <view class="fenlei" bindtap="more" data-operate="01" hover-class="list-item_active">
             01哲学
         </view>
         <view class="fenlei" bindtap="more" data-operate="02">
