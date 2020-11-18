@@ -33,7 +33,17 @@ Page({
       console.log("用户未登录", this.data.userInfo)
     }
   },
-  
+  onShow: function (options) {
+    if(app.is_login()){
+      this.setData({
+        userInfo:app.globalData.userInfo,
+        hasUserInfo:true
+      })
+      console.log("用户已登录", this.data.userInfo)
+    }else{
+      console.log("用户未登录", this.data.userInfo)
+    }
+  },
 
   tiaozhuan:function(e){
     if(!app.is_login()){

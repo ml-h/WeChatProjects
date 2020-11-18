@@ -14,7 +14,7 @@ Page({
     // console.log(event);
     const userInfo=event.detail.userInfo;
     if(userInfo){
-      app.setUserInfo(userInfo);
+     app.setUserInfo(userInfo);
       wx.showToast({
         title: '授权成功！'
       });
