@@ -198,10 +198,12 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-  onLoad:function(){
-    wx.setNavigationBarTitle({
-      title: '发布动态',
-    })
   }
+
+  // ,
+  // onLoad:function(){
+  //   wx.setNavigationBarTitle({
+  //     title: '发布动态',
+  //   })
+  // }
 })
