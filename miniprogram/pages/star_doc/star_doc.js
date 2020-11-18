@@ -102,7 +102,7 @@ downLoadPaper:function(e){
   wx.navigateTo({
     url: '../download/download?title='+e.currentTarget.dataset.title+'&date='+
     e.currentTarget.dataset.date+'&loder='+ e.currentTarget.dataset.loder+'&fileId='+ e.currentTarget.dataset.fileid
-    +'&size='+e.currentTarget.dataset.size
+    +'&size='+Math.round(e.currentTarget.dataset.size/1024)
   })
 }
 
