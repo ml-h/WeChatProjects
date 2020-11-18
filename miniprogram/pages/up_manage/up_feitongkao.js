@@ -148,7 +148,7 @@ upload_paper_yun(){
         paper_time:this.data.tempfile_time,
         paper_type:this.data.selectData2[this.data.index2],
         paper_loader:"题库",
-        status:false
+        status:true
       },
       success:res=>{
         wx.showToast({
