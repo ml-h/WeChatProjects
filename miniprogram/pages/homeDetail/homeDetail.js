@@ -10,7 +10,6 @@ Page({
     topic: {},
     id: '',
     openid: '',
-    isLike: false,
     loadingHidden:false
   },
 
@@ -59,12 +58,12 @@ Page({
   /**
    * 刷新点赞icon
    */
-  refreshLikeIcon(isLike) {
-    that.data.isLike = isLike
-    that.setData({
-      isLike: isLike,
-    })
-  },
+  // refreshPraiseIcon(isPraised) {
+  //   that.data.isPraised = isPraised
+  //   that.setData({
+  //     isPraised: iisPraised,
+  //   })
+  // },
   // 预览图片
   previewImg: function(e) {
     //获取当前图片的下标

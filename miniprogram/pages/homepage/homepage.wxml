@@ -54,8 +54,8 @@
         </image>
       </view>
       <view class="praise-group" bindtap="onPraiseTap" data-weibo="{{windex}}">
-        <image src="../../images/zan.png">赞
-        </image>
+        <image wx:if="{{item.isPraised}}" src="../../images/zan1.png" bindtap='onLikeClick'>赞</image>
+        <image wx:else src="../../images/zan.png" bindtap='onLikeClick'>赞</image>
         <block wx:if="{{item.praises && item.praises.length >0}}">
           {{item.praises.length}}
         </block>

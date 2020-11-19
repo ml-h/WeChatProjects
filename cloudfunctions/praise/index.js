@@ -11,7 +11,8 @@ exports.main = async (event, context) => {
   const weiboId = event.weiboId;
   return await db.collection("topic").doc(weiboId).update({
     data:{
-      "praises":_.push(openId)
+      "praises":_.push(openId),
+      isPraised:true
     }
   })
   

@@ -10,7 +10,7 @@ Page({
     content: '',
     images: [],
     user: {},
-    isLike: false,
+    isPraised:""
   },
   /**
     * 生命周期函数--监听页面加载
@@ -79,7 +79,7 @@ Page({
    */
   timetostr(time){
     var randnum = Math.floor(Math.random() * (9999 - 1000)) + 1000;
-    var str = randnum +"_"+ time.getMilliseconds() + ".png";
+    var str = "shequ_imgs/"+randnum +"_"+ time.getMilliseconds() + ".png";
     return str;
   },
 
@@ -111,9 +111,9 @@ Page({
         content: that.data.content,
         date: new Date(),
         images: that.data.images,
-        user: app.globalData.userInfo,
-        isLike: that.data.isLike,
-        type:1
+        user: that.data.user,
+        type:1,
+        isPraised:false
       },
       success: function(res) {
         // 清空数据
