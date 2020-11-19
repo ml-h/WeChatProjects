@@ -1,9 +1,9 @@
+<!-- 我的动态 -->
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
 
-<view class="container"  wx:if="{{topics.length===0}}">
-  <view class="line">
-          <view class="divLine" style="margin-right: 10rpx;"></view>暂无动态<view class="divLine"  style="margin-left: 10rpx;"></view>
-      </view>
-</view>
+
 
 <view  wx:if="{{topics.length!==0}}" class="container" wx:for='{{topics}}' wx:for-index="windex" >
   <!-- 普通动态 -->
@@ -13,7 +13,7 @@
       <view class="right-info">
         <view class="username">{{item.user.nickName}}</view>
         <view class="detail-info">
-          <view class="time">{{item.date}}</view>
+          <view class="time">{{time}}</view>
         </view>
       </view>
     </view>
@@ -30,7 +30,7 @@
       <view wx:else class="image-list-group">
         <image wx:for="{{item.images}}" wx:for-item="image" src="{{image}}" 
         mode="aspectFill" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px" />
-        <view wx:if="{{images.length%3==2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
+        <view wx:if="{{item.images.length%3 == 2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
       </view>
 
      </view>
@@ -60,11 +60,9 @@
     <view class="user-group">
       <image class="avatar"
       src = "{{item.user.avatarUrl}}"></image>
-      <view class="right-info">
-        <view class="username">{{item.user.nickName}}</view>
-        <view class="detail-info">
-          <view class="time">{{item.date}}</view>
-        </view>
+      <view class="right-info" style="margin-top:15rpx;">
+        <view class="username"  >{{item.user.nickName}}</view>
+
       </view>
     </view>
     <view class="weibo-content-group" bindtap="doc_dongtai" data-id="{{item._id}}">
@@ -97,3 +95,8 @@
 </view>
 
 
+<view class="container"  wx:if="{{topics.length===0}}">
+  <view class="line">
+          <view class="divLine" style="margin-right: 10rpx;"></view>暂无动态<view class="divLine"  style="margin-left: 10rpx;"></view>
+      </view>
+</view>

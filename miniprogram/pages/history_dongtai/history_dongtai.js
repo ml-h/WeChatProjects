@@ -1,7 +1,8 @@
 // pages/homepage/homepage.js
 var that
 const app = getApp()
-const db = wx.cloud.database();
+var util = require('../../utils/util.js');
+const db=wx.cloud.database()
 Page({
 
   /**
@@ -10,7 +11,7 @@ Page({
   data: {
     totalCount: 0,
     topics: [],
-  
+    loadingHidden:false
    },
  
    changeSwiper: function (e) {
@@ -27,14 +28,20 @@ Page({
     wx.cloud.init({
       env: app.globalData.evn
     })
-
+    var time = util.formatTime(new Date());
+    // 再通过setData更改Page()里面的data，动态更新页面的数据
+    this.setData({
+      time: time
+    });
   },
 
   initImageSize:function(){
     const windowWidth = wx.getSystemInfoSync().windowWidth;
-    const weiboWidth = windowWidth-40;
+    // const weiboWidth = windowWidth-40;
+    const weiboWidth = 253;
     const twoImageSize = (weiboWidth-2.5)/2
     const threeImageSize = (weiboWidth-2.5*2)/3
+    console.log(twoImageSize)
     this.setData({
       twoImageSize:twoImageSize,
       threeImageSize:threeImageSize
@@ -65,10 +72,11 @@ Page({
         _openid:this.data.openid
       }).orderBy('date', 'desc').get().then(res=>{
         this.setData({
-          topics: res.data
+          topics: res.data,
+          loadingHidden:true
         })
         wx.hideNavigationBarLoading(); //隐藏加载
-          wx.stopPullDownRefresh();
+        wx.stopPullDownRefresh();
       })
     })
    
@@ -144,9 +152,6 @@ Page({
   onItemClick: function(event) {
     var id = event.currentTarget.dataset.topicid;
     var openid = event.currentTarget.dataset.openid;
-    console.log(event);
-    console.log(id);
-    console.log(openid);
     wx.navigateTo({
       url: "../homeDetail/homeDetail?id=" + id + "&openid=" + openid
     })

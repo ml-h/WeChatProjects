@@ -53,9 +53,17 @@ border-radius: 50%;
   margin-bottom: 20rpx;
 }
 .weibo-content-group .image-list-group{
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.image-list-group{
+  margin-bottom: 5rpx;
+}
+.image-list-group image{
+  margin-bottom: 5rpx;
+  /* margin-right: 5rpx; */
 }
 .weibo-handle{
   display: flex;
@@ -150,20 +158,6 @@ border-radius: 50%;
   width: 100%;
 }
 
-.divLine{
-
-  background:rgb(100, 95, 95);
-  width:230rpx;
-  height: 4rpx;
- 
- }
- .line{
-  font-size:40rpx;
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  margin: 20rpx auto;
- }
 .content-text {
   font-size: 18px;
   color: #666;
@@ -182,6 +176,28 @@ border-radius: 50%;
   font-weight: 900;
   margin-bottom: 20rpx;
 }
+.notice{
+  color: rgb(68, 84, 221);
+  font-size: 32rpx;
+}
+.imageItem{
+  width: 100%;
+  height: 380rpx;
+} 
+.divLine{
+
+  background:rgb(100, 95, 95);
+  width:230rpx;
+  height: 4rpx;
+ 
+ }
+ .line{
+  font-size:40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  margin: 20rpx auto;
+ }
 .notice{
   color: rgb(68, 84, 221);
   font-size: 32rpx;
