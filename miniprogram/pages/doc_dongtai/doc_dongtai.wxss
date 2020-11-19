@@ -25,7 +25,8 @@ button{
   justify-content: center;
   margin-top: 10px;
   border-radius: 50rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
+  font-weight: 100;
 }
 
 image{

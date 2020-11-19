@@ -31,9 +31,8 @@ Page({
 
   download:function(){
     wx.showLoading({
-      title: '数据加载中',
+      title: '正在打开文档',
     })
-
     console.log("下载文件url",this.data.fileId)
     wx.cloud.downloadFile({
       fileID: this.data.fileId,
@@ -43,21 +42,28 @@ Page({
         // res.tempFilePath下载文档成功后的链接
         filePath: res.tempFilePath,
         success: function (res) {
-          console.log('打开文档成功success',res)
+          // console.log('打开文档成功success',res)
+          wx.hideLoading()
         }
       })
     },
     fail: err => {
       // handle error
-      console.log('打开文档失败',err)
-      wx.showToast({
-        icon:'none',
-        title: '预览失败',
+      wx.hideLoading({
+        success: (res) => {
+          console.log('打开文档失败',err)
+          wx.showToast({
+            icon:'none',
+            title: '预览失败',
+          })
+
+        },
       })
+      
     }
    
   })
-  wx.hideLoading()
+
     // wx.cloud.downloadFile({
     //   fileID: this.data.fileId
     // }).then(res => {

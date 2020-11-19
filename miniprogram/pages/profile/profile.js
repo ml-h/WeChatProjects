@@ -16,7 +16,7 @@ Page({
       { text: '收藏题目', url: '../star_timu/star_timu', icon: '../../images/shoucang.png', tips: '' },
       { text: '上传题目', url: '../shangchuan_timu/shangchuan_timu', icon: '../../images/wendang.png', tips: '' },
       { text: '我的动态', url: '../history_dongtai/history_dongtai', icon: '../../images/lishi.png', tips: '' },
-      { text: '我的客服', url: 'kufu', icon: '../../images/kefu.png', tips: '' },
+      { text: '我的客服', url: '../kefu/kefu', icon: '../../images/kefu.png', tips: '' },
     ]
   },
   /**

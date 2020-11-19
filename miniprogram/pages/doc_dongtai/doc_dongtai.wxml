@@ -7,6 +7,8 @@
       </view>
       <button class="download" bindtap="download">预览
       </button>
+      <button class="download" bindtap="download">下载
+      </button>
 
       <view class="line">
           <view class="divLine" style="margin-right: 10rpx;"></view>评价<view class="divLine"  style="margin-left: 10rpx;"></view>

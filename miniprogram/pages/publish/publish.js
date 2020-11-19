@@ -68,7 +68,7 @@ Page({
         wx.hideLoading({
           success: (res) => {
             wx.showToast({
-              title: '上传成功',
+              title: '图片上传成功',
             })
           },
         })

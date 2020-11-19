@@ -22,7 +22,7 @@ Page({
   // 初始化真题页面时会从数据库获取试题列表
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: options.course+"试题" ,
+      title: options.course+"真题" ,
     })
     if(options.type==="1"){
       var dbname="TongKao"

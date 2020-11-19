@@ -17,6 +17,9 @@ Page({
     })
   },
   download:function(){
+    wx.showLoading({
+      title: '正在打开文档',
+    })
     wx.cloud.downloadFile({
       fileID: this.data.fileId
     }).then(res => {
@@ -24,9 +27,11 @@ Page({
       wx.openDocument({
         filePath:res.tempFilePath
       })
+      wx.hideLoading()
      }
     }).catch(error => {
       console.log(res)
+      wx.hideLoading()
       wx.showToast({
         icon:'none',
         title: '文件预览失败',

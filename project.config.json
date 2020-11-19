@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -35,7 +35,7 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.8.1",
+  "libVersion": "2.12.1",
   "appid": "wx977cb0206ddbdbff",
   "projectname": "XiaoFuYouYan",
   "miniprogramRoot": "miniprogram/",
