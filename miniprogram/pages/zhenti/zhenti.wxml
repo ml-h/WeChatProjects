@@ -1,4 +1,4 @@
-<!-- 引入wxs -->
+<!-- 真题列表页面 -->
 <wxs module="m">
     var contain = function(a,id){
         if(a.indexOf(id)>-1){
@@ -9,6 +9,9 @@
     }
     module.exports.contain=contain;
 </wxs>
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
 
 <view wx:for="{{paperList}}" wx:key="unique" style="display: block;" wx:if="{{length!==0}}">
 <!-- 循环view 展示文档试题的列表 -->

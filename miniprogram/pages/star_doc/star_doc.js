@@ -12,8 +12,7 @@ Page({
     shoucang:false,
     openid:"",
     length:0,
-    id:1,
-    day:7
+    loadingHidden:false
 
   },
   /**
@@ -69,7 +68,8 @@ getStarurl(openid){
     }else{
       this.setData({
         paperList:res.result.data[0].doc,
-        length:res.result.data[0].doc.length
+        length:res.result.data[0].doc.length,
+        loadingHidden:true,
       })
       console.log(this.data.paperList)
     }

@@ -1,4 +1,7 @@
 <!-- 查看上传文件页面 -->
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
 <view class="btns">
   <button class="upload" bindtap="up_doc" style="width:300rpx;height:100rpx;margin-left: 20rpx;">
     <view class="jiahao" >+</view>
@@ -6,6 +9,14 @@
   </button>
 </view>
 <view class="container">
+  <view class="notice">
+          <view class="divLine" style="margin-right: 10rpx;"></view>你上传的文档<view class="divLine"  style="margin-left: 10rpx;"></view>
+      </view>
+  <view class="notice" style="margin-top:50rpx;" wx:if="{{my_upDoc.length===0}}">
+         你还没有上传文档
+   </view>
+
+
   <view class="item" wx:for="{{my_upDoc}}">
       <view class="doc_name">{{item.paper_name}}</view>
       <view class="line">

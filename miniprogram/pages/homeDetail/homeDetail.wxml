@@ -1,4 +1,7 @@
-<!--miniprogram/pages/homeDetail/homeDetail.wxml-->
+<!--动态详情页面-->
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
 <view class='container' bindtap='onItemClick'>
   <view class='container-content'>
     <view class='user-info'>

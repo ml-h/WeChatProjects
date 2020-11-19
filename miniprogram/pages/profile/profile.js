@@ -12,9 +12,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     menuitems: [
       { text: '收藏文档', url: '../star_doc/star_doc', icon: '../../images/star.png', tips: '' },
+      { text: '上传文档', url: '../shangchuan_doc/shangchuan_doc', icon: '../../images/wenjian.png', tips: '' },
       { text: '收藏题目', url: '../star_timu/star_timu', icon: '../../images/shoucang.png', tips: '' },
       { text: '上传题目', url: '../shangchuan_timu/shangchuan_timu', icon: '../../images/wendang.png', tips: '' },
-      { text: '上传文档', url: '../shangchuan_doc/shangchuan_doc', icon: '../../images/wenjian.png', tips: '' },
       { text: '我的动态', url: '../history_dongtai/history_dongtai', icon: '../../images/lishi.png', tips: '' },
       { text: '我的客服', url: 'kufu', icon: '../../images/kefu.png', tips: '' },
     ]

@@ -1,4 +1,4 @@
-<!-- 上传题目页面 -->
+<!-- 上传题目页面
   <button class="upload" bindtap="up_timu" style="width:300rpx;height:100rpx;margin-left:20rpx;">
     <view class="jiahao" >+</view>
     上传题目
@@ -11,12 +11,5 @@
         <view class="fankui" bindtap="fankui">查看反馈</view>
       </view>
   </view>
-  <view class="item">
-      <view class="timu">这是一个题目</view>
-      <view class="line">
-        <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view class="fankui" bindtap="fankui">查看反馈</view>
-      </view>
-  </view>
-  
-</view>
+</view> -->
+此功能暂未开放！

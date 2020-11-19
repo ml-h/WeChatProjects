@@ -1,4 +1,7 @@
-<!-- <wxs src="../../utils/util.wxs" module="util" /> -->
+<!-- 主页 -->
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
 
 <view class='container'>
   <scroll-view style="display:flex;width:100%" scroll-y>

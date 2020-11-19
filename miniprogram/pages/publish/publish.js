@@ -37,9 +37,13 @@ Page({
    * 选择图片
    */
   chooseImage: function(event) {
+
     wx.chooseImage({
       count: 6,
       success: function(res) {
+        wx.showLoading({
+          title: '正在上传图片',
+        })
         // 设置图片
         that.setData({
           images: res.tempFilePaths,
@@ -61,6 +65,13 @@ Page({
             }
           })
         }
+        wx.hideLoading({
+          success: (res) => {
+            wx.showToast({
+              title: '上传成功',
+            })
+          },
+        })
       },
     })
   },

@@ -1,4 +1,4 @@
-const app=getApp()
+
 Page({
   
   data: {
@@ -50,12 +50,14 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '上传文档'
-    }),
-    console.log("用户：",app.globalData.userInfo)
+    })
     this.setData({
       select:this.data.selectData[this.data.index],
       select2:this.data.selectData2[this.data.index2],
-      user:app.globalData.userInfo
+      user:{
+        "nickName":options.nickName,
+        "avatarUrl":options.avatarUrl
+      }
     })
   },
   selectTap() {
@@ -116,30 +118,18 @@ Page({
           tempfile_name:res.tempFiles[0].name,
           choose_paper:true
         })
-        
+      },fail(res){
+        console.log("文件上传失败")
       }
     })
   },
 // 点击上传按钮，上传到云端
 upload_paper_yun(){
-   wx.cloud.uploadFile({  
-    //存储的路径 科目分类/时间+文件名
-    cloudPath:"feiTongKao"+"/"+this.data.selectPaperType[this.data.index]+'/'+new Date().getTime()+this.data.tempfile_name,
-    filePath:this.data.tempfile_url0,
-    success:res=>{
-      this.data.tempfile_url=res.fileID
-        this.add_paperList()
-      // 把文件信息存储到云数据库
-    },fail:res=>{
-      console.error
-      wx.showToast({
-        icon:"fail",
-        title: '上传文件失败',
-      })
-    }
+  wx.showLoading({
+    title: '正在上传',
   })
+   this.add_paperList()
 },
-
 // 把文件信息存储到云数据库
   add_paperList(){
     // 存储到相应类别的数据库集合中 this.data.selectPaperType[13]
@@ -154,9 +144,35 @@ upload_paper_yun(){
         status:false
       },
       success:res=>{
-
-        this.add_dongtai() 
-      },fail:res=> { console.log(res) }
+        wx.cloud.uploadFile({  
+          //存储的路径 科目分类/时间+文件名
+          cloudPath:"feiTongKao"+"/"+this.data.selectPaperType[this.data.index]+'/'+new Date().getTime()+this.data.tempfile_name,
+          filePath:this.data.tempfile_url0,
+          success:res=>{
+            this.data.tempfile_url=res.fileID
+            this.add_dongtai()
+            // 把文件信息存储到云数据库
+          },fail:res=>{
+            console.error
+            wx.hideLoading({
+              success: (res) => {
+                wx.showToast({
+                  title: '上传文件失败',
+                })
+              },
+            })
+          }
+        })
+      },fail:res=> { 
+        console.log(res) 
+        wx.hideLoading({
+              success: (res) => {
+                wx.showToast({
+                  title: '上传文件失败',
+                })
+              },
+            })
+      }
     })
   },
 // 自动上传文档动态到社区
@@ -171,17 +187,32 @@ upload_paper_yun(){
         paper_type:this.data.selectData2[this.data.index2],
         pingjia_fenshu:0,
         paper_status:"正在审核",
+        // user:app.globalData.userInfo,
         user:this.data.user,
         uploader:this.data.user.nickName,
         type:2
       },
       success:res=>{
-        wx.showToast({
-          icon:"success",
-          title: '上传文件成功',
+        wx.hideLoading({
+          success: (res) => {
+            wx.showToast({
+              icon:"success",
+              title: '上传文件成功',
+            })
+            this.setData({
+              choose_paper:false
+            })
+          },
         })
+
       },fail:res=> {
-         console.log("上传动态失败") 
+        wx.hideLoading({
+          success: (res) => {
+            wx.showToast({
+              title: '上传文件失败',
+            })
+          },
+        })
         }
    })
   }

@@ -11,16 +11,13 @@ Page({
     id: '',
     openid: '',
     isLike: false,
+    loadingHidden:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.showLoading({
-      title:'数据加载中',
-    })
-
     that = this;
     that.data.id = options.id;
     that.data.openid = options.openid;
@@ -30,10 +27,8 @@ Page({
         that.topic = res.data;
         that.setData({
           topic: that.topic,
+          loadingHidden:true
         })
-      },
-      complete:function(res){
-        wx.hideLoading()
       }
     })
    

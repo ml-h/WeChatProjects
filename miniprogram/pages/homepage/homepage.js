@@ -23,7 +23,8 @@ Page({
     {
       img: "https://7465-test-yan-3gp1h1ez7f7c6a02-1304167464.tcb.qcloud.la/%E5%9B%BE%E6%A0%87/fzu3.png?sign=0f0c1e4bcfdcc47d44b1dbd786b1563f&t=1605663594"
     }
-    ]
+    ],
+    loadingHidden:false
   
    },
  
@@ -99,6 +100,7 @@ Page({
           that.data.topics = res.data;
           that.setData({
             topics: that.data.topics,
+            loadingHidden:true
           })
           wx.hideNavigationBarLoading(); //隐藏加载
           wx.stopPullDownRefresh();

@@ -12,7 +12,8 @@ Page({
     collectPaperurl:[],//用户收藏的试题列表
     length:"",
     id:1,
-    day:7
+    day:7,
+    loadingHidden:false
 
   },
   /**
@@ -22,9 +23,6 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: options.course+"试题" ,
-    })
-    wx.showLoading({
-      title:"数据加载中",
     })
     if(options.type==="1"){
       var dbname="TongKao"
@@ -41,8 +39,6 @@ Page({
     })
     // 获取当前用户的openID,成功后调用getCollectPaperurl，再调用getPaperList
     this.getOpenid()
-    // this.getPaperList()
-    wx.hideLoading()
   },
 
   // 获取用户id  调用getCollectPaperurl（）
@@ -88,6 +84,7 @@ getStarurl(openid){
       })
     }else{
       this.setData({
+        loadingHidden:true,
         collectPaperurl:res.result.data[0].star_docUrl
       })
     }
@@ -126,8 +123,7 @@ starDoc:function(event){
         doc:event.target.dataset.item
       }
     }).then(res=>{
-      // res.result.data 是用户数据
-      // console.log("向云数据库里del数据success",res)
+
       // 获取收藏成功后的paperurl列表,更新collectPaperurl
       this.getStarurl(this.data.openid)
       wx.showToast({
