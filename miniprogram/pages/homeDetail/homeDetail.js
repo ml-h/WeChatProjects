@@ -9,7 +9,7 @@ Page({
     topic: {},
     id: '',
     openid: '',
-    isLike: false,
+    // isPraised: false,
   },
 
   /**
@@ -75,12 +75,12 @@ Page({
   /**
    * 刷新点赞icon
    */
-  refreshLikeIcon(isLike) {
-    that.data.isLike = isLike
-    that.setData({
-      isLike: isLike,
-    })
-  },
+  // refreshPraiseIcon(isPraised) {
+  //   that.data.isPraised = isPraised
+  //   that.setData({
+  //     isPraised: iisPraised,
+  //   })
+  // },
   // 预览图片
   previewImg: function(e) {
     //获取当前图片的下标
@@ -93,21 +93,21 @@ Page({
       urls: this.data.topic.images
     })
   },
-  /**
-   * 喜欢点击
-   */
-  onLikeClick: function(event) {
-    console.log(that.data.isLike);
-    if (that.data.isLike) {
-      // 需要判断是否存在
-      that.removeFromCollectServer();
-    } else {
-      that.saveToCollectServer();
-    }
-  },
-  /**
-   * 添加到收藏集合中
-   */
+  // /**
+  //  * 喜欢点击
+  //  */
+  // onLikeClick: function(event) {
+  //   console.log(that.data.isLike);
+  //   if (that.data.isLike) {
+  //     // 需要判断是否存在
+  //     that.removeFromCollectServer();
+  //   } else {
+  //     that.saveToCollectServer();
+  //   }
+  // },
+  // /**
+  //  * 添加到收藏集合中
+  //  */
   saveToCollectServer: function(event) {
     db.collection('collect').add({
       // data 字段表示需新增的 JSON 数据

@@ -10,7 +10,7 @@ Page({
     content: '',
     images: [],
     user: {},
-    isLike: false,
+    isPraised:""
   },
   /**
     * 生命周期函数--监听页面加载
@@ -59,7 +59,7 @@ Page({
    */
   timetostr(time){
     var randnum = Math.floor(Math.random() * (9999 - 1000)) + 1000;
-    var str = randnum +"_"+ time.getMilliseconds() + ".png";
+    var str = "shequ_imgs/"+randnum +"_"+ time.getMilliseconds() + ".png";
     return str;
   },
 
@@ -96,8 +96,8 @@ Page({
         date: new Date(),
         images: that.data.images,
         user: that.data.user,
-        isLike: that.data.isLike,
-        type:1
+        type:1,
+        isPraised:false
       },
       success: function(res) {
         // 保存到发布历史
@@ -161,7 +161,7 @@ Page({
         date: new Date(),
         images: that.data.images,
         user: that.data.user,
-        isLike: that.data.isLike,
+        isPraised: that.data.isPraised,
       },
       success: function(res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id

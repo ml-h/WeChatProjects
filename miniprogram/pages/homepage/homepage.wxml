@@ -1,5 +1,4 @@
-<!-- <wxs src="../../utils/util.wxs" module="util" /> -->
-
+<!-- <js src="../../utils/util.js" module="util" />   -->
 <view class='container'>
   <scroll-view style="display:flex;width:100%" scroll-y>
     <view class="container">
@@ -52,8 +51,8 @@
         </image>
       </view>
       <view class="praise-group" bindtap="onPraiseTap" data-weibo="{{windex}}">
-        <image src="../../images/zan.png">赞
-        </image>
+        <image wx:if="{{item.isPraised}}" src="../../images/zan1.png" bindtap='onLikeClick'>赞</image>
+        <image wx:else src="../../images/zan.png" bindtap='onLikeClick'>赞</image>
         <block wx:if="{{item.praises && item.praises.length >0}}">
           {{item.praises.length}}
         </block>

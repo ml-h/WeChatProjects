@@ -2,6 +2,7 @@
 var that
 const app = getApp()
 var util = require('../../utils/util.js');
+const db = wx.cloud.database();
 Page({
 
   /**
@@ -10,7 +11,8 @@ Page({
   data: {
     totalCount: 0,
     topics: [],
-    
+    isPraised:false,
+
     currentIndex: 0,
     currentIndex1: 0,
     currentIndex2: 0,
@@ -26,7 +28,12 @@ Page({
     ]
   
    },
- 
+  //  refreshPraiseIcon(isPraised) {
+  //   that.data.isPraised = isPraised
+  //   that.setData({
+  //     isPraised: isPraised,
+  //   })
+  // },
    changeSwiper: function (e) {
      this.setData({
        currentIndex: e.detail.current
@@ -42,6 +49,7 @@ Page({
       env: app.globalData.evn
     })
     var time = util.formatTime(new Date());
+    console.log(new Date());
     // 再通过setData更改Page()里面的data，动态更新页面的数据
     this.setData({
       time: time
@@ -88,27 +96,29 @@ Page({
    * 获取列表数据
    * 
    */
-  getData: function() {
+  getData: function(start=0) {
     const db = wx.cloud.database();
     db.collection('topic')
-      .orderBy('date', 'desc')
-      .get({
-        success: function(res) {
-          // res.data 是包含以上定义的两条记录的数组
-          console.log("数据：" + res.data)
-          that.data.topics = res.data;
-          that.setData({
-            topics: that.data.topics,
-          })
-          wx.hideNavigationBarLoading(); //隐藏加载
-          wx.stopPullDownRefresh();
+    .orderBy('date', 'desc')
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的两条记录的数组
+        console.log("数据：" + res.data)
+        that.data.topics = res.data;
+        that.setData({
+          topics: that.data.topics,
+        })
+        wx.hideNavigationBarLoading(); //隐藏加载
+        wx.stopPullDownRefresh();
 
-        },
-        fail: function(event) {
-          wx.hideNavigationBarLoading(); //隐藏加载
-          wx.stopPullDownRefresh();
-        }
-      })
+      },
+      fail: function(event) {
+        wx.hideNavigationBarLoading(); //隐藏加载
+        wx.stopPullDownRefresh();
+      }
+    })
+    
+     
 
   },
 
@@ -127,22 +137,28 @@ Page({
         //that.userInfo.openId=openId;
       }
     })*/
-    /*wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-      }
-    })*/
+    // wx.cloud.callFunction({
+    //   name: 'login',
+    //   data: {},
+    //   success: res => {
+    //     console.log('[云函数] [login] user openid: ', res.result.openid)
+    //     app.globalData.openid = res.result.openid
+    //     console.log(app.globalData.openid);
+    //   }
+    // })
+    console.log(app.globalData.openid);
     const openId=app.globalData.openid
+    console.log(openId)
+    // console.log(openId);
     //const openId = this.userInfo.openId;
    // console.log(app.globalData);
     let isPraised=false;
     if(topic.praises){
       topic.praises.forEach((value,index) => {
+        // console.log(openId);
         if(value==openId){
           console.log("!!!!!!!!!!!!!!!!!");
+          
           isPraised=true;
         }
       })
@@ -157,10 +173,14 @@ Page({
           weiboId:topic._id
         },
         success: res => {
+          // app.globalData.openid = res.result.openid
+          console.log(topic)
           if(!topic.praises){
+            // console.log(openId);
             topic.praises=[openId];
             console.log("++++++++++++++++++yes");
           }else{
+            // console.log(openId);
             topic.praises.push(openId);
             console.log("++++++++++++++++++no");
           }
@@ -237,6 +257,8 @@ Page({
     }
 
   },
+
+  
 
   /**
    * 用户点击右上角分享
