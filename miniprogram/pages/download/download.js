@@ -41,6 +41,7 @@ Page({
        wx.openDocument({
         // res.tempFilePath下载文档成功后的链接
         filePath: res.tempFilePath,
+        showMenu: true , //表示右上角是否有转发按钮
         success: function (res) {
           // console.log('打开文档成功success',res)
           wx.hideLoading()

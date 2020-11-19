@@ -37,7 +37,6 @@ Page({
    * 选择图片
    */
   chooseImage: function(event) {
-
     wx.chooseImage({
       count: 6,
       success: function(res) {

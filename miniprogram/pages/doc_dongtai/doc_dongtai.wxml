@@ -5,9 +5,7 @@
     <view class="line">
           <view class="divLine" style="margin-right: 10rpx;"></view>{{status}}<view class="divLine"  style="margin-left: 10rpx;"></view>
       </view>
-      <button class="download" bindtap="download">预览
-      </button>
-      <button class="download" bindtap="download">下载
+      <button class="download" bindtap="download">查看
       </button>
 
       <view class="line">

@@ -25,9 +25,13 @@ Page({
     }).then(res => {
      if(res.statusCode===200){
       wx.openDocument({
-        filePath:res.tempFilePath
+        filePath:res.tempFilePath,
+        showMenu: true , //表示右上角是否有转发按钮
+        success: function (res) {
+          // console.log('打开文档成功success',res)
+          wx.hideLoading()
+        }
       })
-      wx.hideLoading()
      }
     }).catch(error => {
       console.log(res)
@@ -82,25 +86,6 @@ Page({
         }
       })
     }
-        //   db.collection('topic').doc(this.data.id).update({
-        //     data: {
-        //       paper_status:"已纳入题库"
-        //     }
-        //   }),
-        //   db.collection('FeiTongKao').where({
-        //     paper_fileID:this.fileId
-        //   }).update({
-        //     data: {
-        //      staus:true
-        //     }
-        //   },sucess=>{
-        //     console.log("纳入题库成功")
-        // },    
-        //   fail=>{
-        //       console.log("纳入题库失败")
-        //   })
-        // }
-      // )}
       
   
 })
