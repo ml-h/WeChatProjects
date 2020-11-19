@@ -35,6 +35,7 @@ App({
     this.globalData.userInfo=userInfo;
   },
   loadUserInfo:function(){
+    const that=this
     wx.getSetting({
       success:res=>{
         const isUserInfo=res.authSetting['scope.userInfo'];
@@ -42,7 +43,20 @@ App({
           wx.getUserInfo({
             success:res=>{
               const userInfo=res.userInfo;
-              this.globalData.userInfo=userInfo;
+              that.globalData.userInfo=userInfo;
+            }
+          });
+          wx.cloud.callFunction({
+            name: 'login',
+            data: {},
+            success: res => {
+              console.log('[云函数] [login] user openid: ', res.result.openid)
+              // console.log(res)
+              const openId = res.result.openid
+              
+              that.globalData.openid = openId
+              console.log(that.globalData)
+              // console.log(app.globalData.openid);
             }
           })
         }
