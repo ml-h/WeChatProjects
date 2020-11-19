@@ -7,9 +7,9 @@
   </view>
   <view class="san">
 <!-- type=1即统考科目 -->
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-type="1" data-course="政治"> 政治 </button>
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-type="1" data-course="英语"> 英语 </button>
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage" data-type="1" data-course="数学"> 数学 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" open-type="getUserInfo"  bindgetuserinfo="changepage" data-type="1" data-course="政治"> 政治 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" open-type="getUserInfo"  bindgetuserinfo="changepage" data-type="1" data-course="英语"> 英语 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" open-type="getUserInfo"  bindgetuserinfo="changepage" data-type="1" data-course="数学"> 数学 </button>
 
   </view>
   
@@ -17,8 +17,8 @@
          <text>———————专业课————————</text>
   </view>
   <view class="two">
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage3"> 统考专业课 </button>
-    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" bindtap="changepage4"> 非统考专业课 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" open-type="getUserInfo"  bindgetuserinfo="changepage3"> 统考专业课 </button>
+    <button class="button-name" hover-class="btn-hover" style=" margin-bottom: 3%;" open-type="getUserInfo"  bindgetuserinfo="changepage4"> 非统考专业课 </button>
   </view>
   
 

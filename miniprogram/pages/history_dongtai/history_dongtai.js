@@ -25,9 +25,6 @@ Page({
   onLoad: function(options) {
     this.initImageSize()
     that = this
-    wx.cloud.init({
-      env: app.globalData.evn
-    })
     var time = util.formatTime(new Date());
     // 再通过setData更改Page()里面的data，动态更新页面的数据
     this.setData({

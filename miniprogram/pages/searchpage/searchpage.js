@@ -64,10 +64,17 @@ Page({
   onShareAppMessage: function () {
 
   },
-  searchclick :function(e){
+  searchclick :function(event){
+    //   if(!app.is_login()){
+    //     wx.navigateTo({
+    //       url: '../login/login'
+    //     })
+    // }else{
+      const userInfo=event.detail.userInfo;
+      if(userInfo){
     wx.navigateTo({
       url: '../../pages/souResult/souResult',
     })  
-    
+  }
   }
 })

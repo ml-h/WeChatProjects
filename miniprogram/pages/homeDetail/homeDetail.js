@@ -57,11 +57,11 @@ Page({
   },
   /**
    * 刷新点赞icon
-   */
-  // refreshPraiseIcon(isPraised) {
-  //   that.data.isPraised = isPraised
+  //  */
+  // refreshLikeIcon(isLike) {
+  //   that.data.isLike = isLike
   //   that.setData({
-  //     isPraised: iisPraised,
+  //     isLike: isLike,
   //   })
   // },
   // 预览图片

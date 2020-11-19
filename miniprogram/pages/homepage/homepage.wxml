@@ -108,7 +108,7 @@
 </view>
 
 
-<view class="write-weibo-btn" bind:tap= "onWriteWeiboTap"> 
-  <text>+</text>
-</view>
+<button class="write-weibo-btn" open-type="getUserInfo"  bindgetuserinfo="onWriteWeiboTap"  style="width:90rpx;height:90rpx;padding:10rpx;border-radius: 50%;"> 
+  +
+</button>
 

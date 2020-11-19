@@ -16,15 +16,21 @@ Page({
     * 生命周期函数--监听页面加载
     */
   onLoad: function (options) {
+
     wx.setNavigationBarTitle({
       title: '发布动态',
     })
-    wx.showLoading({
-      title:'数据加载中',
-    })
+    // wx.showLoading({
+    //   title: '数据加载中',
+    // })
     that = this
-    wx.hideLoading()
-
+    // this.getUserInfo()
+    this.setData({
+      userInfo:{
+        "nickName":options.nickName,
+        "avatarUrl":options.avatarUrl
+      }
+    })
   },
   /**
    * 获取填写的内容
@@ -38,7 +44,7 @@ Page({
    */
   chooseImage: function(event) {
     wx.chooseImage({
-      count: 6,
+      count: 9,
       success: function(res) {
         wx.showLoading({
           title: '正在上传图片',
@@ -79,7 +85,7 @@ Page({
    */
   timetostr(time){
     var randnum = Math.floor(Math.random() * (9999 - 1000)) + 1000;
-    var str = "shequ_imgs/"+randnum +"_"+ time.getMilliseconds() + ".png";
+    var str ="shequ_imgs/"+ randnum +"_"+ time.getMilliseconds() + ".png";
     return str;
   },
 
@@ -111,9 +117,9 @@ Page({
         content: that.data.content,
         date: new Date(),
         images: that.data.images,
-        user: that.data.user,
+        user: that.data.userInfo,
         type:1,
-        isPraised:false
+       isPraised:false
       },
       success: function(res) {
         // 清空数据

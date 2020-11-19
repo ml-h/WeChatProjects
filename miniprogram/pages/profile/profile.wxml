@@ -13,8 +13,9 @@
     </block>
   </view>
   <view class="list-wrapper">
-    <block wx:for="{{menuitems}}" wx:key="item">
-      <view bindtap="tiaozhuan" data-url="{{item.url}}" class="list-item"  hover-class="list-item_active">
+    <button class="list-item"   style="width:100%;height:120rpx;margin-top:10rpx;"
+    wx:for="{{menuitems}}" wx:key="item" open-type="getUserInfo"  bindgetuserinfo="tiaozhuan" data-url="{{item.url}}" >
+      <view >
         <view class='item'>
           <image class='item-image' src="{{item.icon}}"bindtap="{{item.url}}"></image>
           <text class="item-text">{{item.text}}</text>
@@ -22,5 +23,5 @@
         </view>
         <view class="div-line"></view>
       </view>
-    </block>
+    </button>
   </view>

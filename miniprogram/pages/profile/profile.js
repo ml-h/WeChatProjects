@@ -45,14 +45,16 @@ Page({
     }
   },
 
-  tiaozhuan:function(e){
-    if(!app.is_login()){
-      wx.navigateTo({
-        url: '../login/login'
-      })
-  }else{
+  tiaozhuan:function(event){
+    //   if(!app.is_login()){
+    //     wx.navigateTo({
+    //       url: '../login/login'
+    //     })
+    // }else{
+      const userInfo=event.detail.userInfo;
+      if(userInfo){
     wx.navigateTo({
-      url: e.currentTarget.dataset.url
+      url: event.currentTarget.dataset.url
     })
   }
 },
