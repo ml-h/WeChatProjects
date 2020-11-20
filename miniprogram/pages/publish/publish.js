@@ -89,24 +89,7 @@ Page({
     return str;
   },
 
-  /**
-   * 发布
-   */
-  formSubmit: function(e) {
-    console.log('图片：', that.data.images)
-
-    this.data.content = e.detail.value['input-content'];
-      if (this.data.images.length > 0) {
-        this.saveDataToServer();
-      } else if (this.data.content.trim() != '') {
-        this.saveDataToServer();
-      } else {
-        wx.showToast({
-          icon: 'none',
-          title: '写点东西吧',
-        })
-      }
-  },
+  
   /**
    * 保存到发布集合中
    */
@@ -171,6 +154,66 @@ Page({
   },
 
 
+  /**
+   * 发布
+   */
+  formSubmit: function(e) {
+    console.log('图片：', that.data.images)
+    this.data.content = e.detail.value['input-content'];
+    let textareaVal = this.data.content;
+    
+    if ((this.data.images.length > 0) || (this.data.content.trim() != '')){
+      // 调用云函数
+      wx.cloud.callFunction({
+        name: 'msgSecCheck', 
+        data: {
+          content: textareaVal
+        }
+      }).then(res => {
+        console.log(res);
+        const errcode = res.result.data.errcode;
+        // 检测结果
+        if (errcode == 87014){
+          wx.showModal({
+            title: '提示',
+            content: '内容含有敏感内容,请重新输入',
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }else{
+                console.log('用户点击取消')
+              }
+            }
+          })
+          
+        }else{
+          // 检测合格，保存到发布集
+          this.saveDataToServer();
+        }
+      }).catch(err => {
+        // 失败时,也就是违规做一些用户提示,或者禁止下一步操作等之类的业务逻辑操作
+        console.log(err);
+        wx.showModal({
+          title: '提示',
+          content: '内容含有敏感内容,请重新输入',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }else{
+              console.log('用户点击取消')
+            }
+          }
+        })
+      })
+
+    } else {
+      wx.showToast({
+        icon: 'none',
+        title: '写点东西吧',
+      })
+    }  
+   
+  },
 
 
 
