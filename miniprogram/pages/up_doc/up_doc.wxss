@@ -82,13 +82,21 @@
 }
 
 .up_btn{
-  background-color: rgb(76, 148, 196);
-  color: white;
+  background-color: rgb(216, 186, 186);
+  color: rgb(73, 66, 66);
   border-radius: 10%;
   width: 300rpx;
   margin-top: 200rpx;
 }
 .choose_paper{
-  height: 200rpx;
-  width: 200rpx;
+  
+  top:30rpx;
+  margin: 20rpx auto;
+  height: 170rpx;
+  width: 170rpx;
+}
+.doc_name{
+  /* position: fixed; */
+  top:60rpx;
+  margin: 20rpx auto;
 }

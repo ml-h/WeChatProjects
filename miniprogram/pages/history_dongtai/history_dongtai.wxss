@@ -47,6 +47,8 @@ border-radius: 50%;
 
 .weibo-content-group{
   padding: 30rpx;
+  text-overflow: ellipsis; 
+  word-wrap: break-word; 
 }
 .weibo-content-group .content{
   font-size: 32rpx;

@@ -174,7 +174,7 @@ border-radius: 50%;
   margin-bottom: 20rpx;
 }
 .notice{
-  color: rgb(68, 84, 221);
+  color: rgb(55, 66, 168);
   font-size: 32rpx;
 }
 .imageItem{

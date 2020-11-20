@@ -3,7 +3,7 @@
   数据加载中
 </loading>
 <view class="btns">
-  <button class="upload" bindtap="up_doc" style="width:300rpx;height:100rpx;margin-left: 20rpx;">
+  <button class="upload" open-type="getUserInfo"  bindgetuserinfo="up_doc" style="width:300rpx;height:100rpx;margin-left: 20rpx;">
     <view class="jiahao" >+</view>
     上传文档
   </button>

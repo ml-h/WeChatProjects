@@ -43,13 +43,17 @@ Page({
 
   },
 
-
-
-
-  up_doc: function () {
-    wx.navigateTo({
-          url: '../up_doc/up_doc?nickName='+app.globalData.userInfo.nickName+'&avatarUrl='+app.globalData.userInfo.avatarUrl
- })  
+  up_doc: function (event){
+    const userInfo=event.detail.userInfo;
+    if(userInfo){
+      console.log(userInfo)
+      wx.navigateTo({
+                  url: '../up_doc/up_doc?nickName='+userInfo.nickName+'&avatarUrl='+userInfo.avatarUrl
+         })  
+    }
+//     wx.navigateTo({
+//           url: '../up_doc/up_doc?nickName='+app.globalData.userInfo.nickName+'&avatarUrl='+app.globalData.userInfo.avatarUrl
+//  })  
  },
 
 fankui:function (e) {

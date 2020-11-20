@@ -31,4 +31,6 @@ image{
 
  button{
    margin-top: 80rpx;
+   background-color: rgb(216, 186, 186);
+   
  }
