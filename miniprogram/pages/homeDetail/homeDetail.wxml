@@ -2,7 +2,6 @@
 <loading hidden="{{loadingHidden}}">
   数据加载中
 </loading>
-<view class='container' bindtap='onItemClick'>
   <view class='container-content'>
     <view class='user-info'>
       <image class='user-head' src='{{topic.user.avatarUrl}}' mode='aspectFill'></image>
@@ -11,26 +10,39 @@
         <!-- <view class='user-publish-time'>{{topic.date}}</view> -->
       </view>
     </view>
-    <view class='content'>
-      <!-- 显示文本 -->
+    <view class="weibo-content-group">
+      <view class="content">{{topic.content}}</view>
+      <view wx:if="{{topic.images.length===1}}" class="image-list-group">
+        <image src="{{topic.images}}" mode="aspectFill" style="width:100%;max-height:400rpx" />
+      </view>
+      <view wx:elif="{{topic.images.length===2 ||topic.images.length===4}}" class="image-list-group">
+        <image wx:for="{{topic.images}}" wx:for-index="idx" src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'
+         style="width:{{twoImageSize}}px;height:{{twoImageSize}}px;" />
+      </view>
+      <view wx:else class="image-list-group">
+        <image wx:for="{{topic.images}}" wx:for-index="idx" src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'
+         style="width:{{threeImageSize}}px;height:{{threeImageSize}}px" />
+        <view wx:if="{{topic.images.length%3 == 2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
+      </view>
+
+     </view>
+    <!-- <view class='content'>
       <view wx:if="{{topic.content != ''}} && {{topic.images.length > 0}}">
         <text class='content-text'>{{topic.content}}</text>
         <block wx:for="{{topic.images}}" wx:for-index="idx">
           <image class='content-img' src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'></image>
         </block>
       </view>
-      <!-- 显示图片 -->
       <view wx:elif="{{topic.images.length > 0}}">
         <block wx:for="{{topic.images}}" wx:for-index="idx">
           <image class='content-img' src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'></image>
         </block>
       </view>
-      <!-- 显示文本 -->
       <block wx:else>
         <text class='content-text'>{{topic.content}}</text>
       </block>
     </view>
-  </view>
+  </view> -->
   <!-- 显示回复列表 -->
   <view class='replay_content' wx:if="{{replays.length > 0}}">
     <!-- <text class='tip-text'>-----------以下是回复内容----------</text> -->

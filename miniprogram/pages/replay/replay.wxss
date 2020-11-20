@@ -45,16 +45,18 @@ textarea {
   background-color: #f3efef;
 }
 
-.btn {
+
+.btn{
   width: 300rpx;
-  height: 60rpx;
+  height: 90rpx;
   line-height: 60rpx;
   background-color: rgb(155, 129, 129);
   color: #fff;
   border-radius: 50rpx;
-  /* display: flex;
-  flex-direction: row; */
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
+
 
