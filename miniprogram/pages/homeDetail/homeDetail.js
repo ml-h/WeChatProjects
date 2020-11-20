@@ -26,7 +26,7 @@ Page({
         that.topic = res.data;
         that.setData({
           topic: that.topic,
-          loadingHidden:true
+         
         })
       }
     })
@@ -49,7 +49,8 @@ Page({
           // res.data 包含该记录的数据
           console.log(res)
           that.setData({
-            replays: res.data
+            replays: res.data,
+            loadingHidden:true
           })
         },
         fail: console.error
@@ -81,15 +82,23 @@ Page({
   /**
    * 跳转回复页面
    */
-  onReplayClick() {
-    if(!app.is_login()){
-      wx.navigateTo({
-        url: '../login/login'
-      })
-  }else{
-    wx.navigateTo({
-      url: "../replay/replay?id=" + that.data.id + "&openid=" + that.data.openid
-    })
-  }
+  onReplayClick(event){
+      const userInfo=event.detail.userInfo;
+      if(userInfo){
+        wx.navigateTo({
+          url: "../replay/replay?id=" + that.data.id + "&openid=" + that.data.openid
+        });
+      }
+
+
+  //   if(!app.is_login()){
+  //     wx.navigateTo({
+  //       url: '../login/login'
+  //     })
+  // }else{
+  //   wx.navigateTo({
+  //     url: "../replay/replay?id=" + that.data.id + "&openid=" + that.data.openid
+  //   })
+  // }
 }
 })

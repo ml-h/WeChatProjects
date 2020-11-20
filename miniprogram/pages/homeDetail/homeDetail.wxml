@@ -8,7 +8,7 @@
       <image class='user-head' src='{{topic.user.avatarUrl}}' mode='aspectFill'></image>
       <view class='user-name-time'>
         <view class='user-name'>{{topic.user.nickName}}</view>
-        <view class='user-publish-time'>{{topic.date}}</view>
+        <!-- <view class='user-publish-time'>{{topic.date}}</view> -->
       </view>
     </view>
     <view class='content'>
@@ -45,6 +45,6 @@
   <!-- <view class='line'>文末</view> -->
 
   <view class='like-container'>
-    <button class='btn-class'  bindtap='onReplayClick'>回复</button>
+    <button class='btn-class' open-type="getUserInfo"  bindgetuserinfo="onReplayClick">回复</button>
   </view>
 </view>

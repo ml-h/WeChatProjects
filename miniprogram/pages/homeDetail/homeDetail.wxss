@@ -115,7 +115,7 @@
 
 .btn-class{
   width: 300rpx;
-  height: 60rpx;
+  height: 90rpx;
   line-height: 60rpx;
   background-color: rgb(155, 129, 129);
   color: #fff;
