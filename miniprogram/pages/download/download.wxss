@@ -31,6 +31,7 @@ image{
 
  button{
    margin-top: 80rpx;
-   background-color: rgb(216, 186, 186);
-   
+   background-color: rgb(202, 163, 163);
+   color: rgb(73, 66, 66);
+   border-radius: 10rpx;
  }

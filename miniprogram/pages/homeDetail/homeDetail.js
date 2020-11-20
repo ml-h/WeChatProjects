@@ -20,6 +20,7 @@ Page({
     that = this;
     that.data.id = options.id;
     that.data.openid = options.openid;
+    this.initImageSize()
     // 获取话题信息
     db.collection('topic').doc(that.data.id).get({
       success: function(res) {
@@ -33,6 +34,18 @@ Page({
    
   },
 
+  initImageSize:function(){
+    const windowWidth = wx.getSystemInfoSync().windowWidth;
+    // const weiboWidth = windowWidth-40;
+    const weiboWidth = 253;
+    const twoImageSize = (weiboWidth-2.5)/2
+    const threeImageSize = (weiboWidth-2.5*2)/3
+    console.log(twoImageSize)
+    this.setData({
+      twoImageSize:twoImageSize,
+      threeImageSize:threeImageSize
+    })
+  },
   onShow: function() {
     // 获取回复列表
     that.getReplay()

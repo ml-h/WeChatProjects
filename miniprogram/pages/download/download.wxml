@@ -7,4 +7,4 @@
 <view class="value">上传时间：{{date}}</view>
 <view class="value">文件大小：{{size}}Kb</view>
 <view class="value">来源：{{loder}}</view>
-<button type="primary" bindtap="download" >下载</button>
+<button bindtap="download" >下载</button>
