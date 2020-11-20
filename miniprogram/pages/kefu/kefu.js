@@ -7,7 +7,7 @@ Page({
   data: {
     menuitems: [
       { text: '添加微信好友  number:123456', icon: '../../images/weixin.png', tips: '' },
-      { text: '添加QQ好友  number:123456',icon: '../../images/QQ.png', tips: '' },
+      { text: '添加QQ好友  number:123456',icon: '../../images/qq.png', tips: '' },
       { text: '拨打电话  number:123456',icon: '../../images/phone.png', tips: '' },
       { text: '小程序客服  number:123456',icon: '../../images/kefu.png', tips: '' }
     ]

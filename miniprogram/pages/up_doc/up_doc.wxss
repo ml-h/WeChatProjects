@@ -88,15 +88,16 @@
   width: 300rpx;
   margin-top: 200rpx;
 }
-.choose_paper{
-  
-  top:30rpx;
+.choose{
   margin: 20rpx auto;
+  display: flex;
+  flex-direction:column;
+}
+.choose_paper{
   height: 170rpx;
   width: 170rpx;
 }
 .doc_name{
-  /* position: fixed; */
   top:60rpx;
   margin: 20rpx auto;
 }
