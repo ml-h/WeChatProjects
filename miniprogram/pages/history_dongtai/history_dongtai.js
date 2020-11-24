@@ -38,7 +38,6 @@ Page({
     const weiboWidth = 253;
     const twoImageSize = (weiboWidth-2.5)/2
     const threeImageSize = (weiboWidth-2.5*2)/3
-    console.log(twoImageSize)
     this.setData({
       twoImageSize:twoImageSize,
       threeImageSize:threeImageSize
@@ -84,40 +83,16 @@ Page({
     const that = this;
     const weiboIndex = event.currentTarget.dataset.weibo;
     const topic = that.data.topics[weiboIndex];
-    /*wx.cloud.callFunction({
-      name:"praise",
-      success: res => {
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!");
-        data:{
-          weiboId=topic._id
-        }
-        
-        //that.userInfo.openId=openId;
-      }
-    })*/
-    /*wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-      }
-    })*/
     const openId=app.globalData.openid
-    //const openId = this.userInfo.openId;
-   // console.log(app.globalData);
     let isPraised=false;
     if(topic.praises){
       topic.praises.forEach((value,index) => {
         if(value==openId){
-          console.log("!!!!!!!!!!!!!!!!!");
           isPraised=true;
         }
       })
     }
     if(!isPraised){
-      console.log("+++++++++++++++++++++++");
-      
       //console.log(openId);
       wx.cloud.callFunction({
         name:"praise",
@@ -127,10 +102,8 @@ Page({
         success: res => {
           if(!topic.praises){
             topic.praises=[openId];
-            console.log("++++++++++++++++++yes");
           }else{
             topic.praises.push(openId);
-            console.log("++++++++++++++++++no");
           }
           const topics=that.data.topics;
           console.log(weiboIndex);
@@ -174,8 +147,14 @@ Page({
             wx.showToast({
               title: '删除成功',
             })
+            })
+            console.log(that.data.openid)
+            db.collection('replay')
+              .where({
+                u_id: that.data.openid,
+                t_id: e.currentTarget.dataset.id
+              }).remove()
             that.getData();
-         })
         } else if (res.cancel) {
           console.log('用户点击取消')
          }
