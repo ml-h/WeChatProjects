@@ -104,14 +104,5 @@ Page({
       }
 
 
-  //   if(!app.is_login()){
-  //     wx.navigateTo({
-  //       url: '../login/login'
-  //     })
-  // }else{
-  //   wx.navigateTo({
-  //     url: "../replay/replay?id=" + that.data.id + "&openid=" + that.data.openid
-  //   })
-  // }
 }
 })

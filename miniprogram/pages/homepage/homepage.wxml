@@ -31,6 +31,8 @@
           <view class="time">{{time}}</view>
         </view>
       </view>
+      <button class="xiala_btn" hover-class="none" style=" width: 40rpx;" data-openid="{{item._openid}}" data-topicId='{{item._id}}' 
+       open-type="getUserInfo"  bindgetuserinfo="xiala"><image src="../../images/xialakuang.png" class="xiala" ></image></button>
     </view>
     <view class="weibo-content-group" bindtap="onItemClick" data-topicId='{{item._id}}' data-openid='{{item._openid}}'>
       <view class="content">{{item.content}}</view>

@@ -59,7 +59,6 @@ Page({
     const weiboWidth = 253;
     const twoImageSize = (weiboWidth-2.5)/2
     const threeImageSize = (weiboWidth-2.5*2)/3
-    console.log(twoImageSize)
     this.setData({
       twoImageSize:twoImageSize,
       threeImageSize:threeImageSize
@@ -67,28 +66,15 @@ Page({
   },
 
   onWriteWeiboTap:function(event){
-  // if(!app.is_login()){
     const userInfo=event.detail.userInfo;
     if(userInfo){
       wx.navigateTo({
          url: '../publish/publish?nickName='+userInfo.nickName+'&avatarUrl='+userInfo.avatarUrl
       });
     }
-    // if(!app.globalData.login_is){
-  //     wx.navigateTo({
-  //       url: '../login/login'
-  //     })
-  // }else{
-  //   wx.navigateTo({
-  //     url: '../publish/publish?nickName='+app.globalData.userInfo.nickName+'&avatarUrl='+app.globalData.userInfo.avatarUrl
-  //   });
-  // }
+
   },
-  /*commenting :function(e){
-    wx.navigateTo({
-      url: '../../pages/comment/comment',
-    })
-  },*/
+
 
   onShow: function() {
     that.getData();
@@ -104,7 +90,7 @@ Page({
       .get({
         success: function(res) {
           // res.data 是包含以上定义的两条记录的数组
-          console.log("数据：" + res.data)
+          // console.log("数据：" + res.data)
           that.data.topics = res.data;
           that.setData({
             topics: that.data.topics,
@@ -191,9 +177,6 @@ Page({
   onItemClick: function(event) {
     var id = event.currentTarget.dataset.topicid;
     var openid = event.currentTarget.dataset.openid;
-    console.log(event);
-    console.log(id);
-    console.log(openid);
     wx.navigateTo({
       url: "../homeDetail/homeDetail?id=" + id + "&openid=" + openid
     })
@@ -248,17 +231,35 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  },
   doc_dongtai:function(e){
-    // console.log(e.currentTarget.dataset.fileid)
     wx.navigateTo({
       url: '../doc_dongtai/doc_dongtai?id='+e.currentTarget.dataset.id,
     })
+  },
+
+  xiala:function(e){
+    wx.cloud.callFunction({
+      name:"login",
+      data:{}
+    }).then(res=>{
+      if(e.currentTarget.dataset.openid==res.result.openid){
+        wx.showModal({
+          title: '提示',
+          content: '确定删除该条动态',
+          success: function (res) {
+            if (res.confirm) {
+              db.collection('topic').doc(e.currentTarget.dataset.topicid).remove().then(res=>{
+                wx.showToast({
+                  title: '删除成功',
+                })
+                that.getData();
+                })
+            } 
+          }
+        })
+      }
+    })
+
   }
   
 

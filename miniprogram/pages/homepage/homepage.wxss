@@ -122,7 +122,14 @@ border-radius: 50%;
   border-radius: 50%;
   background-color: #ccc;
 }
-
+.xiala{
+  height: 40rpx;
+  width: 40rpx;
+  opacity: 0.5;
+}
+.xiala_btn{
+  width: 50rpx;
+}
 .user-name-time {
   display: flex;
   flex-direction: column;
