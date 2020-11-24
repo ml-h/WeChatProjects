@@ -24,25 +24,11 @@
          style="width:{{threeImageSize}}px;height:{{threeImageSize}}px" />
         <view wx:if="{{topic.images.length%3 == 2}}" style="width:{{threeImageSize}}px;height:{{threeImageSize}}px;"></view>
       </view>
+      
 
      </view>
-    <!-- <view class='content'>
-      <view wx:if="{{topic.content != ''}} && {{topic.images.length > 0}}">
-        <text class='content-text'>{{topic.content}}</text>
-        <block wx:for="{{topic.images}}" wx:for-index="idx">
-          <image class='content-img' src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'></image>
-        </block>
-      </view>
-      <view wx:elif="{{topic.images.length > 0}}">
-        <block wx:for="{{topic.images}}" wx:for-index="idx">
-          <image class='content-img' src='{{item}}' mode='aspectFill' bindtap="previewImg" data-index='{{idx}}'></image>
-        </block>
-      </view>
-      <block wx:else>
-        <text class='content-text'>{{topic.content}}</text>
-      </block>
-    </view>
-  </view> -->
+
+</view>
   <!-- 显示回复列表 -->
   <view class='replay_content' wx:if="{{replays.length > 0}}">
     <!-- <text class='tip-text'>-----------以下是回复内容----------</text> -->
@@ -54,9 +40,11 @@
       </view>
     </block>
   </view>
-  <!-- <view class='line'>文末</view> -->
+  <view class='replay_content' wx:elif="{{replays.length === 0}}">
+    <view class="notice">暂无回复，快来抢沙发</view>
+  </view>
+
 
   <view class='like-container'>
     <button class='btn-class' open-type="getUserInfo"  bindgetuserinfo="onReplayClick">回复</button>
   </view>
-</view>

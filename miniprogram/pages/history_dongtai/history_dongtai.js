@@ -148,7 +148,6 @@ Page({
               title: '删除成功',
             })
             })
-            console.log(that.data.openid)
             db.collection('replay')
               .where({
                 u_id: that.data.openid,
