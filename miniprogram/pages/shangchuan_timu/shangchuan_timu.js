@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadingHidden:false,
     author:'',
     timu:''
   },
@@ -15,8 +16,10 @@ Page({
     }).get().then(res=>{
       // console.log("题目列表",res.data)
         this.setData({
-          timu:res.data
+          timu:res.data,
+          loadingHidden:true
         })
+        
     })
   },
   /**
@@ -53,7 +56,6 @@ Page({
 },
 
 fankui(e) {
-  // console.log(e.target.dataset.item)
   wx.navigateTo({
         url: '../fankui_timu/fankui_timu?id='+e.currentTarget.dataset.id,
   })

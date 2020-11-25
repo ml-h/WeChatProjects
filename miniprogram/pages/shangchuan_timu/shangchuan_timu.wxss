@@ -44,3 +44,17 @@ page{
   color:gray;
   margin-left: 10rpx;
 }
+.divLine{
+
+  background:rgb(100, 95, 95);
+  width:230rpx;
+  height: 4rpx;
+ 
+ }
+ .notice{
+  font-size:35rpx;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  margin: 20rpx auto;
+ }
