@@ -26,100 +26,67 @@ Page({
     wx.getUserInfo({
     success:res=>{
       const userInfo=res.userInfo;
-      console.log(userInfo)
         that.setData({
-          author:userInfo.nickName
+          author:userInfo.nickName,
+          user:{
+            nickName:userInfo.nickName,
+            avatarUrl:userInfo.avatarUrl
+          }
         })
       }
     })
   },
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
   input1: function(e) {//接受题目
-    // console.log("题目 ",e.detail.value)
     this.setData({
       content: e.detail.value
     })
-    console.log(this.data)
   },
   input2: function(e) {//接受答案
-    // console.log("答案 ",e.detail.value)
     this.setData({
       answer: e.detail.value
     })
-    console.log(this.data)
   },
   searchclick: function(){
     db.collection("up_timu").add({
       data:{
-        'author':this.data.author,
-        'content':this.data.content,
-        'answer':this.data.answer,
-        'pinglun':this.data.pinglun,
-        'shoucang':this.data.shoucang
+        author:this.data.author,
+        content:this.data.content,
+        answer:this.data.answer,
+        youYong:0,
+        meiYong:0,
+        timu_status:"正在审核",
+        status:false,
+        pinglun:this.data.pinglun,
+        status:this.data.shoucang,
       }
     }).then(res=>{
+      this.add_dongtai(res._id)
       wx.showToast({
         title: '上传成功',
         duration:1500,
-        success(){
-          wx.navigateTo({
-            url: '../../pages/shangchuan_timu/shangchuan_timu',
-          }) 
-        }
       })
+
     }).catch(err=>{
       wx.showToast({
-        title: '抱歉',
+        title: '上传失败',
       })
       console.log("上传失败：",err)
     })
   },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () { 
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  // 自动上传文档动态到社区
+  add_dongtai(timu_id){
+    wx.cloud.database().collection('topic').add({
+      data: {
+        date: new Date(),
+        timu_id:timu_id,
+        content:this.data.content,
+        answer:this.data.answer,
+        
+        user:this.data.user,
+        
+        uploader:this.data.author,
+        type:3
+      }     
+        })
+      }
 })

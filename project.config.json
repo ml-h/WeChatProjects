@@ -72,10 +72,11 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+          "id": 0,
+          "name": "pages/up_timu/up_timu",
+          "pathName": "pages/up_timu/up_timu",
+          "query": "",
+          "scene": null
         },
         {
           "id": -1,

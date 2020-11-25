@@ -92,15 +92,12 @@
     <view class="user-group">
       <image class="avatar"
       src = "{{item.user.avatarUrl}}"></image>
-      <view class="right-info">
+      <view class="right-info" style="margin-top:15rpx;">
         <view class="username">{{item.user.nickName}}</view>
-        <view class="detail-info">
-          <view class="time">{{item.date}}</view>
-        </view>
       </view>
     </view>
     <view class="weibo-content-group">
-      <view class="title">{{item.timu}}</view>
+      <view class="timu">{{item.content}}</view>
       <view class="notice">
         我上传了真题，快来看看！
       </view>

@@ -8,15 +8,9 @@
       <view class="timu">{{item.content}}</view>
       <view class="line">
         <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view  data-item="{{item}}" class="fankui" bindtap="fankui">查看反馈</view>
+        <view  data-id="{{item._id}}" class="fankui" bindtap="fankui">查看反馈</view>
       </view>
   </view>
-  <!-- <view class="item">
-      <view class="timu">这是一个题目</view>
-      <view class="line">
-        <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view class="fankui" bindtap="fankui">查看反馈</view>
-      </view>
-  </view> -->
+
   
 </view>
