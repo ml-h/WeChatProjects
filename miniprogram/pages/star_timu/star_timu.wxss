@@ -1,1 +1,45 @@
 /* pages/star_timu/star_timu.wxss */
+.timucontainer {
+  display: flex;
+  align-items: center;
+  padding: 8rpx;
+  position: relative;
+  flex-direction: row;
+}
+.ticontainer{
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width:100%;
+  flex-direction: row;
+  font-size: 32rpx;
+  color: rgb(75, 70, 70);
+}
+.oushu{
+  background-color:#dacaca;
+}
+.jishu{
+  background-color:#f1e4e4;
+}
+.timuList{
+  width:90%;
+  margin: 15rpx;
+}
+
+.divLine{
+  
+  background:rgb(100, 95, 95);
+  width:230rpx;
+  height: 4rpx;
+ 
+ }
+ .fenlei{
+   margin: 20rpx auto;
+  font-size:30rpx;
+  color: rgb(100, 95, 95);
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  margin-bottom: 20rpx;
+ }

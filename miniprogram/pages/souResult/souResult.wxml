@@ -1,14 +1,16 @@
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
+
 <!-- 搜题结果返回页面 -->
 <view wx:for="{{dataObj}}" class="timucontainer">
-  <view class="ticontainer oushu" wx:if="{{index%2==0}}" >
+  <view class="ticontainer oushu" >
     <view class="timuList" bindtap="detailclick" data-item="{{item}}">{{item.content}}</view>
-    <x-shoucang iconfont="iconfont" class="shoucang" style="margin-right: 4rpx;"/>         
-  </view>
-  <view class="ticontainer jishu" wx:if="{{index%2==1}}" >
-    <view class="timuList" bindtap="detailclick" data-item="{{item}}" >{{item.content}}</view>
-    <x-shoucang iconfont="iconfont" class="shoucang" style="margin-right: 4rpx;"/>         
+    <image data-item="{{item._id}}" catchtap="handleCollection" wx:if='{{!isC[index]}}' src="../../images/shoucang2.png" style="width:60rpx; height:60rpx;"></image>
+    <image data-item="{{item._id}}" catchtap="handleCollection" wx:if='{{isC[index]}}' src='../../images/shoucang.png' style="width:60rpx; height:60rpx;"></image>
   </view>
 </view>
+
 <view  class="fenlei" >
     <view class="divLine" style="margin-right: 10rpx;"></view>没有更多题目了
     <view class="divLine"  style="margin-left: 10rpx;"></view>

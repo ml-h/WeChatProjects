@@ -24,7 +24,9 @@
 <view class="line1" style="margin-bottom:120rpx;"></view>
 <view class="bottom" >
   <view class="collection" >
-    <x-shoucang iconfont="iconfont" class="shoucang" />
+    <!-- <x-shoucang catchtap="handleCollection" iconfont="iconfont" class="shoucang" /> -->
+    <image catchtap="handleCollection" wx:if='{{!isCollected}}' src="../../images/shoucang2.png" style="width:60rpx; height:60rpx;"></image>
+    <image catchtap="handleCollection" wx:if='{{isCollected}}' src='../../images/shoucang.png' style="width:60rpx; height:60rpx;"></image>
     <view style="font-size:35rpx;">收藏</view>
   </view>
   <view class="comment" >

@@ -1,1 +1,21 @@
-此功能暂未开放！
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
+
+<view wx:for="{{dataObj}}" class="timucontainer">
+  <view class="ticontainer oushu" >
+    <view class="timuList" bindtap="detailclick" data-item="{{item}}">{{item.content}}</view>
+    <!-- <x-shoucang iconfont="iconfont" class="shoucang" style="margin-right: 4rpx;"/>          -->
+    <image data-item="{{item._id}}" catchtap="handleCollection" wx:if='{{!isC[index]}}' src="../../images/shoucang2.png" style="width:60rpx; height:60rpx;"></image>
+    <image data-item="{{item._id}}" catchtap="handleCollection" wx:if='{{isC[index]}}' src='../../images/shoucang.png' style="width:60rpx; height:60rpx;"></image>
+  </view>
+</view>
+
+<view  class="fenlei"  wx:if="{{dataObj.length!==0}}">
+    <view class="divLine" style="margin-right: 10rpx;"></view>没有更多题目了
+    <view class="divLine"  style="margin-left: 10rpx;" ></view>
+  </view>
+  <view  class="fenlei"  wx:else>
+    <view class="divLine" style="margin-right: 10rpx;" ></view>您还没收藏题目
+    <view class="divLine"  style="margin-left: 10rpx;"></view>
+  </view>

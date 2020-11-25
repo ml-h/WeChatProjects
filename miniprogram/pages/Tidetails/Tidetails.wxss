@@ -1,4 +1,3 @@
-/* pages/Tidetails/Tidetails.wxss */
 .TiHeader{
   display: flex;
   flex-flow : row;
@@ -108,7 +107,4 @@
   height: 7rpx;
   margin-top:50rpx;
   background:darkgray;
- 
-
-  
-  }
+}

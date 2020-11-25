@@ -238,10 +238,14 @@ Page({
   },
 
   xiala:function(e){
+    wx.showLoading({
+      title: '正在加载',
+    })
     wx.cloud.callFunction({
       name:"login",
       data:{}
     }).then(res=>{
+      wx.hideLoading()
       if(e.currentTarget.dataset.openid==res.result.openid){
         wx.showModal({
           title: '提示',
