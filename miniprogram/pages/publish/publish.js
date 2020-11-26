@@ -100,6 +100,7 @@ Page({
         content: that.data.content,
         time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         date: new Date(),
+        prise_num:0,
         images: that.data.images,
         user: that.data.userInfo,
         type:1,

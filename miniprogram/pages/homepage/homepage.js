@@ -11,6 +11,7 @@ Page({
   data: {
     totalCount: 0,
     topics: [],
+    priseDongtai:[],
     isPraised:false,
     currentIndex: 0,
     currentIndex1: 0,
@@ -40,22 +41,16 @@ Page({
   onLoad: function(options) {
     this.initImageSize()
     that = this
-    wx.cloud.init({
-      env: app.globalData.evn
-    })
-    // var time = util.formatTime(new Date());
-    // // 再通过setData更改Page()里面的data，动态更新页面的数据
-    // this.setData({
-    //   time: time
-    // });
+    // wx.cloud.init({
+    //   env: 'test-yan-3gp1h1ez7f7c6a02',
+    //   traceUser: true,
+    // })
+    that.getOpenid()
 
-
-    
   },
 
   initImageSize:function(){
     const windowWidth = wx.getSystemInfoSync().windowWidth;
-    // const weiboWidth = windowWidth-40;
     const weiboWidth = 253;
     const twoImageSize = (weiboWidth-2.5)/2
     const threeImageSize = (weiboWidth-2.5*2)/3
@@ -75,10 +70,6 @@ Page({
 
   },
 
-
-  onShow: function() {
-    that.getData();
-  },
   /**
    * 获取列表数据
    * 
@@ -90,15 +81,14 @@ Page({
       .get({
         success: function(res) {
           // res.data 是包含以上定义的两条记录的数组
-          // console.log("数据：" + res.data)
           that.data.topics = res.data;
           that.setData({
             topics: that.data.topics,
             loadingHidden:true
           })
+
           wx.hideNavigationBarLoading(); //隐藏加载
           wx.stopPullDownRefresh();
-
         },
         fail: function(event) {
           wx.hideNavigationBarLoading(); //隐藏加载
@@ -108,51 +98,7 @@ Page({
 
   },
 
-  onPraiseTap: function(event){
-    const that = this;
-    const weiboIndex = event.currentTarget.dataset.weibo;
-    const topic = that.data.topics[weiboIndex];
-
-    const openId=app.globalData.openid
-    //const openId = this.userInfo.openId;
-   // console.log(app.globalData);
-    let isPraised=false;
-    if(topic.praises){
-      topic.praises.forEach((value,index) => {
-        if(value==openId){
-          console.log("!!!!!!!!!!!!!!!!!");
-          isPraised=true;
-        }
-      })
-    }
-    if(!isPraised){
-      console.log("+++++++++++++++++++++++");
-      
-      //console.log(openId);
-      wx.cloud.callFunction({
-        name:"praise",
-        data:{
-          weiboId:topic._id
-        },
-        success: res => {
-          if(!topic.praises){
-            topic.praises=[openId];
-            console.log("++++++++++++++++++yes");
-          }else{
-            topic.praises.push(openId);
-            console.log("++++++++++++++++++no");
-          }
-          const topics=that.data.topics;
-          console.log(weiboIndex);
-          topics[weiboIndex]=topic;
-          that.setData({
-            topics:topics
-          })
-          console.log(topics[weiboIndex].praises);
-        }
-      })
-    }
-  },
+ 
   /**
    * item 点击
    */
@@ -187,14 +133,14 @@ Page({
           if (res.data.length > 0) {
             for (var i = 0; i < res.data.length; i++) {
               var tempTopic = res.data[i];
-              console.log(tempTopic);
+
               temp.push(tempTopic);
             }
 
             var totalTopic = {};
             totalTopic = that.data.topics.concat(temp);
 
-            console.log(totalTopic);
+            
             that.setData({
               topics: totalTopic,
             })
@@ -248,7 +194,82 @@ Page({
       }
     })
 
-  }
+  },
   
+  // 获取用户id  调用getCollectPaperurl（）
+  getOpenid(){
+    // 获取当前用户的openID
+    wx.cloud.callFunction({
+      name:"login",
+      data:{}
+    }).then(res=>{
+      
+      this.setData({
+        openid:res.result.openid
+      })
+      this.getData()
+      this.getPrise(that.data.openid)
+    })
+    .catch(res=>{
+      console.log("获取openID 失败",res)
+    })
+  
+},  
+getPrise(openid){
+  wx.cloud.callFunction({
+    name:"prise",
+    data:{
+      action:"get",
+      userid:openid
+    }
+  }).then(res=>{
+    if(res.result.data.length==0){
+      wx.cloud.callFunction({
+        name:"prise",
+        data:{
+          action:"addUser",
+          userid:openid
+        }
+      })
+    }else{
+      this.setData({
+        loadingHidden:true,
+        priseDongtai:res.result.data[0].priseDongtai
+      })
+    }
+  })
+},
+PriseTap:function(event){
+  if(event.currentTarget.dataset.status=="true"){
+    console.log("取消点赞")
+    wx.cloud.callFunction({
+      name:"prise",
+      data:{
+        action:"cancel",
+        userid:that.data.openid,
+        topicId:event.currentTarget.dataset.topicid,
+      }
+    }).then(res=>{
+      this.getData()
+      this.getPrise(that.data.openid)
+    })
+  }else{
+    console.log("点赞")
+    wx.cloud.callFunction({
+      name:"prise",
+      data:{
+        action:"prise",
+        userid:that.data.openid,
+        topicId:event.currentTarget.dataset.topicid,
+      }
+    }).then(res=>{
+      // console.log(res)
+      // that.data.priseDongtai.push(event.currentTarget.dataset.topicid)
+      this.getData()
+      this.getPrise(that.data.openid)
+     })
+   
+  }
+}
 
 })
