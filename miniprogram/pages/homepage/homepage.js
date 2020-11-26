@@ -270,6 +270,19 @@ PriseTap:function(event){
      })
    
   }
+},
+jubao:function(){
+  wx.showModal({
+    title: '提示',
+    content: '确认要举报该条动态？',
+    success: function (res) {
+      if (res.confirm) {
+        wx.showToast({
+          title: '举报成功',
+        })
+      }
+   }
+  })
 }
 
 })

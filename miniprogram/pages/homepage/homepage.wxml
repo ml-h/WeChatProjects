@@ -89,7 +89,7 @@
       </view> -->
 
 
-      <view class="jubao-group">
+      <view class="jubao-group" bindtap="jubao">
         <image src="../../images/jubao.png">举报
         </image>
       </view>

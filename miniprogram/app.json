@@ -36,8 +36,6 @@
    "pages/up_doc/up_doc",
    "pages/addFunction/addFunction",
    "pages/chooseLib/chooseLib",
-   "pages/databaseGuide/databaseGuide",
-   "pages/deployFunctions/deployFunctions",
    "pages/im/im",
    "pages/storageConsole/storageConsole"
   ],
