@@ -7,7 +7,7 @@
       <image class='user-head' src='{{topic.user.avatarUrl}}' mode='aspectFill'></image>
       <view class='user-name-time'>
         <view class='user-name'>{{topic.user.nickName}}</view>
-        <!-- <view class='user-publish-time'>{{topic.date}}</view> -->
+        <view class='user-publish-time'>{{topic.time}}</view>
       </view>
     </view>
     <view class="weibo-content-group">
