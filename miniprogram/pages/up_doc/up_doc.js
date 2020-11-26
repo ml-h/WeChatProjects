@@ -182,6 +182,7 @@ upload_paper_yun(){
       // data 字段表示需新增的 JSON 数据
       data: {
         date: new Date(),
+        time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         paper_name:this.data.tempfile_name,
         paper_FileID:this.data.tempfile_url,
         paper_type:this.data.selectData2[this.data.index2],

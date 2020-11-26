@@ -28,7 +28,7 @@
       <view class="right-info">
         <view class="username">{{item.user.nickName}}</view>
         <view class="detail-info">
-          <view class="time">{{time}}</view>
+          <view class="time">{{item.time}}</view>
         </view>
       </view>
       <button class="xiala_btn" hover-class="none" style=" width: 40rpx;" data-openid="{{item._openid}}" data-topicId='{{item._id}}' 
@@ -76,8 +76,11 @@
     <view class="user-group">
       <image class="avatar"
       src = "{{item.user.avatarUrl}}"></image>
-      <view class="right-info" style="margin-top:15rpx;">
+      <view class="right-info">
         <view class="username">{{item.user.nickName}}</view>
+        <view class="detail-info">
+          <view class="time">{{item.time}}</view>
+        </view>
       </view>
     </view>
     <view class="weibo-content-group" bindtap="doc_dongtai" data-id="{{item._id}}">
@@ -92,8 +95,11 @@
     <view class="user-group">
       <image class="avatar"
       src = "{{item.user.avatarUrl}}"></image>
-      <view class="right-info" style="margin-top:15rpx;">
+      <view class="right-info">
         <view class="username">{{item.user.nickName}}</view>
+        <view class="detail-info">
+          <view class="time">{{item.time}}</view>
+        </view>
       </view>
     </view>
     <view class="weibo-content-group">

@@ -43,11 +43,11 @@ Page({
     wx.cloud.init({
       env: app.globalData.evn
     })
-    var time = util.formatTime(new Date());
-    // 再通过setData更改Page()里面的data，动态更新页面的数据
-    this.setData({
-      time: time
-    });
+    // var time = util.formatTime(new Date());
+    // // 再通过setData更改Page()里面的data，动态更新页面的数据
+    // this.setData({
+    //   time: time
+    // });
 
 
     
@@ -112,25 +112,7 @@ Page({
     const that = this;
     const weiboIndex = event.currentTarget.dataset.weibo;
     const topic = that.data.topics[weiboIndex];
-    /*wx.cloud.callFunction({
-      name:"praise",
-      success: res => {
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!");
-        data:{
-          weiboId=topic._id
-        }
-        
-        //that.userInfo.openId=openId;
-      }
-    })*/
-    /*wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-      }
-    })*/
+
     const openId=app.globalData.openid
     //const openId = this.userInfo.openId;
    // console.log(app.globalData);
@@ -219,6 +201,7 @@ Page({
           } else {
             wx.showToast({
               title: '已经到底了',
+              icon:'none'
             })
           }
         },
@@ -226,6 +209,7 @@ Page({
     } else {
       wx.showToast({
         title: '已经到底了',
+        icon:'none'
       })
     }
 

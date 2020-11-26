@@ -6,14 +6,15 @@
     <view class="jiahao" >+</view>
     上传题目
   </button>
-<view wx:for="{{timu}}" class="container">
   <view class="notice">
-          <view class="divLine" style="margin-right: 10rpx;"></view>你上传的文档<view class="divLine"  style="margin-left: 10rpx;"></view>
+          <view class="divLine" style="margin-right: 10rpx;"></view>你上传的题目<view class="divLine"  style="margin-left: 10rpx;"></view>
       </view>
   <view class="notice" style="margin-top:50rpx;" wx:if="{{my_upDoc.length===0}}">
-         你还没有上传文档
+         你还没有上传题目
    </view>
-  <view class="item">
+<view class="container">
+
+  <view class="item"  wx:for="{{timu}}" >
       <view class="timu">{{item.content}}</view>
       <view class="line">
         <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>

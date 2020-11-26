@@ -20,7 +20,7 @@
 <view class="value">没用：{{timu[0].meiYong}}</view>
 <view class="line">
 <view class="divLine" style="margin-right: 10rpx;"></view>
-文档状态
+题目状态
 <view class="divLine"  style="margin-left: 10rpx;"></view>
 </view>
 <view class="value">{{timu[0].timu_status}}</view>

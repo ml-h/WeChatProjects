@@ -81,9 +81,8 @@ Page({
         timu_id:timu_id,
         content:this.data.content,
         answer:this.data.answer,
-        
+        time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         user:this.data.user,
-        
         uploader:this.data.author,
         type:3
       }     

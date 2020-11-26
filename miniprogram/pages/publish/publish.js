@@ -98,6 +98,7 @@ Page({
       // data 字段表示需新增的 JSON 数据
       data: {
         content: that.data.content,
+        time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         date: new Date(),
         images: that.data.images,
         user: that.data.userInfo,
