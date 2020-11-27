@@ -118,7 +118,9 @@ Page({
     wx.showNavigationBarLoading() //在标题栏中显示加载
     that.getData();
   },
-
+onShow:function(){
+this.getData()
+},
   /**
    * 页面上拉触底事件的处理函数
    */
