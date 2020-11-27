@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loadingHidden:false,
     timu:""
   },
   get_data:function(e){
@@ -14,7 +15,8 @@ Page({
     }).get().then(res=>{
       console.log(res.data)
       this.setData({
-        timu:res.data
+        timu:res.data,
+        loadingHidden:true
       })
     })
   },

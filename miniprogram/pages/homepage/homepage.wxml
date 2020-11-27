@@ -2,7 +2,6 @@
 <loading hidden="{{loadingHidden}}">
   数据加载中
 </loading>
-<!-- 真题列表页面 -->
 <wxs module="m">
     var contain = function(a,id){
         if(a.indexOf(id)>-1){
@@ -81,14 +80,6 @@
                 </block>
       </view>
 
-
-
-      <!-- <view class="praise-group" bindtap="onPraiseTap" data-weibo="{{windex}}" data-topicId='{{item._id}}' >
-        <image wx:if="{{item.isPraised}}" src="../../images/zan1.png" bindtap='onLikeClick'></image>
-        <image wx:else src="../../images/zan.png" bindtap='onLikeClick'></image>
-      </view> -->
-
-
       <view class="jubao-group" bindtap="jubao">
         <image src="../../images/jubao.png">举报
         </image>
@@ -126,7 +117,7 @@
         </view>
       </view>
     </view>
-    <view class="weibo-content-group">
+    <view class="weibo-content-group" bindtap="timu_dongtai" data-id="{{item.timu_id}}">
       <view class="timu">{{item.content}}</view>
       <view class="notice">
         我上传了真题，快来看看！

@@ -1,3 +1,7 @@
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
+
 <view class="content">
   <view class="text-content">
         <view class="answer">
@@ -16,8 +20,8 @@
 用户评价
 <view class="divLine"  style="margin-left: 10rpx;"></view>
 </view>
-<view class="value">有用：{{timu[0].youYong}}</view>
-<view class="value">没用：{{timu[0].meiYong}}</view>
+<view class="value">评分：{{timu[0].score}}</view>
+<view class="value" style="font-size:30rpx;color:gray;">当用户评价超过5分时，将纳入题库</view>
 <view class="line">
 <view class="divLine" style="margin-right: 10rpx;"></view>
 题目状态

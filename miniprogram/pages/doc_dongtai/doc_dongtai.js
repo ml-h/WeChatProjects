@@ -3,7 +3,8 @@ const app = getApp()
 const db = wx.cloud.database();
 Page({
   data: {
-   pingjia:0
+   pingjia:0,
+   loadingHidden:false,
   },
 
   onLoad: function(option) {
@@ -13,6 +14,7 @@ Page({
           fileId:res.data.paper_FileID,
           id:option.id,
           status:res.data.paper_status,
+          loadingHidden:true,
         })
     })
   },

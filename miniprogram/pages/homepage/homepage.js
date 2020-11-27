@@ -166,6 +166,13 @@ Page({
       url: '../doc_dongtai/doc_dongtai?id='+e.currentTarget.dataset.id,
     })
   },
+  timu_dongtai:function(e){
+    wx.navigateTo({
+      url: '../timu_dongtai/timu_dongtai?id='+e.currentTarget.dataset.id,
+    })
+  },
+
+
 
   xiala:function(e){
     wx.showLoading({

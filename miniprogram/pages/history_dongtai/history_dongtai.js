@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    priseDongtai:[],
     totalCount: 0,
     topics: [],
     loadingHidden:false
@@ -44,7 +45,36 @@ Page({
     })
   },
 
-
+  PriseTap:function(event){
+    if(event.currentTarget.dataset.status=="true"){
+      console.log("取消点赞")
+      wx.cloud.callFunction({
+        name:"prise",
+        data:{
+          action:"cancel",
+          userid:that.data.openid,
+          topicId:event.currentTarget.dataset.topicid,
+        }
+      }).then(res=>{
+        this.getData()
+        this.getPrise(that.data.openid)
+      })
+    }else{
+      console.log("点赞")
+      wx.cloud.callFunction({
+        name:"prise",
+        data:{
+          action:"prise",
+          userid:that.data.openid,
+          topicId:event.currentTarget.dataset.topicid,
+        }
+      }).then(res=>{
+        this.getData()
+        this.getPrise(that.data.openid)
+       })
+     
+    }
+  },
   onShow: function() {
     that.getData();
   },
@@ -60,7 +90,6 @@ Page({
       data:{}
     }).then(res=>{
       // res.result.data 是用户数据
-      console.log("获取openID success",res.result.openid)
       this.setData({
         openid:res.result.openid
       })
@@ -78,44 +107,31 @@ Page({
    
 
   },
-
-  onPraiseTap: function(event){
-    const that = this;
-    const weiboIndex = event.currentTarget.dataset.weibo;
-    const topic = that.data.topics[weiboIndex];
-    const openId=app.globalData.openid
-    let isPraised=false;
-    if(topic.praises){
-      topic.praises.forEach((value,index) => {
-        if(value==openId){
-          isPraised=true;
-        }
-      })
-    }
-    if(!isPraised){
-      //console.log(openId);
-      wx.cloud.callFunction({
-        name:"praise",
-        data:{
-          weiboId:topic._id
-        },
-        success: res => {
-          if(!topic.praises){
-            topic.praises=[openId];
-          }else{
-            topic.praises.push(openId);
+  getPrise(openid){
+    wx.cloud.callFunction({
+      name:"prise",
+      data:{
+        action:"get",
+        userid:openid
+      }
+    }).then(res=>{
+      if(res.result.data.length==0){
+        wx.cloud.callFunction({
+          name:"prise",
+          data:{
+            action:"addUser",
+            userid:openid
           }
-          const topics=that.data.topics;
-          console.log(weiboIndex);
-          topics[weiboIndex]=topic;
-          that.setData({
-            topics:topics
-          })
-          console.log(topics[weiboIndex].praises);
-        }
-      })
-    }
+        })
+      }else{
+        this.setData({
+          loadingHidden:true,
+          priseDongtai:res.result.data[0].priseDongtai
+        })
+      }
+    })
   },
+
   /**
    * item 点击
    */

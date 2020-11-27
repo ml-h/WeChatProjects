@@ -1,3 +1,6 @@
+<loading hidden="{{loadingHidden}}">
+  数据加载中
+</loading>
 <image src="../../images/wenjian2.png"></image>
 <view class="title">{{title}}</view>
 

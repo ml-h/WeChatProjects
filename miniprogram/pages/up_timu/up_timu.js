@@ -52,8 +52,7 @@ Page({
         author:this.data.author,
         content:this.data.content,
         answer:this.data.answer,
-        youYong:0,
-        meiYong:0,
+        score:0,
         timu_status:"正在审核",
         status:false,
         pinglun:this.data.pinglun,
@@ -73,17 +72,15 @@ Page({
       console.log("上传失败：",err)
     })
   },
-  // 自动上传文档动态到社区
+  // 自动上传题目动态到社区
   add_dongtai(timu_id){
     wx.cloud.database().collection('topic').add({
       data: {
         date: new Date(),
         timu_id:timu_id,
         content:this.data.content,
-        answer:this.data.answer,
         time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         user:this.data.user,
-        uploader:this.data.author,
         type:3
       }     
         })

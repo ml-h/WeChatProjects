@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    loadingHidden:false
   },
 
 
@@ -39,7 +39,8 @@ Page({
       this.setData({
         title:option.title,
         score:option.score,
-        status:option.status
+        status:option.status,
+        loadingHidden:true
       })
   },
 
