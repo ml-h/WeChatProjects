@@ -12,7 +12,7 @@ Page({
   },
   get_data: function(e){
     db.collection("up_timu").where({
-      author:e
+      _openid:e
     }).get().then(res=>{
       // console.log("题目列表",res.data)
         this.setData({
@@ -22,24 +22,33 @@ Page({
         
     })
   },
+  getOpenid(){
+    // 获取当前用户的openID
+    wx.cloud.callFunction({
+      name:"login",
+      data:{}
+    }).then(res=>{
+      // res.result.data 是用户数据
+      console.log("获取openID成功 ",res.result.openid)
+      // 获取用户收藏的试题
+      that.get_data(res.result.openid)
+    })
+    .catch(res=>{
+      console.log("获取openID 失败",res)
+    })
+   
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     wx.setNavigationBarTitle({
       title: '上传题目'
     })
     var that = this
-    wx.getUserInfo({
-    success:res=>{
-      const userInfo=res.userInfo;
-      console.log(userInfo)
-        that.setData({
-          author:userInfo.nickName
-        })
-        that.get_data(userInfo.nickName)
-      }
-    })
+
+    that.getOpenid()
   },
 
   /**

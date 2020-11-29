@@ -26,11 +26,20 @@ Page({
   onLoad: function(options) {
     this.initImageSize()
     that = this
-    var time = util.formatTime(new Date());
-    // 再通过setData更改Page()里面的data，动态更新页面的数据
-    this.setData({
-      time: time
-    });
+    // var time = util.formatTime(new Date());
+    // // 再通过setData更改Page()里面的data，动态更新页面的数据
+    // this.setData({
+    //   time: time
+    // });
+    wx.getUserInfo({
+    success:res=>{
+      const userInfo=res.userInfo;
+        that.setData({
+          nickName:userInfo.nickName,
+          avatarUrl:userInfo.avatarUrl
+        })
+      }
+    })
   },
 
   initImageSize:function(){
