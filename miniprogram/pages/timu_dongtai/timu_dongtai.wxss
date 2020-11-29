@@ -27,6 +27,8 @@
   flex-direction: row;
   position:fixed;
   bottom:1rpx; 
+  align-items: center;
+  justify-content:space-around;
 }
 .choice{
     font-size: 40rpx;
@@ -38,7 +40,7 @@
 }
 
 .btn{
-  width: 160rpx;
+
   background-color:  rgb(255, 255, 255);
   color: rgb(63, 57, 57);
   border: 4rpx solid #706e6e;

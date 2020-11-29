@@ -16,6 +16,7 @@ Page({
     currentIndex: 0,
     currentIndex1: 0,
     currentIndex2: 0,
+    show:'1',
     imgList: [{
       img: "https://7465-test-yan-3gp1h1ez7f7c6a02-1304167464.tcb.qcloud.la/%E5%9B%BE%E6%A0%87/fzu1.png?sign=ae23e42dc51b5c57255639a883dfe0cc&t=1605663522" //轮播图片
     },
@@ -292,6 +293,24 @@ jubao:function(){
       }
    }
   })
+},
+change:function(e){
+
+if(e.target.dataset.show=='1'){
+  this.setData({
+    show:e.target.dataset.show,
+    viewBg1:"rgb(219, 204, 204)",
+    viewBg2:"rgb(236, 231, 231)"
+  })
+}else{
+  this.setData({
+    show:e.target.dataset.show,
+    viewBg1:"rgb(236, 231, 231)",
+    viewBg2:"rgb(219, 204, 204)"
+  })
+}
+
+
 }
 
 })

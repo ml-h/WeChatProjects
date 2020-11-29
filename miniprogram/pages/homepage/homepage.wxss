@@ -1,18 +1,38 @@
 page{
   background-color: rgb(219, 204, 204);
 }
+.xuanze view{
+  line-height: 80rpx;
+  width: 375rpx;
+  text-align: center
+}
+#shequ{
+  background-color: rgb(219, 204, 204)
+}
+.xuanze{
+  position: fixed;
+  left: 0;
+  top: 0;
+  align-items: center;
+  justify-content:space-around;
+  display: flex;
+  background-color: rgb(236, 231, 231);
+  z-index: 200;
+}
 .container{
   background-color: rgb(219, 204, 204);
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 10rpx;
+  margin-top: 10rpx;
 }
 
 
 .weibo-group{
   background: #fdfbfb;
   padding: 40rpx;
+  margin-top: 10rpx;
   margin-bottom: 20rpx;
 
 }
