@@ -2,18 +2,18 @@
 <form class="contain" bindsubmit="formSubmit" bindreset="formReset">
 
   <view class="title">题目</view>
-  <textarea class="textarea" bindinput='content' style="height:150rpx;" auto-height  placeholder="输入题目"></textarea>
+  <textarea class="textarea" maxlength="-1" bindinput='content' style="height:150rpx;" auto-height  placeholder="输入题目"></textarea>
   
   <view class="title">选项</view>
-  <button class='xuan_btn' bindtap="xuan_num" data-op='-1' style="width: 180rpx;height: 50rpx;padding:10rpx;  margin-left: 20rpx;" > 减少选项  </button>
+  <button class='xuan_btn'  bindtap="xuan_num" data-op='-1' style="width: 180rpx;height: 50rpx;padding:10rpx;  margin-left: 20rpx;" > 减少选项  </button>
 <button class='xuan_btn' bindtap="xuan_num" data-op='1' style="width: 180rpx;height: 50rpx;padding:10rpx; margin-left: 20rpx;"> 增加选项 </button>
 <view class='choices' wx:for="{{xuanze}}" wx:if="{{index<xuan_num}}">
   <view class="xuan">{{item}}:</view>
-  <textarea class="choice"  name='{{item}}' style="height:50rpx;"  auto-height></textarea>
+  <textarea class="choice" maxlength="-1" name='{{item}}' style="height:50rpx;"  auto-height></textarea>
 </view>
 
   <view class="title">答案</view>
-  <textarea class="choice" bindinput='answer' style="height: 50rpx;"  placeholder="输入答案"></textarea>
+  <textarea class="choice"  bindinput='answer' style="height: 50rpx;"  placeholder="输入答案"></textarea>
   
   <button class='up_btn'  formType="submit"> 上传  </button>
 </form>

@@ -1,8 +1,8 @@
 <!-- 上传文件页面 -->
 <form class="contain">
   <view class="title">题目</view>
-  <textarea class="textarea" bindinput='input1' style="height:300rpx;" name="timu" placeholder="输入题目"></textarea>
+  <textarea class="textarea" maxlength="-1"   auto-height  bindinput='input1' style=" min-height:300rpx;" name="timu" placeholder="输入题目"></textarea>
   <view class="title">答案</view>
-  <textarea class="textarea" bindinput='input2' name="daan" placeholder="输入答案"></textarea>
+  <textarea class="textarea"   maxlength="-1" auto-height  bindinput='input2' style=" min-height:300rpx;" name="daan" placeholder="输入答案"></textarea>
   <button class='up_btn' bindtap="searchclick" form-type="sumbit"> 上传  </button>
 </form>

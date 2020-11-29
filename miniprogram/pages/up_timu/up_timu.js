@@ -47,6 +47,21 @@ Page({
     })
   },
   searchclick: function(){
+    if(this.data.content==''){
+
+      wx.showToast({
+        title: '问题不能为空',
+        icon:'none'
+      })
+    }else if(this.data.answer==''){
+      wx.showToast({
+        title: '答案不能为空',
+        icon:'none'
+      })
+    }else{
+      wx.showLoading({
+        name:"正在上传"
+      })
     db.collection("up_timu").add({
       data:{
         author:this.data.author,
@@ -60,6 +75,7 @@ Page({
       }
     }).then(res=>{
       this.add_dongtai(res._id)
+      wx.hideLoading()
       wx.showToast({
         title: '上传成功',
         duration:1500,
@@ -69,8 +85,9 @@ Page({
       wx.showToast({
         title: '上传失败',
       })
+      wx.hideLoading()
       console.log("上传失败：",err)
-    })
+    })}
   },
   // 自动上传题目动态到社区
   add_dongtai(timu_id){

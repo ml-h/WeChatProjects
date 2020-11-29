@@ -5,7 +5,9 @@ Page({
 data:{
   xuanze:['A','B','C','D','E','F','G'],
   xuan_num:4,
-  choice:[]
+  choice:[],
+  content:"",
+  answer:""
 },
 xuan_num(e){
   const cur_num=this.data.xuan_num
@@ -42,6 +44,25 @@ answer: function(e) {//接受答案
   })
 },
 formSubmit:function(e){
+  if(this.data.content==''){
+    wx.showToast({
+      title: '问题不能为空',
+      icon:'none'
+    })
+  }else if(this.data.answer==''){
+    wx.showToast({
+      title: '答案不能为空',
+      icon:'none'
+    })
+  }else if(e.detail.value.A==""||e.detail.value.B==""){
+    wx.showToast({
+      title: '选项不能为空',
+      icon:'none'
+    })
+  }else{
+    wx.showLoading({
+      name:"正在上传"
+    })
   db.collection("up_timu").add({
     data:{
       author:this.data.user.nickName,
@@ -56,17 +77,20 @@ formSubmit:function(e){
     }
   }).then(res=>{
     this.add_dongtai(res._id)
+    wx.hideLoading()
     wx.showToast({
       title: '上传成功',
       duration:1500,
     })
 
   }).catch(err=>{
+    wx.hideLoading()
     wx.showToast({
       title: '上传失败',
     })
     console.log("上传失败：",err)
   })
+}
 },
 // 自动上传题目动态到社区
 add_dongtai(timu_id){
