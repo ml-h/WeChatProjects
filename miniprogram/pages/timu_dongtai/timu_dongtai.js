@@ -5,6 +5,7 @@ Page({
   data: {
    pingjia:0,
    loadingHidden:false,
+   xuanze:['A','B','C','D','E','F','G'],
   },
 
   onLoad: function(option) {
@@ -12,11 +13,14 @@ Page({
         this.setData({
          content:res.data.content,
          answer:res.data. answer,
+         choice:res.data.choice,
+          type:option.type,
           timu_id:option.id,
           status:res.data.timu_status,
           loadingHidden:true
         })
     })
+   
   },
  
 

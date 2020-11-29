@@ -9,14 +9,16 @@ Page({
     loadingHidden:false,
     timu:""
   },
-  get_data:function(e){
+  get_data:function(id,type){
     db.collection("up_timu").where({
-      _id:e
+      _id:id
     }).get().then(res=>{
       console.log(res.data)
       this.setData({
+
         timu:res.data,
-        loadingHidden:true
+        loadingHidden:true,
+        type:type
       })
     })
   },
@@ -28,7 +30,7 @@ Page({
       title: '用户反馈'
     })
     console.log("反馈页接收的id",options.id)
-    this.get_data(options.id)
+    this.get_data(options.id,options.type)
   },
 
 })

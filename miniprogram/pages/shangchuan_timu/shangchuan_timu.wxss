@@ -34,6 +34,10 @@ page{
   margin-top: 20rpx;
   align-items:center;
 }
+.left{
+position: absolute;
+left: 350rpx;
+}
 .jiahao{
   color: rgb(87, 139, 206);
   font-size: 50rpx;

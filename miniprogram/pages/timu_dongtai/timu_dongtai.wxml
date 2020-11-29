@@ -9,8 +9,14 @@
         <view class="info">{{content}}</view>
       </view>
 
+      <view class=text-content" wx:if="{{type==4}}">
+        <view class="title">选项</view>
+        <text class="choice" wx:for="{{choice}}">{{index}} :  {{item}}</text>
+      </view>
+
+
       <view class=text-content">
-        <view class="title">答案解析</view>
+        <view class="title">答案</view>
         <view class="info">{{answer}}</view>
       </view>
 

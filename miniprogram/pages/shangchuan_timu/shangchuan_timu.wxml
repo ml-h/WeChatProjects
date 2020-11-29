@@ -4,8 +4,13 @@
 </loading>
   <button class="upload" bindtap="up_timu" style="width:300rpx;height:100rpx;margin-left:20rpx;">
     <view class="jiahao" >+</view>
-    上传题目
+    上传简答题
   </button>
+  <button class="upload left" bindtap="up_xuanze" style="width:300rpx;height:100rpx;margin-left:20rpx;">
+    <view class="jiahao" >+</view>
+    上传选择题
+  </button>
+
   <view class="notice">
           <view class="divLine" style="margin-right: 10rpx;"></view>你上传的题目<view class="divLine"  style="margin-left: 10rpx;"></view>
       </view>
@@ -18,7 +23,7 @@
       <view class="timu">{{item.content}}</view>
       <view class="line">
         <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
-        <view  data-id="{{item._id}}" class="fankui" bindtap="fankui">查看反馈</view>
+        <view  data-id="{{item._id}}" data-type="{{item.type}}" class="fankui" bindtap="fankui" >查看反馈</view>
       </view>
   </view>
 

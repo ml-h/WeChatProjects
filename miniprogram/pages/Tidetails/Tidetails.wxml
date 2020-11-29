@@ -7,13 +7,24 @@
     <view>{{detail.author}}</view>
   </view>
 </view>
+
+
 <view class="xuxian"></view>
 <text class="Ticontent">{{detail.content}}</text>
 <view class="line"></view>
-<view class="title">答案解析</view>
+
+
+<view wx:if="{{type==4}}" class='choice'>
+<view class="title" >选项</view>
+<view class="xuxian"></view>
+<text class="" wx:for="{{detail.choice}}">
+  {{index}} :  {{item}}
+</text>
+</view>
+<view class="title">答案</view>
 <view class="xuxian"></view>
 <view class="Tianswer">{{detail.answer}}</view>
-<view class="title">评论</view>
+<!-- <view class="title">评论</view>
 <view class="xuxian"></view>
 <block wx:for="{{detail.pinglun}}" wx:key="{{index}}">  
   <view class="pingfield">
@@ -21,7 +32,7 @@
     <view>{{item.content}}</view>
   </view>
 </block>
-<view class="line1" style="margin-bottom:120rpx;"></view>
+<view class="line1" style="margin-bottom:120rpx;"></view> -->
  <!-- <view class="bottom" >
   <view class="collection" >
   

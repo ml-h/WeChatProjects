@@ -73,8 +73,8 @@
       "list": [
         {
           "id": 0,
-          "name": "pages/up_timu/up_timu",
-          "pathName": "pages/up_timu/up_timu",
+          "name": "pages/shangchuan_timu/shangchuan_timu",
+          "pathName": "pages/up_xuanze/up_xuanze",
           "query": "",
           "scene": null
         },

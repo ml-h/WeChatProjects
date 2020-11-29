@@ -228,13 +228,6 @@ Page({
     //如果收藏了
     },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-
-  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -254,45 +247,11 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   detailclick(event){
-    console.log("搜索结果界面",this.data)
-    console.log("点击获取的数据",event.currentTarget.dataset.item._id)
+    // console.log("搜索结果界面",this.data)
+    // console.log("点击获取的数据",event.currentTarget.dataset.item._id)
     wx.navigateTo({
-      url: '../../pages/Tidetails/Tidetails?id='+event.currentTarget.dataset.item._id,
+      url: '../../pages/Tidetails/Tidetails?id='+event.currentTarget.dataset.item._id+'&type='+event.currentTarget.dataset.item.type,
     })  
     
  

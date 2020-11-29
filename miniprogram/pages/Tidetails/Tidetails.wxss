@@ -9,8 +9,8 @@
   font-size: 36rpx;
   font-weight: 800;
   padding-left: 40rpx;
-  margin-top:20px;
-  margin-bottom:20px;
+  margin-top:15px;
+  margin-bottom:15px;
   margin-left:10rpx;
 
 }
@@ -34,8 +34,8 @@
   
   }
 .Ticontent{
-  color: rgb(49, 46, 46);
-  font-size: 35rpx;
+  color: rgb(26, 25, 25);
+  font-size: 38rpx;
   margin:5rpx auto;
   margin-left:2rpx;
   padding: 20rpx;
@@ -107,4 +107,8 @@
   height: 7rpx;
   margin-top:50rpx;
   background:darkgray;
+}
+.choice{
+   padding-left: 30rpx;
+   padding-bottom: 30rpx;
 }

@@ -6,15 +6,19 @@
   font-size: 40rpx;
   margin-bottom: 20rpx;
   margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 4.3rpx solid #706e6e;
 }
 .text-content {
   padding: 10rpx 30rpx 10rpx 30rpx;
   line-height: 45rpx;
-  font-size: 32rpx;
+  font-size: 40rpx;
+  text-overflow: ellipsis; 
+  word-wrap: break-word; 
 }
 .info{
   display: flex;
-  border-top: 4.3rpx solid #706e6e;
+ 
   margin-bottom: 20rpx;
 }
 
@@ -24,7 +28,14 @@
   position:fixed;
   bottom:1rpx; 
 }
-
+.choice{
+    font-size: 40rpx;
+    margin-top: 30rpx;
+    display: flex;
+    text-overflow: ellipsis; 
+    word-wrap: break-word; 
+    word-break:break-all;
+}
 
 .btn{
   width: 160rpx;

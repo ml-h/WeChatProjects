@@ -63,10 +63,15 @@ Page({
         url: '../up_timu/up_timu'
 })  
 },
+up_xuanze: function (options) {
+  wx.navigateTo({
+        url: '../up_xuanze/up_xuanze'
+})  
+},
 
 fankui(e) {
   wx.navigateTo({
-        url: '../fankui_timu/fankui_timu?id='+e.currentTarget.dataset.id,
+        url: '../fankui_timu/fankui_timu?id='+e.currentTarget.dataset.id+'&type='+e.currentTarget.dataset.type,
   })
  }
 })

@@ -106,7 +106,7 @@
      </view>
   </view>
     <!-- 动态题目 -->
-    <view class="weibo-group" wx:if="{{item.type===3}}">
+    <view class="weibo-group" wx:else>
     <view class="user-group">
       <image class="avatar"
       src = "{{item.user.avatarUrl}}"></image>
@@ -117,7 +117,7 @@
         </view>
       </view>
     </view>
-    <view class="weibo-content-group" bindtap="timu_dongtai" data-id="{{item.timu_id}}">
+    <view class="weibo-content-group" bindtap="timu_dongtai" data-type="{{item.type}}" data-id="{{item.timu_id}}" >
       <view class="timu">{{item.content}}</view>
       <view class="notice">
         我上传了真题，快来看看！

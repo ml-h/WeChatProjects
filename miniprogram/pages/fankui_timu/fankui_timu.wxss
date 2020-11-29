@@ -22,7 +22,17 @@ image{
    margin: 20rpx auto;
    font-size: 40rpx;
    color: rgb(68, 65, 65);
+   padding-bottom: 28rpx;
+   border-bottom: 4.3rpx solid #706e6e;
  }
+ .choice{
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  display: flex;
+  text-overflow: ellipsis; 
+  word-wrap: break-word; 
+  word-break:break-all;
+}
  .value{
   margin: 20rpx auto;
   font-size: 40rpx;
@@ -41,7 +51,7 @@ image{
 }
 .info{
   display: flex;
-  border-top: 4.3rpx solid #706e6e;
+
   margin-bottom: 20rpx;
 }
 

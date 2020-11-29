@@ -20,7 +20,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '上传题目'
+      title: '上传简答题'
     })
     var that = this
     wx.getUserInfo({

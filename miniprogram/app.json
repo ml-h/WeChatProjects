@@ -36,7 +36,8 @@
    "pages/up_doc/up_doc",
    "pages/addFunction/addFunction",
    "pages/chooseLib/chooseLib",
-   "pages/storageConsole/storageConsole"
+   "pages/storageConsole/storageConsole",
+   "pages/up_xuanze/up_xuanze"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

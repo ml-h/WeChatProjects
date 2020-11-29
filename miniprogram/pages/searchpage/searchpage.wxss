@@ -41,6 +41,6 @@
   line-height: 40px;
   font-size: 14px;
   border-radius: 20px;
-  color: #bebec4;
+  color: #5f5a5a;
   padding-left: 35px;
 }
