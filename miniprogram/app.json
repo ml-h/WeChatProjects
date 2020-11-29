@@ -36,7 +36,6 @@
    "pages/up_doc/up_doc",
    "pages/addFunction/addFunction",
    "pages/chooseLib/chooseLib",
-   "pages/im/im",
    "pages/storageConsole/storageConsole"
   ],
   "window": {
