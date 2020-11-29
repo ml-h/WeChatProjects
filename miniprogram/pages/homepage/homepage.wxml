@@ -106,7 +106,7 @@
      </view>
   </view>
     <!-- 动态题目 -->
-    <view class="weibo-group" wx:else>
+    <view class="weibo-group" wx:if="{{item.type===3||item.type===4}}">
     <view class="user-group">
       <image class="avatar"
       src = "{{item.user.avatarUrl}}"></image>
