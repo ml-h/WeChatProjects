@@ -60,6 +60,10 @@ Page({
 
   },
   more:function(e){
+    wx.showLoading({
+      title: '正在加载',
+      icon:'none'
+    })
     wx.cloud.callFunction({
       name:"query_zhuanye",
       data:{
@@ -69,9 +73,14 @@ Page({
       res=>{
       this.setData({
         zhuanye:res.result.data.list,
-      })     
+      })  
+      wx.hideLoading()   
     }).catch(err=>{
       console.log("请求数据库错误"+err);
+      wx.hideLoading() 
+      wx.showToast({
+        title: '加载失败',
+      })
     });
   },
 

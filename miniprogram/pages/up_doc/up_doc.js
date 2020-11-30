@@ -178,11 +178,12 @@ upload_paper_yun(){
 // 自动上传文档动态到社区
   add_dongtai(){
     console.log(this.data.tempfile_time,this.data.tempfile_name,this.data.tempfile_url,this.data.selectData2[this.data.index2])
+    var month=new Date().getMonth()+1
     wx.cloud.database().collection('topic').add({
       // data 字段表示需新增的 JSON 数据
       data: {
         date: new Date(),
-        time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
+        time: new Date().getFullYear()+"/"+nmonth+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         paper_name:this.data.tempfile_name,
         paper_FileID:this.data.tempfile_url,
         paper_type:this.data.selectData2[this.data.index2],

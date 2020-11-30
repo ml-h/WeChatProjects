@@ -3,7 +3,7 @@
   <form bindsubmit="formSubmit">
     <view class="text-content">
       <view class='text-area'>
-        <textarea name="input-content" maxlength="-1" auto-height type="text" placeholder="畅所欲言" placeholder-class="holder" value="{{textContent}}" bindblur='getTextAreaContent' class="input-content"></textarea>
+        <textarea name="input-content" maxlength="-1" auto-height type="text" placeholder="畅所欲言" bindblur='getTextAreaContent' class="input-content"></textarea>
       </view>
     </view>
     <scroll-view class="image-group" scroll-x="true">

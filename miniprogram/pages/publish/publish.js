@@ -94,11 +94,12 @@ Page({
    * 保存到发布集合中
    */
   saveDataToServer: function(event) {
+    var month=new Date().getMonth()+1
     db.collection('topic').add({
       // data 字段表示需新增的 JSON 数据
       data: {
         content: that.data.content,
-        time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
+        time: new Date().getFullYear()+"/"+month+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         date: new Date(),
         prise_num:0,
         images: that.data.images,
@@ -112,7 +113,6 @@ Page({
         that.data.images = [];
 
         that.setData({
-          textContent: '',
           images: [],
         })
 

@@ -19,9 +19,7 @@ textarea {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 336rpx;
-  /* align-items: center; */
-  line-height: 26rpx;
+  min-height: 330rpx;
   border-radius: 5rpx;
   background-color: #f3efef;
   margin-bottom: 20rpx;

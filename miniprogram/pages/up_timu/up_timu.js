@@ -91,12 +91,13 @@ Page({
   },
   // 自动上传题目动态到社区
   add_dongtai(timu_id){
+    var month=new Date().getMonth()+1
     wx.cloud.database().collection('topic').add({
       data: {
         date: new Date(),
         timu_id:timu_id,
         content:this.data.content,
-        time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
+        time: new Date().getFullYear()+"/"+month+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
         user:this.data.user,
         type:3
       }     
