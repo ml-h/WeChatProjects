@@ -4,10 +4,12 @@ Page({
 
 data:{
   xuanze:['A','B','C','D','E','F','G'],
+  bg:['background-color:rgb(146, 153, 153);','background-color:rgb(146, 153, 153);','background-color:rgb(146, 153, 153);'
+  ,'background-color:rgb(146, 153, 153);','background-color:rgb(146, 153, 153);','background-color:rgb(146, 153, 153);','background-color:rgb(146, 153, 153);'],
   xuan_num:4,
   choice:[],
   content:"",
-  answer:""
+  answer:[],
 },
 xuan_num(e){
   const cur_num=this.data.xuan_num
@@ -39,11 +41,26 @@ content: function(e) {//接受题目
   })
 },
 answer: function(e) {//接受答案
-  this.setData({
-    answer: e.detail.value
-  })
+  var an=e.target.dataset.an
+  var index= this.data.answer.indexOf(an)
+  var change='bg['+e.target.dataset.index+']'
+  // console.log(an,index)
+  if(index==-1){
+      this.data.answer.push(an),
+      this.setData({
+        [change]:'background-color:rgb(100, 153, 153)'
+    })
+  }else{
+    this.data.answer.splice(index,1),  
+    this.setData({
+      [change]:'background-color:rgb(146, 153, 153)'
+    })
+  }
 },
+
 formSubmit:function(e){
+
+
   if(this.data.content==''){
     wx.showToast({
       title: '问题不能为空',
@@ -67,7 +84,7 @@ formSubmit:function(e){
     data:{
       author:this.data.user.nickName,
       content:this.data.content,
-      answer:this.data.answer,
+      answer:this.data.answer.join(","),
       score:0,
       timu_status:"正在审核",
       status:false,

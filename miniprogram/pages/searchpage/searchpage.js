@@ -77,7 +77,8 @@ Page({
       console.log("不支持无关键词搜索")
       wx.showToast({
         title: "请输入关键词",
-        duration:2000
+        duration:2000,
+        icon:'none'
       })
     }
   }

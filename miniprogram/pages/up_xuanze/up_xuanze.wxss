@@ -1,5 +1,5 @@
 .up_btn{
-  background-color: rgb(161, 120, 120);
+  background-color:rgb(100, 153, 153);
   color: white;
   border-radius: 10%;
   width: 300rpx;
@@ -32,6 +32,23 @@
   left:68rpx;
   width: 650rpx;
 }
+.an_choice{
+  justify-content: center; /**内容居中*/
+  border-radius: 20%;
+  color: rgb(255, 255, 255);
+  font-size: 38rpx;
+  display: flex; /*设置显示样式**/
+padding-top: 22rpx;
+padding-bottom: 22rpx;
+justify-content: center; /**内容居中*/
+  width: 100rpx;
+}
+.an_choices{
+  margin-top: 20rpx;
+display: flex;
+flex-direction: row;
+justify-content:space-around;
+}
 .xuan{
   font-size: 40rpx;
   margin-left: 20rpx;
@@ -44,9 +61,8 @@
   display: inline;
 }
 .xuan_btn{
-
+  background-color:rgb(100, 153, 153);
   display: inline;
-  background-color: rgb(192, 153, 153);
   color: white;
   border-radius: 10%;
   font-size: 30rpx;
