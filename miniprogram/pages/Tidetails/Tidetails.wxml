@@ -1,6 +1,7 @@
 <!--搜索题目后的详情页-->
+
 <view class="TiHeader">
-  <view class="title" >题目</view>
+<view class="title" >题目</view>
   <view class="anchor" style="margin-right:2%;"> 
     <image class="ren" src="../../images/ren.png"></image>
     <view>上传者:</view>
@@ -11,19 +12,20 @@
 
 <view class="xuxian"></view>
 <text class="Ticontent">{{detail.content}}</text>
-<view class="line"></view>
 
-
+<view wx:if="{{type==4}}" class="title" >选项</view>
 <view wx:if="{{type==4}}" class='choice'>
-<view class="title" >选项</view>
+
 <view class="xuxian"></view>
-<text class="" wx:for="{{detail.choice}}">
+<text class="xuanxiang" wx:for="{{detail.choice}}">
   {{index}} :  {{item}}
 </text>
 </view>
+<view>
 <view class="title">答案</view>
 <view class="xuxian"></view>
 <view class="Tianswer">{{detail.answer}}</view>
+</view>
 <!-- <view class="title">评论</view>
 <view class="xuxian"></view>
 <block wx:for="{{detail.pinglun}}" wx:key="{{index}}">  

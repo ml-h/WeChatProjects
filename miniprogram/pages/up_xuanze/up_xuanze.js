@@ -14,12 +14,17 @@ data:{
 xuan_num(e){
   const cur_num=this.data.xuan_num
   if(e.target.dataset.op=='-1'){
+     
     if((cur_num-1)<2){
       wx.showToast({
         title: '选项不能少于2',
         icon:'none'
       })
     }else{
+      var index=this.data.answer.indexOf(this.data.xuanze[cur_num-1])
+    if(index>-1){
+      this.data.answer.splice(index,1)
+    }
     this.setData({
       xuan_num:cur_num-1
     })}
@@ -59,8 +64,6 @@ answer: function(e) {//接受答案
 },
 
 formSubmit:function(e){
-
-
   if(this.data.content==''){
     wx.showToast({
       title: '问题不能为空',
@@ -111,12 +114,13 @@ formSubmit:function(e){
 },
 // 自动上传题目动态到社区
 add_dongtai(timu_id){
+  var month=new Date().getMonth()+1
   wx.cloud.database().collection('topic').add({
     data: {
       date: new Date(),
       timu_id:timu_id,
       content:this.data.content,
-      time: new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
+      time: new Date().getFullYear()+"/"+month+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
       user:this.data.user,
       type:4
     }     
