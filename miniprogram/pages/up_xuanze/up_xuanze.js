@@ -10,6 +10,7 @@ data:{
   choice:[],
   content:"",
   answer:[],
+  analyse:""
 },
 xuan_num(e){
   const cur_num=this.data.xuan_num
@@ -40,6 +41,11 @@ xuan_num(e){
     })}
   }
 },
+analyse: function(e) {//接受题目
+  this.setData({
+    analyse: e.detail.value
+  })
+},
 content: function(e) {//接受题目
   this.setData({
     content: e.detail.value
@@ -69,9 +75,9 @@ formSubmit:function(e){
       title: '问题不能为空',
       icon:'none'
     })
-  }else if(this.data.answer==''){
+  }else if(this.data.answer==''&&this.data.analyse==""){
     wx.showToast({
-      title: '答案不能为空',
+      title: '请输入答案或解析',
       icon:'none'
     })
   }else if(e.detail.value.A==""||e.detail.value.B==""){
@@ -89,6 +95,7 @@ formSubmit:function(e){
       content:this.data.content,
       answer:this.data.answer.join(","),
       score:0,
+      analyse:this.data.analyse,
       timu_status:"正在审核",
       status:false,
       choice:e.detail.value,

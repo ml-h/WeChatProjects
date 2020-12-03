@@ -6,18 +6,22 @@ Page({
    pingjia:0,
    loadingHidden:false,
    xuanze:['A','B','C','D','E','F','G'],
+   answer:"",
+   analyse:"",
   },
 
   onLoad: function(option) {
     db.collection('up_timu').doc(option.id).get().then(res=>{
         this.setData({
          content:res.data.content,
-         answer:res.data. answer,
+         answer:res.data.answer,
+         analyse:res.data.analyse,
          choice:res.data.choice,
           type:option.type,
           timu_id:option.id,
           status:res.data.timu_status,
-          loadingHidden:true
+          loadingHidden:true,
+          op:option.op
         })
     })
    

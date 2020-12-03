@@ -13,11 +13,11 @@
 </view>
 
   <view class="title">答案</view>
-  <!-- <textarea class="choice"  bindinput='answer' style="height: 50rpx;"  placeholder="输入答案"></textarea> -->
   <view class="an_choices">
-
   <view class="an_choice"  wx:for="{{xuanze}}" bindtap="answer"  data-an="{{item}}" data-index="{{index}}" wx:if="{{index<xuan_num}}"  style="{{bg[index]}}" >{{item}}</view>
-
   </view>
+  <view class="title">解析</view>
+  <textarea class="textarea" maxlength="-1" bindinput='analyse' style="height:150rpx;" auto-height  placeholder="输入解析"></textarea>
+  
   <button class='up_btn'  formType="submit"> 上传  </button>
 </form>

@@ -20,7 +20,7 @@
 <view class="container">
 
   <view class="item"  wx:for="{{timu}}" >
-      <view class="timu">{{item.content}}</view>
+      <view class="timu"  data-id="{{item._id}}"  data-type="4" bindtap="fankui" bindtap="timu_dongtai">{{item.content}}</view>
       <view class="line">
         <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
         <view  data-id="{{item._id}}" data-type="{{item.type}}" class="fankui" bindtap="fankui" >查看反馈</view>

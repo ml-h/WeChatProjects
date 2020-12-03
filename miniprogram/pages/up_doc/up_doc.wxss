@@ -82,8 +82,8 @@
 }
 
 .up_btn{
-  background-color: rgb(216, 186, 186);
-  color: rgb(73, 66, 66);
+  background-color: rgb(100, 153, 153);
+  color: white;
   border-radius: 10%;
   width: 300rpx;
   margin-top: 200rpx;

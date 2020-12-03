@@ -1,5 +1,5 @@
 .up_btn{
-  background-color: rgb(192, 153, 153);
+  background-color: rgb(100, 153, 153);
   color: white;
   border-radius: 10%;
   width: 300rpx;

@@ -73,5 +73,10 @@ fankui(e) {
   wx.navigateTo({
         url: '../fankui_timu/fankui_timu?id='+e.currentTarget.dataset.id+'&type='+e.currentTarget.dataset.type,
   })
- }
+ },
+ timu_dongtai:function(e){
+   wx.navigateTo({
+     url: '../timu_dongtai/timu_dongtai?id='+e.currentTarget.dataset.id+'&type='+e.currentTarget.dataset.type+"&op=1",
+   })
+  }
 })

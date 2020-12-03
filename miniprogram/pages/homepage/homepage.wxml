@@ -134,7 +134,7 @@
         </view>
       </view>
     </view>
-    <view class="weibo-content-group" bindtap="timu_dongtai" data-type="{{item.type}}" data-id="{{item.timu_id}}" >
+    <view class="weibo-content-group"    bindtap="timu_dongtai" data-type="{{item.type}}" data-id="{{item.timu_id}}" >
       <view class="timu">{{item.content}}</view>
       <view class="notice">
         我上传了真题，快来看看！

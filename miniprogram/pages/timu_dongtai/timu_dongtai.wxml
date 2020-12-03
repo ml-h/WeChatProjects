@@ -14,15 +14,24 @@
         <text class="choice" wx:for="{{choice}}">{{index}} :  {{item}}</text>
       </view>
 
+      <view class=text-content"  wx:if="{{type==3}}">
+          <view class="title">答案解析</view>
+          <view class="info">{{answer}}</view>
+  </view>
+  <view class=text-content"  wx:if="{{type==4&&answer!==''}}">
+          <view class="title" >答案</view>
+          <view class="info">{{answer}}</view>
+  </view>
+  <view class=text-content"  wx:if="{{type==4&&analyse!==''}}">
+          <view class="title" >解析</view>
+          <view class="info">{{analyse}}</view>
+  </view>
+      
 
-      <view class=text-content">
-        <view class="title">答案</view>
-        <view class="info">{{answer}}</view>
-      </view>
 
     </view>
 
-    <view class='comment'>
+    <view class='comment' wx:if="{{op==='0'}}">
         <button class="btn" bindtap="pingjia" style="  width: 375rpx;" data-operate="-1" open-type="getUserInfo">没用
           <image class="img" src="../../images/cai.png"></image>
         </button>

@@ -14,9 +14,17 @@
         <text class="choice" wx:for="{{timu[0].choice}}">{{index}} :  {{item}}</text>
       </view>
 
-  <view class=text-content">
+  <view class=text-content"  wx:if="{{type==3}}">
           <view class="title">答案解析</view>
           <view class="info">{{timu[0].answer}}</view>
+  </view>
+  <view class=text-content"  wx:if="{{type==4&&timu[0].answer!==''}}">
+          <view class="title" >答案</view>
+          <view class="info">{{timu[0].answer}}</view>
+  </view>
+  <view class=text-content"  wx:if="{{type==4&&timu[0].analyse!==''}}">
+          <view class="title" >解析</view>
+          <view class="info">{{timu[0].analyse}}</view>
   </view>
 </view>
 <view class="line">

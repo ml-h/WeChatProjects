@@ -12,6 +12,7 @@
   font-size: 38rpx;
   display: flex;
   margin:20rpx auto;
+  width: 640rpx;
   padding: 20rpx;
   margin-bottom: 30rpx;
   
@@ -25,12 +26,11 @@
   min-height: 60rpx;
   padding: 12rpx;
   border: 4rpx dashed  rgb(49, 46, 46);
-  /* background-color: rgb(248, 244, 244); */
   border-radius: 5%;
   color: rgb(49, 46, 46);
   font-size: 38rpx;
   left:68rpx;
-  width: 650rpx;
+  width: 620rpx;
 }
 .an_choice{
   justify-content: center; /**内容居中*/
@@ -45,6 +45,8 @@ justify-content: center; /**内容居中*/
 }
 .an_choices{
   margin-top: 20rpx;
+margin-bottom: 30rpx;
+  
 display: flex;
 flex-direction: row;
 justify-content:space-around;
