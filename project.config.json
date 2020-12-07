@@ -73,8 +73,8 @@
       "list": [
         {
           "id": 0,
-          "name": "pages/shangchuan_timu/shangchuan_timu",
-          "pathName": "pages/up_xuanze/up_xuanze",
+          "name": "pages/up_img/up_img",
+          "pathName": "pages/up_img/up_img",
           "query": "",
           "scene": null
         },
@@ -93,9 +93,9 @@
           "scene": null
         },
         {
-          "id": 5,
-          "name": "pages/history_dongtai/history_dongtai",
-          "pathName": "pages/replay/replay",
+          "id": 3,
+          "name": "pages/shangchuan_timu/shangchuan_timu",
+          "pathName": "pages/shangchuan_timu/shangchuan_timu",
           "query": "",
           "scene": null
         },

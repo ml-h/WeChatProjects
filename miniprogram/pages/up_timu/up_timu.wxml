@@ -1,8 +1,35 @@
 <!-- 上传文件页面 -->
 <form class="contain">
-  <view class="title">题目</view>
-  <textarea class="textarea" maxlength="-1"   auto-height  bindinput='input1' style=" min-height:300rpx;" name="timu" placeholder="输入题目"></textarea>
-  <view class="title">答案</view>
-  <textarea class="textarea"   maxlength="-1" auto-height  bindinput='input2' style=" min-height:300rpx;" name="daan" placeholder="输入答案"></textarea>
+  <view class="row">
+    <view class="title">题目</view>
+    <button bindtap="changeType" data-op="0" class="img_btn" style="width: 220rpx;height: 50rpx;padding:10rpx;  margin-left: 40rpx;">输入文字</button>
+    <button bindtap="changeType" data-op="1" class="img_btn" style="width: 220rpx;height: 50rpx;padding:10rpx;  margin-left: 20rpx;">上传图片</button>
+  </view>
+
+  <textarea wx:if="{{con_type===1}}" class="textarea" maxlength="-1"   auto-height  bindinput='input1' style=" min-height:300rpx;" name="timu" placeholder="输入题目"></textarea>
+  <view class="img" wx:if="{{con_type===2}}" bindtap="chooseImage" data-op="0">
+    <view wx:if="{{content_img===''}}">
+          选择图片
+        </view>
+        <image src='{{content_img}}'  wx:if="{{content_img!==''}}" mode='aspectFit' style="height:380rpx;" bindtap="previewImg" data-op="0" ></image>
+        <icon type='clear' data-op="0" bindtap='removeImg'  wx:if="{{content_img!==''}}"></icon>
+  </view>
+
+  <view class="row">
+    <view class="title">答案</view>
+    <button bindtap="changeType" data-op="2" class="img_btn" style="width: 220rpx;height: 50rpx;padding:10rpx;  margin-left: 40rpx;">输入文字</button>
+    <button bindtap="changeType" data-op="3" class="img_btn" style="width: 220rpx;height: 50rpx;padding:10rpx;  margin-left: 20rpx;">上传图片</button>
+  </view>
+  <textarea wx:if="{{ans_type===1}}" class="textarea" maxlength="-1"   auto-height  bindinput='input2' style=" min-height:300rpx;" name="timu" placeholder="输入答案"></textarea>
+ 
+  <view class="img"  wx:if="{{ans_type===2}}" bindtap="chooseImage" data-op="1">
+           <view wx:if="{{answer_img===''}}">
+          选择图片
+        </view>
+        <image src='{{answer_img}}' wx:if="{{answer_img!==''}}" mode='aspectFit' style="height:380rpx;" bindtap="previewImg" data-op="1" ></image>
+        <icon type='clear' data-op="1" bindtap='removeImg'wx:if="{{answer_img!==''}}"></icon>
+  </view>
+
+
   <button class='up_btn' bindtap="searchclick" form-type="sumbit"> 上传  </button>
 </form>

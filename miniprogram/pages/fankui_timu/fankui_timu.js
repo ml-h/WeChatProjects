@@ -22,6 +22,19 @@ Page({
       })
     })
   },
+     // 预览图片
+     previewImg: function(e) {
+       console.log(e)
+      //获取当前图片的下标
+      var url =[]
+      url.push(e.currentTarget.dataset.url);
+      wx.previewImage({
+        //当前显示图片
+        current: url[0],
+        //所有图片
+        urls: url
+      })
+    },
   /**
    * 生命周期函数--监听页面加载
    */

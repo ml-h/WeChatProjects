@@ -31,7 +31,7 @@ Page({
       // res.result.data 是用户数据
       console.log("获取openID成功 ",res.result.openid)
       // 获取用户收藏的试题
-      that.get_data(res.result.openid)
+      this.get_data(res.result.openid)
     })
     .catch(res=>{
       console.log("获取openID 失败",res)
@@ -46,28 +46,17 @@ Page({
     wx.setNavigationBarTitle({
       title: '上传题目'
     })
-    var that = this
+    
 
-    that.getOpenid()
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.get_data()
+    this.getOpenid()
   },
-
-   up_timu: function (options) {
-  wx.navigateTo({
-        url: '../up_timu/up_timu'
-})  
-},
-up_xuanze: function (options) {
-  wx.navigateTo({
-        url: '../up_xuanze/up_xuanze'
-})  
-},
 
 fankui(e) {
   wx.navigateTo({
@@ -78,5 +67,25 @@ fankui(e) {
    wx.navigateTo({
      url: '../timu_dongtai/timu_dongtai?id='+e.currentTarget.dataset.id+'&type='+e.currentTarget.dataset.type+"&op=1",
    })
-  }
+  },
+  up:function() {
+    wx.showActionSheet({
+      itemList: ['上传简答题', '上传选择题'],
+      success: function(res) {
+        if(res.tapIndex==0){
+          wx.navigateTo({
+            url: '../up_timu/up_timu'
+    })  
+        }else if(res.tapIndex==1){
+          wx.navigateTo({
+            url: '../up_xuanze/up_xuanze'
+    })  
+        }
+      },
+      fail: function(res) {
+          console.log(res.errMsg)
+      }
+  })
+  },
+  
 })

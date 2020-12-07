@@ -62,3 +62,12 @@ left: 350rpx;
   align-items:center;
   margin: 20rpx auto;
  }
+ .write-weibo-btn{ 
+  background: rgb(100, 153, 153);
+  font-size: 50rpx;
+  color: #ffffff;
+  box-shadow: grey;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}

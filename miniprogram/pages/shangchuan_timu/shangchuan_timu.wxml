@@ -2,16 +2,8 @@
 <loading hidden="{{loadingHidden}}">
   数据加载中
 </loading>
-  <button class="upload" bindtap="up_timu" style="width:300rpx;height:100rpx;margin-left:20rpx;">
-    <view class="jiahao" >+</view>
-    上传简答题
-  </button>
-  <button class="upload left" bindtap="up_xuanze" style="width:300rpx;height:100rpx;margin-left:20rpx;">
-    <view class="jiahao" >+</view>
-    上传选择题
-  </button>
-
-  <view class="notice">
+<movable-area style="height:300%;width:750rpx;">
+  <view class="notice" style="">
           <view class="divLine" style="margin-right: 10rpx;"></view>你上传的题目<view class="divLine"  style="margin-left: 10rpx;"></view>
       </view>
   <view class="notice" style="margin-top:50rpx;" wx:if="{{my_upDoc.length===0}}">
@@ -20,7 +12,11 @@
 <view class="container">
 
   <view class="item"  wx:for="{{timu}}" >
-      <view class="timu"  data-id="{{item._id}}"  data-type="4" bindtap="fankui" bindtap="timu_dongtai">{{item.content}}</view>
+      <view  wx:if="{{item.content!==''}}" class="timu"  data-id="{{item._id}}"  data-type="{{item.type}}" bindtap="fankui" bindtap="timu_dongtai">{{item.content}}</view>
+     <view wx:else>
+      <image data-id="{{item._id}}"  data-type="{{item.type}}" bindtap="fankui" bindtap="timu_dongtai" src="{{item.con_img}}" mode="aspectFill"  style="width:100%;max-height:300rpx" />
+     </view>
+     
       <view class="line">
         <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
         <view  data-id="{{item._id}}" data-type="{{item.type}}" class="fankui" bindtap="fankui" >查看反馈</view>
@@ -29,3 +25,10 @@
 
   
 </view>
+
+<movable-view class="write-weibo-btn"  direction="all"  bindtap="up"  style="width:90rpx;height:90rpx;border-radius: 50%;font-size:70rpx" x="600rpx" y="1000rpx"> 
+  <view style="padding-bottom:15rpx">
+  +
+</view>
+</movable-view>
+</movable-area>

@@ -136,6 +136,9 @@
     </view>
     <view class="weibo-content-group"    bindtap="timu_dongtai" data-type="{{item.type}}" data-id="{{item.timu_id}}" >
       <view class="timu">{{item.content}}</view>
+      <view wx:if="{{item.content===''}}">
+        <image src="{{item.con_img}}" mode="aspectFit" style="width:100%;max-height:400rpx" />
+      </view>
       <view class="notice">
         我上传了真题，快来看看！
       </view>

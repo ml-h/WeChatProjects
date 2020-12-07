@@ -6,7 +6,10 @@
     <view class="text-content">
       <view class="answer">
         <view class="title">题目</view>
-        <view class="info">{{content}}</view>
+        <view class="info" wx:if="{{content!==''}}">{{content}}</view>
+        <view wx:else>
+        <image src="{{con_img}}" mode="aspectFit" data-url='{{con_img}}' bindtap="previewImg" style="width:100%;max-height:400rpx" />
+      </view>
       </view>
 
       <view class=text-content" wx:if="{{type==4}}">
@@ -16,8 +19,11 @@
 
       <view class=text-content"  wx:if="{{type==3}}">
           <view class="title">答案解析</view>
-          <view class="info">{{answer}}</view>
-  </view>
+          <view class="info" wx:if="{{answer!==''}}">{{answer}}</view>
+        <view wx:else>
+        <image src="{{ans_img}}" mode="aspectFit" data-url='{{ans_img}}' bindtap="previewImg" style="width:100%;max-height:400rpx" />
+      </view>
+     </view>
   <view class=text-content"  wx:if="{{type==4&&answer!==''}}">
           <view class="title" >答案</view>
           <view class="info">{{answer}}</view>

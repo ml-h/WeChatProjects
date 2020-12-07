@@ -19,6 +19,8 @@ Page({
          choice:res.data.choice,
           type:option.type,
           timu_id:option.id,
+          con_img:res.data.con_img,
+          ans_img:res.data.ans_img,
           status:res.data.timu_status,
           loadingHidden:true,
           op:option.op
@@ -26,7 +28,19 @@ Page({
     })
    
   },
- 
+   // 预览图片
+   previewImg: function(e) {
+    //获取当前图片的下标
+    var url =[]
+    url.push(e.currentTarget.dataset.url);
+
+    wx.previewImage({
+      //当前显示图片
+      current: url[0],
+      //所有图片
+      urls: url
+    })
+  },
 
   pingjia:function(e){
     if(this.data.pingjia===0){

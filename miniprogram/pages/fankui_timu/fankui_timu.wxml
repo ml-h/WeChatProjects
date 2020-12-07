@@ -6,7 +6,10 @@
   <view class="text-content">
         <view class="answer">
           <view class="title">题目</view>
-          <view class="info">{{timu[0].content}}</view>
+          <view class="info" wx:if="{{timu[0].content!==''}}">{{timu[0].content}}</view>
+        <view wx:else>
+        <image src="{{timu[0].con_img}}" mode="aspectFit" data-url='{{timu[0].con_img}}' bindtap="previewImg" style="width:100%;max-height:400rpx" />
+      </view>
         </view>
   </view>
   <view class=text-content" wx:if="{{type==4}}">
@@ -16,11 +19,17 @@
 
   <view class=text-content"  wx:if="{{type==3}}">
           <view class="title">答案解析</view>
-          <view class="info">{{timu[0].answer}}</view>
+        <view class="info" wx:if="{{timu[0].answer!==''}}">{{timu[0].answer}}</view>
+        <view wx:else>
+        <image src="{{timu[0].ans_img}}" mode="aspectFit" data-url='{{timu[0].ans_img}}' bindtap="previewImg" style="width:100%;max-height:400rpx" />
+      </view>
+   
   </view>
   <view class=text-content"  wx:if="{{type==4&&timu[0].answer!==''}}">
           <view class="title" >答案</view>
           <view class="info">{{timu[0].answer}}</view>
+
+          
   </view>
   <view class=text-content"  wx:if="{{type==4&&timu[0].analyse!==''}}">
           <view class="title" >解析</view>
