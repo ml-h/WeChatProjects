@@ -1,4 +1,4 @@
-<!-- 上传文件页面 -->
+<!-- 上传题目页面 -->
 <form class="contain">
   <view class="row">
     <view class="title">题目</view>

@@ -31,7 +31,6 @@ page{
   display:flex;
   margin-left: 30rpx;
   font-size: 30rpx;
-  margin-top: 20rpx;
   align-items:center;
 }
 .left{
