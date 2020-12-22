@@ -3,7 +3,7 @@
   <form bindsubmit="formSubmit">
     <view class="text-content">
       <view class='text-area'>
-        <textarea name="input-content" maxlength="-1" auto-height type="text" placeholder="畅所欲言" bindblur='getTextAreaContent' class="input-content"></textarea>
+        <textarea name="input-content" maxlength="-1" auto-height type="text" placeholder="今天又有哪些事儿~" bindblur='getTextAreaContent' class="input-content"></textarea>
       </view>
     </view>
     <scroll-view class="image-group" scroll-x="true">
@@ -20,7 +20,7 @@
         <image src='../../images/publish/pic2.png' bindtap='chooseImage' class="picimg"></image>
       </view>
       <view class="picbtnview">
-        <button class="btn" formType='submit' open-type="getUserInfo">发布动态</button>
+        <button class="btn" formType='submit' open-type="getUserInfo">发布</button>
       </view>
     </view>
   </form>
