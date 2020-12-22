@@ -77,7 +77,6 @@ textarea {
   height: 80rpx;
   line-height: 60rpx;
   font-size: 40rpx;
-  display: flex;
   margin-top: 25rpx;
   margin-bottom: 20rpx;
   background-color:#a6a6ce;

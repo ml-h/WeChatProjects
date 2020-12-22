@@ -5,8 +5,12 @@
   padding-bottom: 3%;
   border-bottom: 2rpx solid #b99898;
   border-radius: 0%;
+  background: transparent;
 }
-
+page{
+  background-image: url(https://uploadfile.bizhizu.cn/up/2e/07/93/2e0793e5a2912f9b4940e39e765c55c5.jpg);
+padding-top: 20rpx;
+}
 .contain .year{
   display: flex;
   flex-direction: row;

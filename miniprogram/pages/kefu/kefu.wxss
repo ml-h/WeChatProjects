@@ -1,9 +1,6 @@
-/* miniprogram/pages/profile/kufu.wxss */
-
-/* .head-height { */
-  /* height: 280rpx;
-} */
-
+page{
+  background-image: url(https://uploadfile.bizhizu.cn/up/2e/07/93/2e0793e5a2912f9b4940e39e765c55c5.jpg);
+}
 .head {
   display:flex;
   color: #2d3b6b;

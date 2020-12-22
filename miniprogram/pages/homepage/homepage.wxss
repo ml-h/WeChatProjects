@@ -124,18 +124,6 @@ border-radius: 50%;
   align-items: center;
 }
 
-.write-weibo-btn{ 
-  position: fixed;
-  right: 50rpx;
-  bottom: 80rpx;
-  background: gray;
-  font-size: 50rpx;
-  color: #ffffff;
-  box-shadow: grey;
-}
-.write-weibo-btn view{
-  margin-top: -16rpx;
-}
 
 
 .container-content {
@@ -146,7 +134,27 @@ border-radius: 50%;
   margin: 0 auto;
 }
 
-
+.write-btn{ 
+  opacity: 0.7;
+  background: rgb(135, 117, 141);
+  font-size: 50rpx;
+  color: #ffffff;
+  box-shadow: grey;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100rpx;
+  width:100rpx;
+  border-radius: 50%;
+  position: fixed;
+  top: 80%;
+  left: 80%;
+}
+.jiahao{
+  color: rgb(240, 242, 245);
+  font-size: 50rpx;
+  margin-top: -10rpx;
+}
 .user-info {
   display: flex;
   flex-direction: row;

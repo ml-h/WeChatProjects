@@ -69,6 +69,7 @@ left: 350rpx;
  }
 
  .write-btn{ 
+   opacity: 0.7;
   background: rgb(135, 117, 141);
   font-size: 50rpx;
   color: #ffffff;
@@ -86,4 +87,5 @@ left: 350rpx;
 .jiahao{
   color: rgb(240, 242, 245);
   font-size: 50rpx;
+  margin-top: -10rpx;
 }

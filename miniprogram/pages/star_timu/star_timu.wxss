@@ -6,6 +6,7 @@
   position: relative;
   flex-direction: row;
 }
+
 .ticontainer{
   padding: 10rpx;
   display: flex;
@@ -15,13 +16,14 @@
   flex-direction: row;
   font-size: 32rpx;
   color: rgb(75, 70, 70);
+  background: transparent;
 }
-.oushu{
+/* .oushu{
   background-color:#dacaca;
 }
 .jishu{
   background-color:#f1e4e4;
-}
+} */
 .timuList{
   width:90%;
   margin: 15rpx;
