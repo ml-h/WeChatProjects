@@ -13,7 +13,6 @@
    "pages/xiangqing/xiangqing",
    "pages/logs/logs",
    "pages/timuxiangqing/timuxiangqing",
-   "pages/replay/replay",
    "pages/shangchuan_doc/shangchuan_doc",
    "pages/shangchuan_timu/shangchuan_timu",
    "pages/up_timu/up_timu",
@@ -83,7 +82,7 @@
     "l-button": "/miniprogram_npm/lin-ui/button/index",
     "l-tabs": "/miniprogram_npm/lin-ui/tabs/index",
     "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index",
-    "van-grid": "@vant/weapp/grid/index",
-    "van-grid-item": "@vant/weapp/grid-item/index"
+    "l-grid": "/miniprogram_npm/lin-ui/grid/index",
+    "l-grid-item": "/miniprogram_npm/lin-ui/grid-item/index"
   }
 }
