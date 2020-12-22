@@ -1,36 +1,53 @@
 page{
-  background-color: rgb(219, 204, 204);
+  /* background-color: rgb(219, 204, 204); */
 }
 .xuanze view{
-  line-height: 80rpx;
+  /* line-height: 80rpx; */
   width: 375rpx;
   text-align: center
 }
 #shequ{
-  background-color: rgb(219, 204, 204)
+  /* background-color: rgb(219, 204, 204) */
 }
 .xuanze{
-  position: fixed;
+  /* position: fixed;
   left: 0;
   top: 0;
   align-items: center;
   justify-content:space-around;
   display: flex;
   background-color: rgb(236, 231, 231);
-  z-index: 200;
+  z-index: 200; */
+  background-color: rgb(236, 231, 231);
+  z-index: 99999;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 60%;
+  /* color: #999; */
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 100;
+  margin-bottom: 10px;
+  height: 34px;
+  background: rgba(0, 0, 0, 0);
 }
 .container{
-  background-color: rgb(219, 204, 204);
+  /* background-color: rgb(90, 94, 109); */
+  background-image: url(https://uploadfile.bizhizu.cn/up/2e/07/93/2e0793e5a2912f9b4940e39e765c55c5.jpg);
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 10rpx;
-  margin-top: 10rpx;
+  /* margin-top: 10rpx; */
 }
 
 
 .weibo-group{
   background: #fdfbfb;
+  /* opacity: 0.50;   */
+  filter: alpha(opacity=50);
   padding: 40rpx;
   margin-top: 10rpx;
   margin-bottom: 20rpx;

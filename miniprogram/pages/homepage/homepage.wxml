@@ -12,14 +12,19 @@
     }
     module.exports.contain=contain;
 </wxs>
-
-<view class="xuanze">
+<l-tabs bind:linchange="change">
+        <l-tabpanel tab="社区动态" key="one" slot="one" id="shequ" >
+        </l-tabpanel>
+        <l-tabpanel tab="题库动态" key="two" slot="two" id="tiku" >
+        </l-tabpanel>
+</l-tabs>
+<!-- <view class="xuanze">
 <view bindtap="change" style="background:{{viewBg1}};" data-show='1' id="shequ">社区动态</view>
 <view bindtap="change" style="background:{{viewBg2}};"  data-show='2' id="tiku">题库动态</view>
-</view>
+</view> -->
 
-<view wx:if="{{show=='1'}}" style="margin-top:60rpx">
-  <!-- <scroll-view style="display:flex;width:100%" scroll-y>
+<view wx:if="{{show=='one'}}" >
+  <scroll-view style="display:flex;width:100%" scroll-y>
     <view class="container">
       <swiper autoplay="true" interval="2000" indicator-dots="true"
       indicator-color="grey" indicator-active-color="pink"
@@ -31,9 +36,9 @@
         </block>
       </swiper>
     </view>
-  </scroll-view> -->
+  </scroll-view>
 
-<view class="container" >
+<view class="container"  >
   <!-- 普通动态 -->
   <view class="weibo-group" wx:for='{{topics}}' wx:for-index="windex" wx:if="{{item.type===1}}">
     <view class="user-group">
@@ -100,7 +105,7 @@
 </view>
 
 
-<view wx:if="{{show=='2'}}" style="margin-top:60rpx" >
+<view wx:if="{{show=='two'}}" style="margin-top:0rpx" >
 <view class="container" >
   <!-- 文档动态 -->
   <view wx:for='{{topics}}' wx:for-index="windex">
