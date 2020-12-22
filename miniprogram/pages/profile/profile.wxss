@@ -39,7 +39,7 @@
 
 
 .userinfo-nickname {
-  background-color: rgb(219, 204, 204);
+  background: transparent;
   color: #333333;
   font-size: 42rpx;
 }

@@ -193,3 +193,41 @@
   margin: 30rpx auto;
   font-size: rgb(105, 103, 103);
 }
+/* pages/test/test.wxss */
+.release{
+  font-size: 14px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0 5px 15px;
+}
+.releaseInput{
+  color: #ccc;
+}
+.release .text{
+  width: 302px;
+  min-height: 17px;
+  max-height: 51px;
+  line-height: 17px;
+  border-width: 7px 10px;
+  border-style: solid;
+  border-color: #fff;
+  background-color: #fff;
+}
+.release .submit{
+  color: #6c0;
+  width: 58px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+}
+
+
+
+

@@ -35,7 +35,8 @@
     <view class="content-box">回复内容</view>
     <block wx:for="{{replays}}" wx:for-index="idx">
       <view class="main-content">
-        <view class="louceng-box">{{idx + 1}}楼</view>
+        <view class="louceng-box">{{idx + 1}}楼  </view> 
+        {{item.time}}
         <view class="content-maintext">{{item.content}}</view>    
       </view>
     </block>
@@ -46,5 +47,20 @@
 
 
   <view class='like-container'>
-    <button class='btn-class' open-type="getUserInfo"  bindgetuserinfo="onReplayClick">回复</button>
+    <button  bindtap="bindReply">回复</button>
+    <view class="release">
+    <textarea 
+      class="text"
+      placeholder-class="releaseInput"
+      value="{{content}}"
+      fixed="true" 
+      maxlength="150" 
+      show-confirm-bar="{{false}}" 
+      cursor-spacing="15" 
+      auto-height="true" 
+      focus="{{focus}}"
+      value="{{content}}"
+      bindinput="contentInput"></textarea>
+    <view class="submit" bindtap="onReplayClick">发送</view>
+  </view>
   </view>

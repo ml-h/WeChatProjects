@@ -10,7 +10,19 @@ Page({
     topic: {},
     id: '',
     openid: '',
-    loadingHidden:false
+    content:'',
+    loadingHidden:false,
+    focus: false
+  },
+  bindReply(e) {
+    this.setData({
+      focus: true
+    });
+  },
+  contentInput(e) { //当输入框的值发生改变时，获取
+    this.setData({
+      content: e.detail.value
+    });
   },
 
   /**
@@ -93,16 +105,39 @@ Page({
 
 
   /**
-   * 跳转回复页面
+   * 回复
    */
-  onReplayClick(event){
-      const userInfo=event.detail.userInfo;
-      if(userInfo){
-        wx.navigateTo({
-          url: "../replay/replay?id=" + that.data.id + "&openid=" + that.data.openid
-        });
+  onReplayClick(){
+        var month=new Date().getMonth()+1
+        if (this.data.content.trim() != ''){
+          db.collection('replay').add({
+            // data 字段表示需新增的 JSON 数据
+            data: {
+              content: that.data.content,
+              date: new Date(),
+              time: new Date().getFullYear()+"/"+month+"/"+new Date().getDate()+' '+new Date().getHours()+":"+new Date().getMinutes(),
+              r_id: that.data.id,
+              u_id: that.data.openid,
+              t_id: that.data.id
+            },
+            success: function(res) {
+              wx.showToast({
+                title: '回复成功',
+              })
+              that.getReplay()
+              that.setData({
+                content:''
+              })
+             
+            },
+            fail: console.error
+          })
+        }else {
+          wx.showToast({
+            icon: 'none',
+            title: '写点东西吧',
+          })
+        }
       }
 
-
-}
 })
