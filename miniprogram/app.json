@@ -1,6 +1,8 @@
 {
   "pages": [
    "pages/homepage/homepage",
+   "pages/star/star",
+   "pages/map/map",
    "pages/questionbank/questionbank",
    "pages/searchpage/searchpage",
    "pages/profile/profile",
@@ -62,8 +64,8 @@
         "selectedIconPath": "images/laohu.png"
       },
       {
-        "pagePath": "pages/searchpage/searchpage",
-        "text": "搜索",
+        "pagePath": "pages/map/map",
+        "text": "地图",
         "iconPath": "images/huli1.png",
         "selectedIconPath": "images/huli.png"
       },

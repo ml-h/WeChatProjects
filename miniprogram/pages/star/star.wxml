@@ -1,0 +1,47 @@
+<view class='bc'  bindtap='local'
+style="background:url({{bc_url}})  no-repeat center center;background-size: cover;height:{{height*0.9}}px;">
+<canvas canvas-id="canvas"    style='width:1200rpx;height: 100vh;'></canvas>
+</view> 
+
+<view class='tip' >
+当前在线人数：{{sum}}人
+</view>
+<view class='tip' >
+{{notice}}
+</view>
+<button bindtap="select" class="btn">选择教室学习</button>
+<modal hidden="{{hiddenmodalput}}" title="选择教室自习" 
+   			confirm-text="提交" cancel-text="取消" bindcancel="modalinput" 
+   			bindconfirm="confirm">
+     <!-- 这里可以自由选择你的输入框类型<input type='text' placeholder="请输入内容" auto-focus/> -->
+     <!-- <view class="line"> 教室： <input id="roomName"></input></view>
+     <view class="line"> 时长：<input id="hour"></input></view> -->
+
+     <!-- 下拉框 -->
+<view class="line"> 
+      <view class="name">教室： </view>
+      <view class='select_box' style="z-index:300;">
+      <view class='select' catchtap='selectTap'>
+          <text class='select_text'>{{selectData[index]}}</text>
+          <image class='select_img {{selectShow&&"select_img_rotate"}}' src='../common/images/xiala.png'  background-size="contain"></image> 
+      </view>
+      <view class='option_box' style='height:{{selectShow?180:0}}rpx;z-index:300;'>
+          <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+     <!-- 下拉框 -->
+     <view class="line"> 
+       <view  class="name"> 时长： </view>
+      <view class='select_box' style="z-index:200;">
+      <view class='select' catchtap='selectTap2'>
+          <text class='select_text'>{{selectData2[index2]}}</text>
+          <image class='select_img {{selectShow2&&"select_img_rotate"}}' src='../../images/xiala.png'  background-size="contain"></image> 
+      </view>
+      <view class='option_box' style='height:{{selectShow2?150:0}}rpx;z-index:200;'>
+          <text class='option' wx:for='{{selectData2}}' wx:key='this' data-index='{{index}}' catchtap='optionTap2'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+ </modal>
+
