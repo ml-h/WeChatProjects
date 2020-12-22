@@ -1,8 +1,11 @@
 page{
-  background-color: rgb(219, 204, 204);
+  /* background-color: rgb(247, 241, 241); */
+  background-image: url(https://uploadfile.bizhizu.cn/up/2e/07/93/2e0793e5a2912f9b4940e39e765c55c5.jpg);
+  padding-top: 20rpx;
 }
 .container{
-  background-color: rgb(219, 204, 204);
+  /* background-color: rgb(247, 241, 241); */
+  background: transparent;
   display: flex;
   flex-direction: column;
   margin: 0;

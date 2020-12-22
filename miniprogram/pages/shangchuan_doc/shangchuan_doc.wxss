@@ -1,5 +1,7 @@
 page{
   background-color: rgb(235, 233, 233);
+  background-image: url(https://uploadfile.bizhizu.cn/up/2e/07/93/2e0793e5a2912f9b4940e39e765c55c5.jpg);
+
 }
 .btns{
   display:flex;
@@ -12,7 +14,8 @@ page{
 }
 .container{
   margin-top: 25rpx;
-  background-color: rgb(235, 233, 233);
+  /* background-color: rgb(235, 233, 233); */
+  background: transparent;
   flex-wrap: wrap; 
   padding: 12rpx;
 }
@@ -37,10 +40,7 @@ page{
   align-items:center;
   justify-content:space-around;
 }
-.jiahao{
-  color: rgb(87, 139, 206);
-  font-size: 50rpx;
-}
+
 
 .fankui{
   font-size: 25rpx;
@@ -54,10 +54,33 @@ page{
   height: 4rpx;
  
  }
- .notice{
+ .null{
+  font-size: 50rpx;
+  color:gray;
+  margin: auto auto;
+}
+.notice{
   font-size:35rpx;
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  margin: 20rpx auto;
+  display: inline-block;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
  }
+ .write-btn{ 
+  background: rgb(135, 117, 141);
+  font-size: 50rpx;
+  color: #ffffff;
+  box-shadow: grey;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100rpx;
+  width:100rpx;
+  border-radius: 50%;
+  position: fixed;
+  top: 80%;
+  left: 80%;
+}
+.jiahao{
+  color: rgb(240, 242, 245);
+  font-size: 50rpx;
+}

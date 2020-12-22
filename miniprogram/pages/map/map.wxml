@@ -1,5 +1,5 @@
 <!--miniprogram/pages/map.wxml-->
-<map id="map" longitude="119.19769049" latitude="26.05932738" scale="16" bindmarkertap="toaddress" points="{{points}}" markers="{{markers}}" style="width: 100%; height: 300px;"></map>
+<map id="map" longitude="119.19769049" latitude="26.05932738" scale="16" bindmarkertap="toaddress" points="{{points}}" markers="{{markers}}" style="width: 100%; height:1000rpx;"></map>
 
 <!-- <view style="width:100vw;height:200px" wx:if="{{points.length>0}}">
   <heatMap points="{{points}}" longitude="{{longitude}}" latitude="{{latitude}}" mapScale="{{mapScale}}" range="{{range}}"></heatMap>

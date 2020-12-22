@@ -19,9 +19,7 @@
       <view class="picimgview">
         <image src='../../images/publish/pic2.png' bindtap='chooseImage' class="picimg"></image>
       </view>
-      <view class="picbtnview">
         <button class="btn" formType='submit' open-type="getUserInfo">发布</button>
-      </view>
     </view>
   </form>
 

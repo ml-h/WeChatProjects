@@ -2,23 +2,13 @@
 <loading hidden="{{loadingHidden}}">
   数据加载中
 </loading>
-<!-- <movable-area style="height:300%;width:750rpx;"> -->
-
-<view class="container">
-  <!-- <view class="btns"> -->
-  <button class="upload" bindtap="up" open-type="getUserInfo"  bindgetuserinfo="up_doc" style="width:300rpx;height:100rpx;margin-left: 20rpx;">
-    <view class="jiahao" >+</view>
-    上传题目
-  </button>
-<!-- </view> -->
-  <view class="notice" style="">
-          <view class="divLine" style="margin-right: 10rpx;"></view>你上传的题目<view class="divLine"  style="margin-left: 10rpx;"></view>
-      </view>
       
-  <view class="notice" style="margin-top:50rpx;" wx:if="{{my_upDoc.length===0}}">
+  <view class="null" style="margin-top:50rpx;" wx:if="{{my_upDoc.length===0}}">
          你还没有上传题目
    </view>
-  <view class="item"  wx:for="{{timu}}" >
+   <view class="container" wx:else>
+   <view class="notice" >已纳入题库</view>
+  <view class="item"  wx:for="{{timu}}" wx:if="{{item.timu_status==='已纳入题库'}}">
       <view  wx:if="{{item.content!==''}}" class="timu"  data-id="{{item._id}}"  data-type="{{item.type}}" bindtap="fankui" bindtap="timu_dongtai">{{item.content}}</view>
      <view wx:else>
       <image data-id="{{item._id}}"  data-type="{{item.type}}" bindtap="fankui" bindtap="timu_dongtai" src="{{item.con_img}}" mode="aspectFill"  style="width:100%;max-height:300rpx" />
@@ -29,13 +19,20 @@
         <view  data-id="{{item._id}}" data-type="{{item.type}}" class="fankui" bindtap="fankui" >查看反馈</view>
       </view>
   </view>
-
-  
+  <view class="notice" >正在审核</view>
+  <view class="item"  wx:for="{{timu}}"  wx:if="{{item.timu_status==='正在审核'}}">
+      <view  wx:if="{{item.content!==''}}" class="timu"  data-id="{{item._id}}"  data-type="{{item.type}}" bindtap="fankui" bindtap="timu_dongtai">{{item.content}}</view>
+     <view wx:else>
+      <image data-id="{{item._id}}"  data-type="{{item.type}}" bindtap="fankui" bindtap="timu_dongtai" src="{{item.con_img}}" mode="aspectFill"  style="width:100%;max-height:300rpx" />
+     </view>
+     
+      <view class="line">
+        <image src="../../images/duoren.png" style="width:50rpx;height:50rpx;"></image>
+        <view  data-id="{{item._id}}" data-type="{{item.type}}" class="fankui" bindtap="fankui" >查看反馈</view>
+      </view>
+  </view>
 </view>
 
-<!-- <movable-view class="write-weibo-btn"  direction="all"  bindtap="up"  style="width:90rpx;height:90rpx;border-radius: 50%;font-size:70rpx" x="600rpx" y="1000rpx"> 
-  <view style="padding-bottom:15rpx">
-  +
-</view>
-</movable-view>
-</movable-area> -->
+<button class="write-btn" bindtap="up" >
+    <view class="jiahao" >+</view>
+  </button>

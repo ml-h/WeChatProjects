@@ -11,14 +11,14 @@ Page({
         longitude: 119.19766049,
         alpha:0,
         callout:{
-          content: "0图书馆",
+          // content: "0图书馆",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
           borderRadius: 10,
           anchorY:20,
-          borderColor:'#ff0000',
-          borderWidth: 2,
+          borderColor:'#000000',
+          borderWidth: 0,
         }
       },
       {
@@ -27,7 +27,7 @@ Page({
         longitude: 119.19560049,
         // alpha:0,
         callout:{
-          content: "1西三",
+          // content: "1西三",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
@@ -41,7 +41,7 @@ Page({
         longitude: 119.19546049,
         // alpha:0,
         callout:{
-          content: "2西二",
+          // content: "2西二",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
@@ -56,7 +56,7 @@ Page({
         longitude: 119.19546049,
         // alpha:0,
         callout:{
-          content: "3西一",
+          // content: "3西一",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
@@ -65,28 +65,28 @@ Page({
           // borderWidth: 2,
         }
       },
-      {
-        id: 4,
-        latitude: 26.06002704,
-        longitude: 119.19546049,
-        // alpha:0,
-        callout:{
-          content: "4中楼",
-          padding:10,
-          display:'ALWAYS',
-          textAlign:'center',
-          // borderRadius: 10,
-          // borderColor:'#ff0000',
-          // borderWidth: 2,
-        }
-      },
+      // {
+      //   id: 4,
+      //   latitude: 26.06002704,
+      //   longitude: 119.19546049,
+      //   // alpha:0,
+      //   callout:{
+      //     // content: "4中楼",
+      //     padding:10,
+      //     display:'ALWAYS',
+      //     textAlign:'center',
+      //     // borderRadius: 10,
+      //     // borderColor:'#ff0000',
+      //     // borderWidth: 2,
+      //   }
+      // },
       {
         id: 5,
         latitude: 26.06045704,
         longitude: 119.19636049,
         // alpha:0,
         callout:{
-          content: "5东一",
+          // content: "5东一",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
@@ -101,7 +101,7 @@ Page({
         longitude: 119.196706049,
         // alpha:0,
         callout:{
-          content: "6东二",
+          // content: "6东二",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
@@ -116,7 +116,7 @@ Page({
         longitude: 119.197406049,
         // alpha:0,
         callout:{
-          content: "7东三",
+          // content: "7东三",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
