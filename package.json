@@ -1,0 +1,18 @@
+{
+  "name": "yunkaifa5",
+  "version": "1.0.0",
+  "description": "小福有研进行中",
+  "main": "index.js",
+  "dependencies": {
+    "@vant/weapp": "^1.6.2",
+    "lin-ui": "^0.8.11",
+    "miniprogram-sm-crypto": "^0.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

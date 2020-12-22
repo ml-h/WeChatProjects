@@ -73,7 +73,7 @@ textarea {
   font-size: 58rpc;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
-  background-color: rgb(216, 186, 186);
+  /* background-color: rgb(216, 186, 186); */
   color: #fff;
   border-radius: 50rpx;
 }
