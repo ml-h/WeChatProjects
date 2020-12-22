@@ -281,18 +281,99 @@ PriseTap:function(event){
    
   }
 },
-jubao:function(){
+jubao:function(event){
+
   wx.showModal({
     title: '提示',
     content: '确认要举报该条动态？',
     success: function (res) {
       if (res.confirm) {
-        wx.showToast({
-          title: '举报成功',
-        })
+        console.log(event.currentTarget.dataset.topicid)
+        console.log(that.data.openid)
+        // 获取该动态的举报信息
+        wx.cloud.callFunction({
+          name:"jubao",
+          data:{
+            action:"get",
+            userid:that.data.openid,
+            topicId:event.currentTarget.dataset.topicid,
+          }
+        }).then(res=>{
+          console.log("查询结果aa",res)
+          console.log("查询结果aa",res.result.data.length)
+
+          // 没有被举报过
+         if(res.result.data.length==0){
+           console.log(that.data.openid,"hjadgyidsc")
+          wx.cloud.callFunction({
+            name:"jubao",
+            data:{
+              action:"new",
+              userid:that.data.openid,
+              topicId:event.currentTarget.dataset.topicid,
+            }
+          }).then(res=>{
+            console.log(res,"第一次举报add")
+            wx.showToast({
+              title: '举报成功',
+            })
+          })
+         }else{
+          console.log(res.result.data[0].user_id.length)
+          console.log("用户id",that.data.openid)
+          var f=0;
+          // 不能重复举报
+          for(var i=0;i<res.result.data[0].user_id.length;i++){
+            if(res.result.data[0].user_id[i]==that.data.openid){
+              f=1;
+              wx.showToast({
+                title: '不能重复举报',
+              })
+              break;
+            }
+          }
+     
+          // 增加举报
+          if(f==0){
+            console.log("增加举报")
+            wx.cloud.callFunction({
+              name:"jubao",
+              data:{
+                action:"add",
+                userid:that.data.openid,
+                topicId:event.currentTarget.dataset.topicid,
+              }
+            }).then(res=>{
+              console.log(res,"add")
+              wx.showToast({
+                title: '举报成功',
+              })
+            })
+          }
+          
+         // 判断是否可以删除
+         if(res.result.data[0].user_id.length>6){
+           console.log("执行删除")
+                wx.cloud.callFunction({
+                  name:"jubao",
+                  data:{
+                    // action:"prise",
+                    action:"delete",
+                    userid:that.data.openid,
+                    topicId:event.currentTarget.dataset.topicid,
+                  }
+                }).then(res=>{
+                  console.log(res,"del")
+                })
+         }
+         }
+
+         })
+        
       }
    }
   })
+
 },
 change:function(e){
 console.log(e)

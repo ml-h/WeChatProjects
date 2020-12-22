@@ -3,6 +3,7 @@
    "pages/homepage/homepage",
    "pages/star/star",
    "pages/map/map",
+   "pages/study_record/study_record",
    "pages/questionbank/questionbank",
    "pages/searchpage/searchpage",
    "pages/profile/profile",

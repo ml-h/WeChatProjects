@@ -157,6 +157,14 @@
           "id": -1,
           "name": "pages/publish/publish",
           "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 12,
+          "name": "pages/study_record/study_record",
+          "pathName": "pages/study_record/study_record",
+          "query": "",
           "scene": null
         }
       ]

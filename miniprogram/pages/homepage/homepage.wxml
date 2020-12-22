@@ -90,7 +90,7 @@
                 </block>
       </view>
 
-      <view class="jubao-group" bindtap="jubao">
+      <view class="jubao-group" bindtap="jubao" data-topicId='{{item._id}}'>
         <image src="../../images/jubao.png">举报
         </image>
       </view>

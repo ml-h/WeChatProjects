@@ -1,4 +1,18 @@
 // miniprogram/pages/map.js
+const db=wx.cloud.database()
+var sum=[]
+var numbercolor = {
+ 9:'#CE0000',
+ 8:'#EA0000',
+ 7:'#FF0000',
+ 6:'#FF2D2D',
+ 5:'#FF5151',
+ 4:'ff7575',
+ 3:'#FF9797',
+ 2:'#FFB5B5',
+ 1:'#FFD2D2',
+ 0:'#FFFFFF',
+}
 Page({
 
   /**
@@ -11,14 +25,15 @@ Page({
         longitude: 119.19766049,
         alpha:0,
         callout:{
-          // content: "0图书馆",
+          // content: "图书馆",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
           borderRadius: 10,
           anchorY:20,
-          borderColor:'#000000',
-          borderWidth: 0,
+          bgColor:'#CE0000',
+          // borderColor:'#ff0000',
+          // borderWidth: 2,
         }
       },
       {
@@ -27,11 +42,13 @@ Page({
         longitude: 119.19560049,
         // alpha:0,
         callout:{
-          // content: "1西三",
+          // content: "西三",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
-          // borderRadius: 10,
+          borderRadius: 10,
+          anchorY:30,
+          bgColor:'#CE0000',
           // borderColor:'#ff0000',
           // borderWidth: 2,
         }
@@ -41,11 +58,13 @@ Page({
         longitude: 119.19546049,
         // alpha:0,
         callout:{
-          // content: "2西二",
+          // content: "西二",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
-          // borderRadius: 10,
+          anchorY:30,
+          bgColor:'#CE0000',
+          borderRadius: 10,
           // borderColor:'#ff0000',
           // borderWidth: 2,
         }
@@ -56,78 +75,105 @@ Page({
         longitude: 119.19546049,
         // alpha:0,
         callout:{
-          // content: "3西一",
+          // content: "西一",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
-          // borderRadius: 10,
+          anchorY:30,
+          bgColor:'#CE0000',
+          borderRadius: 10,
           // borderColor:'#ff0000',
           // borderWidth: 2,
         }
       },
-      // {
-      //   id: 4,
-      //   latitude: 26.06002704,
-      //   longitude: 119.19546049,
-      //   // alpha:0,
-      //   callout:{
-      //     // content: "4中楼",
-      //     padding:10,
-      //     display:'ALWAYS',
-      //     textAlign:'center',
-      //     // borderRadius: 10,
-      //     // borderColor:'#ff0000',
-      //     // borderWidth: 2,
-      //   }
-      // },
       {
-        id: 5,
+        id: 4,
         latitude: 26.06045704,
         longitude: 119.19636049,
         // alpha:0,
         callout:{
-          // content: "5东一",
+          // content: "东一",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
-          // borderRadius: 10,
+          anchorY:30,
+          bgColor:'#CE0000',
+          borderRadius: 10,
+          // borderColor:'#ff0000',
+          // borderWidth: 2,
+        }
+      },
+      {
+        id: 5,
+        latitude: 26.06065704,
+        longitude: 119.196706049,
+        // alpha:0,
+        callout:{
+          // content: "东二",
+          padding:10,
+          display:'ALWAYS',
+          textAlign:'center',
+          anchorY:10,
+          bgColor:'#CE0000',
+          borderRadius: 10,
           // borderColor:'#ff0000',
           // borderWidth: 2,
         }
       },
       {
         id: 6,
-        latitude: 26.06066704,
-        longitude: 119.196706049,
-        // alpha:0,
-        callout:{
-          // content: "6东二",
-          padding:10,
-          display:'ALWAYS',
-          textAlign:'center',
-          // borderRadius: 10,
-          // borderColor:'#ff0000',
-          // borderWidth: 2,
-        }
-      },
-      {
-        id: 7,
         latitude: 26.06086704,
         longitude: 119.197406049,
         // alpha:0,
         callout:{
-          // content: "7东三",
+          // content: "东三",
           padding:10,
           display:'ALWAYS',
           textAlign:'center',
-          // borderRadius: 10,
+          anchorY:30,
+          bgColor:'#CE0000',
+          borderRadius: 10,
           // borderColor:'#ff0000',
           // borderWidth: 2,
         }
       },
     ]
   },
-  
+  ser:function(e){
+    db.collection("NowUser").where({
+      _id:"sum"
+    })
+    .get().then(res=>{
+      sum.push(res.data[0].all)
+      console.log(sum)
+      // this.setData({
+      //   ['markers[0].callout.content']:"图书馆" + sum[0].lab,
+      //   ['markers[1].callout.content']:"西三" + sum[0].west3,
+      //   ['markers[2].callout.content']:"西二" + sum[0].west2,
+      //   ['markers[3].callout.content']:"西一" + sum[0].west1,
+      //   ['markers[4].callout.content']:"东一" + sum[0].east1,
+      //   ['markers[5].callout.content']:"东二" + sum[0].east2,
+      //   ['markers[6].callout.content']:"东三" + sum[0].east3,
+      // })
+      var number0 =  (sum[0].lab-sum[0].lab%10)/10
+      var number1 = (sum[0].west3-sum[0].west3%10)/10
+      var number2 = (sum[0].west2-sum[0].west2%10)/10
+      var number3 = (sum[0].west1-sum[0].west1%10)/10
+      var number4 = (sum[0].east1-sum[0].east1%10)/10
+      var number5 = (sum[0].east2-sum[0].east2%10)/10
+      var number6 = (sum[0].east3-sum[0].east3%10)/10
+      this.setData({
+        ['markers[0].callout.bgColor']:numbercolor[number0],
+        ['markers[1].callout.bgColor']:numbercolor[number1],
+        ['markers[2].callout.bgColor']:numbercolor[number2],
+        ['markers[3].callout.bgColor']:numbercolor[number3],
+        ['markers[4].callout.bgColor']:numbercolor[number4],
+        ['markers[5].callout.bgColor']:numbercolor[number5],
+        ['markers[6].callout.bgColor']:numbercolor[number6],
+      })
+
+    })
+  },
   toaddress:function(e){
     console.log(e)
     var id =e.markerId
@@ -137,7 +183,7 @@ Page({
     //   longitude: this.data.markers[id].longitude,
     // })
     wx.navigateTo({
-      url: '/pages/up_doc/up_doc'
+      url: '/pages/star/star?id=' + id
     })
   },
 
@@ -147,7 +193,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.ser()
   },
 
   /**
