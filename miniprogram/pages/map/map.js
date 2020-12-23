@@ -144,24 +144,14 @@ Page({
       _id:"sum"
     })
     .get().then(res=>{
-      sum.push(res.data[0].all)
-      console.log(sum)
-      // this.setData({
-      //   ['markers[0].callout.content']:"图书馆" + sum[0].lab,
-      //   ['markers[1].callout.content']:"西三" + sum[0].west3,
-      //   ['markers[2].callout.content']:"西二" + sum[0].west2,
-      //   ['markers[3].callout.content']:"西一" + sum[0].west1,
-      //   ['markers[4].callout.content']:"东一" + sum[0].east1,
-      //   ['markers[5].callout.content']:"东二" + sum[0].east2,
-      //   ['markers[6].callout.content']:"东三" + sum[0].east3,
-      // })
-      var number0 =  (sum[0].lab-sum[0].lab%10)/10
-      var number1 = (sum[0].west3-sum[0].west3%10)/10
-      var number2 = (sum[0].west2-sum[0].west2%10)/10
-      var number3 = (sum[0].west1-sum[0].west1%10)/10
-      var number4 = (sum[0].east1-sum[0].east1%10)/10
-      var number5 = (sum[0].east2-sum[0].east2%10)/10
-      var number6 = (sum[0].east3-sum[0].east3%10)/10
+      var number0 = 10- Math.floor( (res.data[0].lab)/20%10)
+      var number1 =10- Math.floor((res.data[0].west3)/20%10)
+      var number2 =10-Math.floor( (res.data[0].west2)/20%10)
+      var number3 =10-Math.floor( (res.data[0].west1)/20%10)
+      var number4 =10-Math.floor( (res.data[0].east1)/20%10)
+      var number5 = 10-Math.floor((res.data[0].east2)/20%10)
+      var number6 = 10-Math.floor((res.data[0].east3)/20%10)
+      console.log(number0,number1,number2,number3)
       this.setData({
         ['markers[0].callout.bgColor']:numbercolor[number0],
         ['markers[1].callout.bgColor']:numbercolor[number1],

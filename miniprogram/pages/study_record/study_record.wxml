@@ -3,7 +3,7 @@
   数据加载中
 </loading>
 <view class="null" style="margin-top:50rpx;" wx:if="{{records.length===0}}">
-         你还没有仔细记录
+         你还没有自习记录
    </view>
 <view class="container" wx:else>
 

@@ -32,17 +32,25 @@
   <!-- 显示回复列表 -->
   <view class='replay_content' wx:if="{{replays.length > 0}}">
     <!-- <text class='tip-text'>-----------以下是回复内容----------</text> -->
-    <view class="content-box">回复内容</view>
+    <view class="content-box">全部评论</view>
     <block wx:for="{{replays}}" wx:for-index="idx">
       <view class="main-content">
-        <view class="louceng-box">{{idx + 1}}楼  </view> 
-        {{item.time}}
-        <view class="content-maintext">{{item.content}}</view>    
+        <!-- <open-data class="avatar"type="userAvatarUrl"></open-data>        -->
+        <view class="main-replay-content">
+            <view class="main-replay-header">
+              <view class="replay-main-header">
+                  <view class="louceng-box">{{idx + 1}}楼   </view> 
+                  <view style="width:150px;margin-left:5rpx; color: #999;">{{item.time}}</view>
+              </view>
+              <button class="xiala_btn" hover-class="none" style=" width: 40rpx;"  data-item='{{item}}' open-type="getUserInfo"  bindgetuserinfo="xiala"><image src="../../images/xialakuang.png" class="xiala" ></image></button>
+            </view>
+                <view class="content-maintext">{{item.content}}</view>   
+         </view> 
       </view>
     </block>
   </view>
   <view class='replay_content' wx:elif="{{replays.length === 0}}">
-    <view class="notice">暂无回复，快来抢沙发</view>
+    <view class="notice">暂无评论，快来抢沙发</view>
   </view>
 
 
@@ -60,7 +68,8 @@
       auto-height="true" 
       focus="{{focus}}"
       value="{{content}}"
-      bindinput="contentInput"></textarea>
-    <view class="submit" bindtap="onReplayClick">发送</view>
+      bindinput="contentInput"
+      placeholder="千头万绪，落笔汇成评论一句"></textarea>
+    <view class="submit" bindtap="onReplayClick" >发送</view>
   </view>
   </view>

@@ -1,12 +1,13 @@
 /* pages/questionbank/questionbank.wxss */
 .allpage{
+    margin-top: 7%;
     display: flex;
     flex-direction: column;
 
 
 }
 page{
-    background-color: white;
+    background-image: url(https://uploadfile.bizhizu.cn/up/2e/07/93/2e0793e5a2912f9b4940e39e765c55c5.jpg);
 }
 .allpage view{
     display: flex;
@@ -22,7 +23,7 @@ page{
     font-size: 100%;
 }
 .san{
-    padding-top: 8%;
+    padding-top: 5%;
     display: flex;
     flex-direction: column;
 }
@@ -82,5 +83,8 @@ page{
     border-radius: 20px;
     color: #5f5a5a;
     padding-left: 35px;
+  }
+  .form{
+    margin-top:5%;
   }
   

@@ -12,7 +12,9 @@ Page({
     openid: '',
     content:'',
     loadingHidden:false,
-    focus: false
+    focus: false,
+    nickname:''
+
   },
   bindReply(e) {
     this.setData({
@@ -109,6 +111,14 @@ Page({
    */
   onReplayClick(){
         var month=new Date().getMonth()+1
+        
+       wx.getUserInfo({
+         success:(res)=>{
+        this.data.nickname=res.nickname
+         }
+         
+       })
+       console.log("___"+res.nickname)
         if (this.data.content.trim() != ''){
           db.collection('replay').add({
             // data 字段表示需新增的 JSON 数据
@@ -119,6 +129,7 @@ Page({
               r_id: that.data.id,
               u_id: that.data.openid,
               t_id: that.data.id
+           
             },
             success: function(res) {
               wx.showToast({
@@ -138,6 +149,38 @@ Page({
             title: '写点东西吧',
           })
         }
-      }
+      },
+      xiala:function(e){
+        wx.showLoading({
+          title: '正在加载',
+        })
+        wx.cloud.callFunction({
+          name:"login",
+          data:{}
+        }).then(res=>{
+          wx.hideLoading()
+          console.log(e)
+          console.log("&&&&&"+e.currentTarget.dataset.item._openid)
+          console.log("&&&&&&&"+res.result.openid)
+          console.log(e.currentTarget.dataset.item._openid==res.result.openid)
+          if(e.currentTarget.dataset.item._openid==res.result.openid){
+            wx.showModal({
+              title: '提示',
+              content: '确定删除该条动态',
+              success: function (res) {
+                if (res.confirm) {
+                  db.collection('replay').doc(e.currentTarget.dataset.item._id).remove().then(res=>{
+                    wx.showToast({
+                      title: '删除成功',
+                    })
+                    that.getReplay();
+                    })
+                } 
+              }
+            })
+          }
+        })
+    
+      },
 
 })

@@ -11,6 +11,7 @@ Page({
   },
 
   onLoad: function(option) {
+    console.log(option)
     db.collection('up_timu').doc(option.id).get().then(res=>{
         this.setData({
          content:res.data.content,

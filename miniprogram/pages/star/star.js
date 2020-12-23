@@ -1,7 +1,8 @@
 var can=wx.createCanvasContext('canvas');
-// var stars = [];
 // var myStar=false;
 var db=wx.cloud.database();
+const _ = db.command;
+var stars=[];
 var idurl = {
   0:["https://7465-test-yan-3gp1h1ez7f7c6a02-1304167464.tcb.qcloud.la/map/3n.png?sign=069b57871efe462dbf5dba12154949d6&t=1608623368",
      "https://7465-test-yan-3gp1h1ez7f7c6a02-1304167464.tcb.qcloud.la/map/3m.png?sign=9d555aa64039a02a16fd501a5057eef8&t=1608623334"],
@@ -68,7 +69,7 @@ Page({
    */
 
   data: {
-    stars:[],
+   
     myStar:false,
     doc_id:['lab','west3','west2','west1','east1','east2','east3'],
     selectData:['101','102','103','104','105','106','107','108',
@@ -91,9 +92,6 @@ Page({
   },
   onShow: function (options) {
     can.draw(false)
-    this.setData({
-     stars:[],
-    })
   },
   selectTap() {
     this.setData({
@@ -196,12 +194,16 @@ local:function(e){
 
    */
   onLoad: function (options) {
-    console.log(options.id)
+    // this.judge()
     var id = options.id
     wx.setNavigationBarTitle({
       title: idname[id]
     })
-   
+    if(options.id==0){
+      this.setData({
+        selectData:['一楼','二楼','三楼','四楼','五楼'],
+      })
+    }
     can.draw(false, function (e) {
       console.log('draw callback')
     })
@@ -209,23 +211,29 @@ local:function(e){
     // time=10;
     if(time>17||time<6){
       this.setData({
+        select_id:options.id,
         title:idname[id],
        bc_url:idurl[id][0],
-       dis:options.id>3?0.13:(options.id==0?0.1:0.125),
+         dis:options.id>3?0.13:(options.id==0?0.1:0.125),
          bottom:options.id>3?0.7:(options.id==0?0.68:0.65),
         height: wx.getSystemInfoSync().windowHeight,
         width: wx.getSystemInfoSync().windowWidth
       })
     }else{
       this.setData({
+        select_id:options.id,
         title:idname[id],
+        dis:options.id>3?0.13:(options.id==0?0.1:0.125),
+        bottom:options.id>3?0.7:(options.id==0?0.68:0.65),
       bc_url:idurl[id][1],
       height: wx.getSystemInfoSync().windowHeight,
       width: wx.getSystemInfoSync().windowWidth
     })  }
-    console.log(this.data.doc_id[options.id],options.id)
     db.collection("NowUser").doc(this.data.doc_id[options.id]).get()
     .then(res => {
+      this.setData({
+        rooms:res.data.room
+      })
       for(var r in res.data.room.valueOf()){
         this.data.room.push(r)
         this.data.room_num.push(res.data.room[r])
@@ -237,21 +245,20 @@ local:function(e){
     
       if(bottom!=0.68){
       for(var j=0;j<39;j++){
-        console.log("教学楼")
         // console.log(0.15*(j%7),(0.7- Math.floor(j/7)*0.13))
         for (var i = 0; i <this.data.room_num[j]; i++,s++) {
           var obj = new starObj();
-          this.data.stars.push(obj);
-          this.data.stars[s].init(30,25,0.13*(j%8)*this.data.width,(bottom- Math.floor(j/8)*dis)*this.data.height);
+          stars.push(obj);
+          stars[s].init(30,25,0.13*(j%8)*this.data.width,(bottom- Math.floor(j/8)*dis)*this.data.height);
         }
     }}else{
-      console.log("图书馆")
         for(var j=0;j<5;j++){
           // console.log(0.15*(j%7),(0.7- Math.floor(j/7)*0.13))
           for (var i = 0; i <this.data.room_num[j]; i++,s++) {
             var obj = new starObj();
-            this.data.stars.push(obj);
-            this.data.stars[s].init(200,12,0.15*this.data.width,(bottom+0.06- Math.floor(j%5)*0.07)*this.data.height);
+            stars.push(obj);
+      
+            stars[s].init(200,12,0.15*this.data.width,(bottom+0.06- Math.floor(j%5)*0.07)*this.data.height);
           }
         }
     }
@@ -284,12 +291,12 @@ local:function(e){
 
   drawStars(){
     for (var i = 0; i <this.data.sum; i++) { 
-      this.data.stars[i].undate();
-      this.data.stars[i].draw();
+      stars[i].undate();
+      stars[i].draw();
     }
     if(this.data.myStar){
-      this.data.stars[i].undate();
-      this.data.stars[i].draw('../../images/star2.png',10,10);
+      stars[i].undate();
+      stars[i].draw('../../images/star2.png',10,10);
     }
     can.draw();
   },
@@ -343,13 +350,26 @@ local:function(e){
       data:{}
     }).then(res=>{
       this.setData({
-        openid:res.result.openid
+        openid:res.result.openid,
+        sum:this.data.sum+1
       })
-      console.log( new Date().getTime(),this.data.study_time,this.data.title+"-"+room,)
       var month=new Date().getMonth()+1
+      this.data.rooms[room]=this.data.rooms[room]+1;
+      wx.cloud.callFunction({
+        name:"map_star",
+        data:{
+          didian:this.data.doc_id[this.data.select_id],
+          room:this.data.rooms,
+          sum:this.data.sum+1
+        }
+      }).then(res=>{
+        console.log(res)
+      })
       db.collection('study_record').add({
         data:{
-        userId:res.result.openid,
+        userId:this.data.openid,
+        room_name:this.data.selectData[this.data.index],
+        didian:this.data.doc_id[this.data.select_id],
         time: new Date().getFullYear()+"/"+month+"/"+new Date().getDate(),
         start_time: new Date().getTime(),
         study_time:this.data.study_time,
@@ -365,7 +385,7 @@ local:function(e){
           title: '选择失败，请再次尝试',
           icon:'none'
         })
-      })
+      }) 
      
 
     })
@@ -384,7 +404,25 @@ local:function(e){
     })
   },
 
-
+  // judge(){
+  //   db.collection("study_record").where({
+  //       _openid:this.data.openid
+  //   }).get().then(res=>{
+  //     var nowTime=new Data().time();
+  //     for(var rec in res.data){
+  //         if(rec.start_time+60*res.study_time*1000<nowTime){
+  //           wx.cloud.callFunction({
+  //             name:"map",
+  //             data:{
+  //               didian:this.data.doc_id[this.data.select_id],
+  //               room:this.data.rooms,
+  //               sum:this.data.sum+1
+  //             }
+  //           })
+  //         }
+  //     }
+  //   })
+  // }
 
 
 

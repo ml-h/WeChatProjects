@@ -31,11 +31,11 @@ Page({
   //     })
   // }else{
     const userInfo=event.detail.userInfo;
-    if(userInfo){
+    // if(userInfo){
     wx.navigateTo({
       url:'../tongkaoshiti/tongkaoshiti',
     })
-  }
+  // }
   },
   changepage4:function(event){
     //   if(!app.is_login()){
@@ -44,10 +44,11 @@ Page({
     //     })
     // }else{
       const userInfo=event.detail.userInfo;
-      if(userInfo){
+      // if(userInfo){
     wx.navigateTo({
       url:'../feitongkao/feitongkao',
-    })}
+    })
+  // }
   },
   input: function(e) {//接受输入值
     this.setData({

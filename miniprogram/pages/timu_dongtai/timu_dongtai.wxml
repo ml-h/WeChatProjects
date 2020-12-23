@@ -3,8 +3,8 @@
 </loading>
 <view class="content">
   <!-- <form bindsubmit="formSubmit"> -->
-    <view class="text-content">
-      <view class="answer">
+    <!-- <view class="text-content1"> -->
+      <view class="text-content">
         <view class="title">题目</view>
         <view class="info" wx:if="{{content!==''}}">{{content}}</view>
         <view wx:else>
@@ -17,23 +17,31 @@
         <text class="choice" wx:for="{{choice}}">{{index}} :  {{item}}</text>
       </view>
 
-      <view class=text-content"  wx:if="{{type==3}}">
+      <view class=text-content2"  wx:if="{{type==3}}">
           <view class="title">答案解析</view>
           <view class="info" wx:if="{{answer!==''}}">{{answer}}</view>
         <view wx:else>
         <image src="{{ans_img}}" mode="aspectFit" data-url='{{ans_img}}' bindtap="previewImg" style="width:100%;max-height:400rpx" />
       </view>
      </view>
-  <view class=text-content"  wx:if="{{type==4&&answer!==''}}">
+  <view class=text-content2"  wx:if="{{type==4&&answer!==''}}">
           <view class="title" >答案</view>
           <view class="info">{{answer}}</view>
   </view>
-  <view class=text-content"  wx:if="{{type==4&&analyse!==''}}">
+  <view class=text-content2"  wx:if="{{type==4&&analyse!==''}}">
           <view class="title" >解析</view>
           <view class="info">{{analyse}}</view>
   </view>
       
+  <view class='comment' wx:if="{{op==='0'}}">
+        <button class="btn" bindtap="pingjia" style="  width: 375rpx;" data-operate="-1" open-type="getUserInfo">没用
+          <image class="img" src="../../images/cai.png"></image>
+        </button>
 
+        <button class="btn" bindtap="pingjia" style="  width: 375rpx;"  data-operate="1" open-type="getUserInfo">有用
+          <image class="img" src="../../images/zan.png"></image>
+        </button>
+    </view>
 
     </view>
 
@@ -45,7 +53,7 @@
         <button class="btn" bindtap="pingjia" style="  width: 375rpx;"  data-operate="1" open-type="getUserInfo">有用
           <image class="img" src="../../images/zan.png"></image>
         </button>
-    </view>
+    <!-- </view> -->
 
   <!-- </form> -->
 </view>

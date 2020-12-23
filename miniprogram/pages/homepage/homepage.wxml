@@ -98,7 +98,7 @@
   </view>
 </view>
 
-<button class="write-btn" bindtap="up_doc" open-type="getUserInfo"  bindgetuserinfo="up_doc" >
+<button class="write-btn" open-type="getUserInfo"  bindgetuserinfo="onWriteWeiboTap" >
     <view class="jiahao" >+</view>
 </button>
 </view>
