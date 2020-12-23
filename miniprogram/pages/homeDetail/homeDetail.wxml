@@ -34,8 +34,7 @@
     <!-- <text class='tip-text'>-----------以下是回复内容----------</text> -->
     <view class="content-box">全部评论</view>
     <block wx:for="{{replays}}" wx:for-index="idx">
-      <view class="main-content">
-        <!-- <open-data class="avatar"type="userAvatarUrl"></open-data>        -->
+      <view class="main-content">      
         <view class="main-replay-content">
             <view class="main-replay-header">
               <view class="replay-main-header">

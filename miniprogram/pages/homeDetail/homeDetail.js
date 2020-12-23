@@ -1,4 +1,5 @@
 var that
+
 const db = wx.cloud.database();
 const app=getApp();
 Page({
@@ -111,14 +112,7 @@ Page({
    */
   onReplayClick(){
         var month=new Date().getMonth()+1
-        
-       wx.getUserInfo({
-         success:(res)=>{
-        this.data.nickname=res.nickname
-         }
-         
-       })
-       console.log("___"+res.nickname)
+      
         if (this.data.content.trim() != ''){
           db.collection('replay').add({
             // data 字段表示需新增的 JSON 数据
